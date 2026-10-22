@@ -1,9 +1,10 @@
-# OmniBeat-MCP — Ria's lane. Targets must not lie. If one goes red, stop and read it.
-# 4-service topology (D-08): :9000 chaos → :8080 mcp → :4000 orchestrator → :3000 sim.
+# Intent Lock — demo rig Makefile. Every target named here is defined
+# below; if one fails, its output says why.
+# 4-service topology: :9000 chaos rig → :8080 MCP server → :4000 orchestrator → :3000 simulator.
 COMPOSE := docker compose
 PYTHON  := python3
 
-.PHONY: help config dev dev-chaos demo demo-compose stop down logs test-mcp verify chaos-suite clean
+.PHONY: help config dev dev-chaos demo demo-compose stop down logs clean
 
 help: ## what each target does (this list)
 	@grep -E '^[a-z-]+: ##' $(MAKEFILE_LIST) | sed 's/: ##/ —/'
@@ -14,7 +15,7 @@ config: ## validate the 4-service compose file (works with no Docker engine)
 dev: ## boot all 4 services (foreground; Ctrl-C tears it down)
 	$(COMPOSE) up --build
 
-dev-chaos: ## boot with fault injection ARMED on both ends (D-06)
+dev-chaos: ## boot with fault injection ARMED on both ends
 	MCP_CHAOS_MODE=1 CHAOS_MODE=chaos_injection $(COMPOSE) up --build
 
 demo: ## THE one command: all 4 services up, no Docker, no env vars (zero-settings)
@@ -40,7 +41,7 @@ demo: ## THE one command: all 4 services up, no Docker, no env vars (zero-settin
 	up=$$(count_up); \
 	if [ "$$up" -lt 4 ]; then echo "DEMO FAILED: only $$up/4 services responding — read logs/"; exit 1; fi; \
 	echo "demo stack: sim http://localhost:$$SIM_P · orchestrator :$$ORCH_P · mcp :$$MCP_P · chaos :$$CHAOS_P"
-# J-01 note on the health-wait this replaced: the old probe was
+# Note on the health-wait above (it replaced an older probe): the old probe was
 #   curl … / || curl … /health && up++
 # In shell, && and || are equal-precedence and LEFT-associative, so it parsed
 # as (A || B) && C — the counting was accidentally right. The real bug was

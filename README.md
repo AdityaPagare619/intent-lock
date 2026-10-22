@@ -72,6 +72,8 @@ and every catalog decision is made by the Intent Lock MCP server.
 - **Windows:** native PowerShell launchers — see
   [docs/INSTALL_WINDOWS.md](docs/INSTALL_WINDOWS.md).
 - **macOS:** see [docs/INSTALL_MACOS.md](docs/INSTALL_MACOS.md).
+- **Linux:** the bash launchers above run as-is — `make demo` is the
+  whole path; there is no separate Linux guide.
 - With no Gemini key set, the demo still boots and locks: extraction
   falls back to a deterministic local floor over the audited catalog
   snapshot, and the UI labels the fallback honestly.
@@ -168,7 +170,7 @@ services/omnibeat-mcp-server/ the Intent Lock MCP server (the hero)
 services/alexa-agent-orchestrator/  host-side orchestrator (Gemini brain, advisory only)
 services/chaos-and-provider-mock/   fault-injection rig for the outage act
 packages/polyglot-phonetic-judo/    the phonetic grounding library (also standalone, MIT)
-scripts/                      launchers, wire suite, gate, host-matrix harness
+scripts/                      bootstrap + demo up/down launchers (verification: docs/TESTING.md)
 docs/                         spec, architecture, operations, development, friction logs
 ```
 

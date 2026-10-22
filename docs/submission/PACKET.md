@@ -195,7 +195,7 @@ Intent Lock (OmniBeat-MCP) did not exist before this hackathon. The repository w
 ## 13. Testing instructions (paste into the form's testing/access field)
 
 ```
-Judges: the repository is public — no invitation or account is needed. Clone https://github.com/AdityaPagare619/intent-lock and follow the README quickstart; the interactive walkthrough is a static page (docs/index.html in the repo, opens with no setup) and is also deployed via GitHub Pages.
+Judges: the repository is public — no invitation or account is needed. Clone https://github.com/AdityaPagare619/intent-lock and follow the README quickstart; the interactive walkthrough is a static page (docs/index.html in the repo, opens with no setup, runs offline).
 
 Fastest path (~3 minutes):
 1. Watch the demo video (2:00) — everything in it is real MCP wire traffic produced by this code.

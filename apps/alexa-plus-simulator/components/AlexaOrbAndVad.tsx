@@ -159,7 +159,7 @@ function StageUtterance() {
   } else if (def) {
     heard = <span className="text-stage-ink">{def.simAsr}</span>;
   } else {
-    heard = <span className="text-stage-ink">Say the thing she always gets wrong.</span>;
+    heard = <span className="text-stage-ink">Alexa guesses. Intent Lock proves.</span>;
   }
 
   return (

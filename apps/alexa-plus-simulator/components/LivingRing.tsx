@@ -2,7 +2,7 @@
  * The Living Ring — Alexa's presence, rebuilt in her own grammar
  * (audit-2 §4.1 state table + audit-3 §C1 state map).
  *
- * Form: a luminous azure→violet gradient core wrapped in an Echo-style
+ * Form: a luminous azure→blue gradient core wrapped in an Echo-style
  * light ring, rendered on ONE canvas (Canvas-2D renderer — the audit's
  * designated fallback; state semantics identical to the shader spec).
  * The RING carries state, exactly as on Echo hardware:
@@ -177,11 +177,15 @@ const rgba = (c: [number, number, number], a: number) =>
 const ALEXA: [number, number, number] = [0, 202, 255];
 const CYAN: [number, number, number] = [143, 235, 255];
 const AZURE: [number, number, number] = [77, 124, 254];
-const VIOLET: [number, number, number] = [124, 108, 240];
+// DEEP_BLUE is #2F7BFF — the deep end of the founder's Alexa light
+// ramp (#5BD7FF → #2F7BFF). The orb lives entirely inside that ramp;
+// the old out-of-family stop and churn tint are gone (founder §5,
+// Jury 4 V5).
+const DEEP_BLUE: [number, number, number] = [47, 123, 255];
 const DEEP: [number, number, number] = [16, 34, 56];
-// rim tone: DEEP lifted 30% toward VIOLET — the sphere's edge keeps its
-// chromatic identity instead of dissolving into the backdrop.
-const RIM: [number, number, number] = [48, 56, 111];
+// rim tone: DEEP lifted 30% toward DEEP_BLUE — the sphere's edge keeps
+// its chromatic identity instead of dissolving into the backdrop.
+const RIM: [number, number, number] = [25, 61, 116];
 
 function drawRing(ctx: CanvasRenderingContext2D, w: number, h: number, p: PresenceParams) {
   const cx = w / 2;
@@ -199,7 +203,7 @@ function drawRing(ctx: CanvasRenderingContext2D, w: number, h: number, p: Presen
   ctx.fillStyle = halo;
   ctx.fillRect(0, 0, w, h);
 
-  // core sphere — azure→cyan→violet field with slow churn highlights
+  // core sphere — cyan→azure→deep-blue field with slow churn highlights
   const breath = 1 + 0.018 * (Math.sin(p.t * 0.9) + Math.sin(p.t * 0.37 + 1.7)) + 0.05 * p.level;
   const r = coreR * breath;
   const hx = cx + Math.cos(p.t * 0.23 * (0.4 + p.churn)) * r * 0.22;
@@ -208,7 +212,7 @@ function drawRing(ctx: CanvasRenderingContext2D, w: number, h: number, p: Presen
   core.addColorStop(0, rgba(desat(...CYAN, sat), 0.97));
   core.addColorStop(0.38, rgba(desat(...ALEXA, sat), 0.94));
   core.addColorStop(0.72, rgba(desat(...AZURE, sat), 0.95));
-  core.addColorStop(0.94, rgba(desat(...VIOLET, sat), 0.92));
+  core.addColorStop(0.94, rgba(desat(...DEEP_BLUE, sat), 0.92));
   core.addColorStop(1, rgba(desat(...RIM, sat), 1));
   ctx.beginPath();
   ctx.arc(cx, cy, r, 0, Math.PI * 2);
@@ -220,11 +224,11 @@ function drawRing(ctx: CanvasRenderingContext2D, w: number, h: number, p: Presen
   ctx.fill();
   ctx.globalAlpha = 1;
 
-  // churn blob — a soft violet light drifting through the core
+  // churn blob — a soft deep-blue light drifting through the core
   const bx = cx + Math.cos(p.t * 0.41 * (0.3 + p.churn) + 2.1) * r * 0.42;
   const by = cy + Math.sin(p.t * 0.53 * (0.3 + p.churn)) * r * 0.38;
   const blob = ctx.createRadialGradient(bx, by, 0, bx, by, r * 0.75);
-  blob.addColorStop(0, rgba(desat(...VIOLET, sat), 0.30 * p.bright));
+  blob.addColorStop(0, rgba(desat(...DEEP_BLUE, sat), 0.30 * p.bright));
   blob.addColorStop(1, "rgba(0,0,0,0)");
   ctx.beginPath();
   ctx.arc(cx, cy, r, 0, Math.PI * 2);

@@ -15,7 +15,7 @@
 
 > **Story note:** §3 below is the Intent Lock narrative from `docs/DEVPOST_STORY.md`, swapped in verbatim — the two files must never diverge. The retired v1 story (yield / ledger / multiroom) survives nowhere in this packet.
 >
-> **Dependency note (install fix):** §13's testing instructions describe the fixed quickstart (`./scripts/bootstrap.sh && make demo` from any clone location). The panel's install-fix lane must be merged to `main` and one fresh-clone run must pass **before** this form is submitted — the coordinator confirms this; do not submit against a broken quickstart.
+> **Dependency note (install fix):** §13's testing instructions describe the quickstart (`./scripts/bootstrap.sh && make demo`) of the public repo `AdityaPagare619/intent-lock` (branch `main`). One fresh-clone run of that repo must pass **before** this form is submitted — Petu confirms at package time; do not submit against a broken quickstart.
 
 ---
 
@@ -83,7 +83,7 @@ The friction log (24 entries, written as we hit the walls) is the honest version
 ### Accomplishments that we're proud of
 
 - **Verified on the metal, not reported.** Beat 1 locks the 2012 Film Original of Saiyaara (iTunes 673948365) on the raw heard form "Sayaraa," repeatedly, live — with the remix vetoed by the user's own "nahi… not the remix" even when the host's extraction omits the exclusion. Beat 3 is deterministic: at host time 22:05 the stored Taste Lock fires and the official LoFi Mix (iTunes 1620148631) locks — and the rule learned its exact-recording binding from that verified win.
-- **A real wire, not a mock.** Handshake → session → tools/call → App, all live, all reproducible from the repo. Intent Lock's evidence is live, not inherited: the demo beats are verified end-to-end against live catalogs, the wire smoke passes from a fresh clone, and an intent_lock verification suite runs the hero, veto, sabotage, pin, domain and rule cases against the live server — final gate: 10/10, with the hostile-host replay at 36/36 fixed (docs/TESTING.md). The regression suite for the legacy tool surface the server still carries holds at **47 PASS / 2 SKIP / 0 FAIL** — labeled as legacy coverage, never cited as Intent Lock's.
+- **A real wire, not a mock.** Handshake → session → tools/call → App, all live, all reproducible from the repo. Intent Lock's evidence is live, not inherited: the demo beats are verified end-to-end against live catalogs, the wire smoke passes from a fresh clone, and an intent_lock wire suite (`scripts/verify_intent_lock.py`) runs the hero, veto, sabotage, pin, domain and rule cases against a live server. The regression suite for the legacy tool surface the server still carries holds at **47 PASS / 2 SKIP / 0 FAIL** — labeled as legacy coverage, never cited as Intent Lock's.
 - **Attacked by our own hosts, and the score is published.** We pointed three Gemini host personas — careful, careless, and sloppy — at the kernel with 55 messy utterances: 161 runs in which the host, not a script, chose the words. Before the surgery wave that followed, the guarantee survived **77.6%** of runs. The failures are instructive, not hidden: the safety machinery never broke — zero missed vetoes, zero smuggled pins, zero trap resurrections in any run — every failure was a *crowning* choice among legitimate rows (which of two real recordings heads a bare-name ask), never a breached ban. We fixed the crowning layer and replayed the identical attacks; the post-surgery figure stands in the submission packet's testing instructions, next to the suite it belongs to.
 - **Zero LLMs in the guarantee box.** We deleted an in-server model tie-break on principle — a second model judging the first is correlated risk, not a boundary — and replaced it with duplicate-merge, an honest `tie_choice` state, and a re-verified host pin.
 - **Honest labeling as a feature**: the README carries a "Simulated vs real (no weasel words)" section, every Trust Card number is emitted by the pipeline run that displays it (fields hide when absent; nothing is estimated), and the friction log names our own bugs before anyone else can.
@@ -122,8 +122,8 @@ Model Context Protocol (spec 2025-11-25, Streamable HTTP) · Python · FastAPI �
 
 | Field | Value |
 |---|---|
-| GitHub repository (required) | `https://github.com/AdityaPagare619/omnibeat-mcp` (private; judge collaborators added at submission — see `JUDGE_INVITES.md`) |
-| Video (required) | **⏳ PENDING RE-SHOOT.** The Intent Lock demo is being re-shot on the new stage (2:00 cut). The earlier 2:57 video shows the retired pre-Intent-Lock UI and must **not** be submitted. `[PASTE PUBLIC YOUTUBE URL AFTER THE RE-SHOOT UPLOAD — see VIDEO_UPLOAD_CHECKLIST.md]` |
+| GitHub repository (required) | `https://github.com/AdityaPagare619/intent-lock` (public, MIT — no invitation needed) |
+| Video (required) | **⏳ PENDING FINAL CUT.** The submission film is recorded from the redesigned Story walkthrough (2:50, public, English). Earlier cuts show retired UI and must **not** be submitted. `[PASTE PUBLIC YOUTUBE URL AFTER UPLOAD — see VIDEO_UPLOAD_CHECKLIST.md]` |
 | Demo / try-it link (optional) | Leave blank unless the Render option is approved (see gap audit in the J-09 verdict). Judges' sanctioned path is repo + video. |
 | Open Source repo | `https://github.com/AdityaPagare619/polyglot-phonetic-judo` (public, MIT) |
 
@@ -195,7 +195,7 @@ Intent Lock (OmniBeat-MCP) did not exist before this hackathon. The repository w
 ## 13. Testing instructions (paste into the form's testing/access field)
 
 ```
-Judges: you have been added as collaborators to this private repository (invites sent at submission time). GitHub invitations expire after 7 days if unaccepted — if yours has lapsed, message us via Devpost and we will re-send it the same day. Access stays open through the end of the judging period.
+Judges: the repository is public — no invitation or account is needed. Clone https://github.com/AdityaPagare619/intent-lock and follow the README quickstart; the interactive walkthrough is in `site/` (static, opens with no setup) and is also deployed via GitHub Pages from that folder.
 
 Fastest path (~3 minutes):
 1. Watch the demo video (2:00) — everything in it is real MCP wire traffic produced by this code.
@@ -218,7 +218,7 @@ Rules basis (official rules, Testing): *"The project must be accessible to judge
 Upload to the Devpost gallery, in this order:
 1. The Trust Card at the Beat 1 lock — Heard ➔ Grounded, the four eliminations, the 2012 Film Original playing. The product in one frame.
 2. The wire-inspector frame from the video — real MCP traffic under the card, proving the wire.
-3. Architecture diagram — export from the blueprint / `docs/ARCHITECTURE_V2.md` assets in the repo.
+3. Architecture diagram — `docs/architecture-main.png` (and `docs/architecture-pipeline.png`) in the repo.
 4. The coda frame — three locks (music · cable · oat milk) on one schema.
 
 ## 15. Final pre-submit checklist (founder, in order)

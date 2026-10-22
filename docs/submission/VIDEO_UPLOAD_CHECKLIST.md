@@ -35,7 +35,7 @@ The official rules say the video *"should be less than three (3) minutes"* and t
    1:00 Beat 2 — the Taste Lock rule, the clock scrub, the LoFi Mix
    1:35 Coda — one schema, three locks
 
-   Code (private during judging; judges are collaborators): https://github.com/AdityaPagare619/omnibeat-mcp
+   Code (public): https://github.com/AdityaPagare619/intent-lock
    Open-source phonetic core: https://github.com/AdityaPagare619/polyglot-phonetic-judo
 
    Built by THE YAP PATROL for the Amazon "Build, Ship, Shape" Developer Hackathon — Alexa+ Track + Open Source Mini Challenge.

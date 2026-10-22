@@ -29,13 +29,13 @@ One gate, five sections, all must pass:
 | The five demo beats through the real host path | **5 / 5 PASS** |
 | Rig left pristine (no test rules or state left behind) | **PASS** |
 
-Final gate run: 2026-10-22, against the exact tree in this repository.
+Final gate run: 2026-10-22 (run 5, 19:43 IST), against the exact tree in this repository — including the protocol-negotiation fix below. One acceptance note, in the open: the B2 rule beat accepts the LoFi Mix by recording (title + lead artist + either catalog's verified pressing: iTunes 1620148631 or Deezer 1724669457, ISRC-checked), because two live catalogs legitimately carry the same recording under different ids.
 
 ## Interop
 
 The server was also exercised by a third-party MCP client (the official MCP
 Inspector): initialize, tools/list, and a full tie → pin → re-verify flow
-against the live kernel — 12/12 protocol checks against MCP spec 2025-11-25.
+against the live kernel — 12/12 protocol checks against MCP spec 2025-11-25. Protocol negotiation follows the spec: a client proposing a different well-formed version receives a counter-offer of 2025-11-25, not a dead end (verified live against older and newer proposals).
 
 ## Known limitations (printed, not hidden)
 

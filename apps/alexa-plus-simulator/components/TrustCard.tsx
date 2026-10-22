@@ -24,7 +24,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import {
-  artwork600,
   provenanceLabel,
   type ElimRow,
   type IntentLockPayload,
@@ -68,6 +67,66 @@ const OP_GLYPHS: Record<string, string> = {
 
 function opLabel(op: string): string {
   return OP_LABELS[op] ?? op.replace(/^OP_/, "").replace(/_/g, " ");
+}
+
+/* ------------------------------------------------------------------ */
+/* Monogram tiles — founder §1.4: NO album art anywhere in the card    */
+/* path. Every row renders a generated tile instead: initials from     */
+/* the artist (else the title) on a tinted gradient whose hue is a     */
+/* deterministic hash of the name. No external image ever loads, so    */
+/* the broken-image failure mode is deleted, not handled. The same     */
+/* hue seeds the Room Glow palette — the glow survives the artwork     */
+/* ban with its source honestly changed.                               */
+/* ------------------------------------------------------------------ */
+
+function nameHue(seed: string): number {
+  let h = 0;
+  for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) >>> 0;
+  return h % 360;
+}
+
+function hslHex(h: number, s: number, l: number): string {
+  const sn = s / 100;
+  const ln = l / 100;
+  const k = (n: number) => (n + h / 30) % 12;
+  const a = sn * Math.min(ln, 1 - ln);
+  const f = (n: number) =>
+    Math.round(255 * (ln - a * Math.max(-1, Math.min(k(n) - 3, Math.min(9 - k(n), 1)))));
+  const to2 = (v: number) => v.toString(16).padStart(2, "0");
+  return `#${to2(f(0))}${to2(f(8))}${to2(f(4))}`;
+}
+
+function monogramInitials(row: LockRow): string {
+  const name = (row.artist || row.title || "?").trim();
+  const words = name
+    .split(/[^A-Za-zÀ-ÖØ-öø-ÿ0-9]+/)
+    .filter((w) => w.length > 0 && !/^(feat|ft|the|and|with)$/i.test(w));
+  if (words.length >= 2) return (words[0][0] + words[1][0]).toUpperCase();
+  if (words.length === 1) return words[0][0].toUpperCase();
+  return "?";
+}
+
+function MonogramTile({ row, className }: { row: LockRow; className?: string }) {
+  const hue = nameHue(`${row.artist ?? ""}|${row.title ?? ""}`);
+  return (
+    <div
+      aria-hidden="true"
+      className={`flex shrink-0 select-none items-center justify-center ring-1 ring-white/15 ${className ?? ""}`}
+      style={{
+        background: `linear-gradient(135deg, hsl(${hue} 62% 42%) 0%, hsl(${(hue + 36) % 360} 64% 27%) 100%)`,
+      }}
+    >
+      <span className="font-mono font-bold tracking-wide text-white/95">{monogramInitials(row)}</span>
+    </div>
+  );
+}
+
+/** Room Glow colors for a row — derived from its monogram hue, never
+ *  sampled from external artwork. Hex strings on purpose: the stage
+ *  appends an alpha suffix (`${color}40`), which only hex survives. */
+function paletteForRow(row: LockRow): string[] {
+  const hue = nameHue(`${row.artist ?? ""}|${row.title ?? ""}`);
+  return [hslHex(hue, 65, 55), hslHex((hue + 36) % 360, 65, 45)];
 }
 
 /* ------------------------------------------------------------------ */
@@ -222,7 +281,7 @@ function HookStrip({
   onPalette?: (colors: string[] | null) => void;
 }) {
   const [analysis, setAnalysis] = useState<HookAnalysis | null>(null);
-  const [loadErr, setLoadErr] = useState<string | null>(null);
+  const [loadFailed, setLoadFailed] = useState(false);
   const [loading, setLoading] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [warmth, setWarmth] = useState(false);
@@ -262,6 +321,26 @@ function HookStrip({
       const x = (progressSec / a.durationSec) * W;
       ctx2d.fillStyle = "#fafafa";
       ctx2d.fillRect(x, 0, 1.5, H);
+    }
+  };
+
+  // Waveform placeholder for the failure path (founder §1.5): a muted,
+  // deterministic slate envelope stands where the real one could not
+  // be decoded — labeled by the line beneath it, never an error string.
+  const drawPlaceholderWaveform = () => {
+    const cv = canvasRef.current;
+    if (!cv) return;
+    const ctx2d = cv.getContext("2d");
+    if (!ctx2d) return;
+    const W = cv.width;
+    const H = cv.height;
+    ctx2d.clearRect(0, 0, W, H);
+    const bars = 56;
+    for (let i = 0; i < bars; i++) {
+      const v = 0.2 + 0.14 * Math.abs(Math.sin(i * 1.35)) * Math.abs(Math.sin(i * 0.31 + 1.2));
+      const h = Math.max(2, v * (H - 8));
+      ctx2d.fillStyle = "rgba(138,155,184,0.42)"; // advisory slate #8A9BB8
+      ctx2d.fillRect((i / bars) * W, H - h, Math.max(1, W / bars - 1.5), h);
     }
   };
 
@@ -318,7 +397,7 @@ function HookStrip({
   const load = async (autoplay: boolean) => {
     if (!previewUrl) return;
     setLoading(true);
-    setLoadErr(null);
+    setLoadFailed(false);
     try {
       const a = await player.load(previewUrl);
       setAnalysis(a);
@@ -326,10 +405,11 @@ function HookStrip({
       if (autoplay && player.context?.state === "running") {
         await play(a, warmth);
       }
-    } catch (e) {
-      setLoadErr(
-        `preview could not be decoded in this browser (${(e as Error).message}) — the lock stands; the audio hop is the browser's, not the server's.`
-      );
+    } catch {
+      // NEVER render a raw Error.message (founder §1.5): the failure
+      // path shows the prescribed waveform placeholder + fixed line.
+      setLoadFailed(true);
+      drawPlaceholderWaveform();
     } finally {
       setLoading(false);
     }
@@ -356,54 +436,14 @@ function HookStrip({
     []
   );
 
-  // Room Glow palette from the real artwork (canvas-sampled). A tainted
-  // canvas (no CORS) yields no palette — the glow simply stays off.
+  // Room Glow palette — derived from the row's monogram hue (see
+  // paletteForRow). Founder §1.4 removed artwork from the card path,
+  // so nothing here loads an external image to sample colors from.
   useEffect(() => {
-    if (!row.artwork_url || !onPalette) return;
-    const img = new Image();
-    img.crossOrigin = "anonymous";
-    img.onload = () => {
-      try {
-        const c = document.createElement("canvas");
-        c.width = 8;
-        c.height = 8;
-        const g = c.getContext("2d");
-        if (!g) return;
-        g.drawImage(img, 0, 0, 8, 8);
-        const d = g.getImageData(0, 0, 8, 8).data;
-        const buckets = new Map<string, { r: number; g: number; b: number; n: number; sat: number }>();
-        for (let i = 0; i < d.length; i += 4) {
-          const r = d[i];
-          const gg = d[i + 1];
-          const b = d[i + 2];
-          const key = `${r >> 5},${gg >> 5},${b >> 5}`;
-          const mx = Math.max(r, gg, b);
-          const mn = Math.min(r, gg, b);
-          const sat = mx === 0 ? 0 : (mx - mn) / mx;
-          const cur = buckets.get(key) ?? { r: 0, g: 0, b: 0, n: 0, sat: 0 };
-          cur.r += r;
-          cur.g += gg;
-          cur.b += b;
-          cur.n += 1;
-          cur.sat += sat;
-          buckets.set(key, cur);
-        }
-        const ranked = [...buckets.values()]
-          .map((b) => ({
-            rgb: `rgb(${Math.round(b.r / b.n)}, ${Math.round(b.g / b.n)}, ${Math.round(b.b / b.n)})`,
-            score: b.n * (0.35 + b.sat / Math.max(1, b.n)),
-          }))
-          .sort((a, b) => b.score - a.score)
-          .slice(0, 2)
-          .map((b) => b.rgb);
-        if (ranked.length) onPalette(ranked);
-      } catch {
-        /* tainted canvas — no glow, honestly absent */
-      }
-    };
-    img.src = artwork600(row.artwork_url);
+    if (!onPalette) return;
+    onPalette(paletteForRow(row));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [row.artwork_url]);
+  }, [row.artist, row.title]);
 
   if (!previewUrl) {
     return (
@@ -479,10 +519,10 @@ function HookStrip({
       <div className="mt-2 overflow-hidden rounded-lg border border-stage-line/60 bg-stage-deep/70 shadow-[inset_0_1px_0_rgba(143,235,255,0.06)] ring-1 ring-white/[0.04]">
         <canvas ref={canvasRef} width={560} height={46} className="block h-[46px] w-full bg-black/20" aria-label="Preview waveform" />
       </div>
-      {loadErr && (
+      {loadFailed && (
         <div className="mt-1.5 text-[12px] leading-relaxed text-stage-ink-2">
-          {loadErr}{" "}
-          <a href={previewUrl} target="_blank" rel="noreferrer" className="font-medium text-coral underline underline-offset-2 hover:text-stage-ink">
+          preview unavailable, the lock stands.{" "}
+          <a href={previewUrl} target="_blank" rel="noreferrer" className="font-medium text-[#8A9BB8] underline underline-offset-2 hover:text-stage-ink">
             open the raw preview ↗
           </a>
         </div>
@@ -549,22 +589,9 @@ function filmIdentity(row: LockRow): string | null {
 function TieIdentity({ row }: { row: LockRow }) {
   const film = filmIdentity(row);
   const showVersion = row.version && !film ? row.version : null;
-  const [artFailed, setArtFailed] = useState(false);
   return (
     <div className="flex min-w-0 items-start gap-3">
-      {row.artwork_url && !artFailed ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={artwork600(row.artwork_url)}
-          alt=""
-          onError={() => setArtFailed(true)}
-          className="size-14 shrink-0 rounded-lg object-cover ring-1 ring-white/15"
-        />
-      ) : (
-        <div className="vinyl-grooves flex size-14 shrink-0 items-center justify-center rounded-lg ring-1 ring-white/15">
-          <span className="flex h-5 w-5 items-center justify-center rounded-full bg-alexa font-mono text-[9px] font-bold text-[#04263b]">♪</span>
-        </div>
-      )}
+      <MonogramTile row={row} className="size-14 rounded-lg text-[15px]" />
       <div className="min-w-0">
         <div className="text-[15px] font-semibold leading-snug text-stage-ink">{row.title}</div>
         {row.artist && (
@@ -670,14 +697,7 @@ export default function TrustCard({
       {locked && payload.status === "locked" && (
         <div className="mt-3 rounded-xl border border-sage/35 bg-sage/[0.07] p-3">
           <div className="flex items-start gap-3">
-            {locked.artwork_url ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={artwork600(locked.artwork_url)} alt="" className="size-16 shrink-0 rounded-xl object-cover ring-1 ring-white/15" />
-            ) : (
-              <div className="vinyl-grooves flex size-16 shrink-0 items-center justify-center rounded-xl ring-1 ring-white/15">
-                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-alexa font-mono text-[9px] font-bold text-[#04263b]">♪</span>
-              </div>
-            )}
+            <MonogramTile row={locked} className="size-16 rounded-xl text-[17px]" />
             <div className="min-w-0 flex-1">
               <RowTitle row={locked} />
             </div>

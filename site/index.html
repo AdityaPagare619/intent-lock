@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Intent Lock · Alexa guesses. Intent Lock proves.</title>
+<meta name="description" content="Intent Lock is a deterministic MCP server for Alexa+. The host proposes. The referee verifies against the real catalogs and locks only with evidence, or refuses honestly.">
+<link rel="stylesheet" href="assets/css/story.css">
+</head>
+<body>
+<a class="skip" href="#beat-0">Skip to the story</a>
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<nav class="rail" aria-label="Chapters">
+  <p class="rail-brand">Intent Lock</p>
+  <p class="rail-sub">An MCP server for Alexa+</p>
+  <ol class="rail-list">
+    <li><button type="button" class="rail-item is-active" data-goto="beat-0"><span class="rail-time">0:00</span><span class="rail-name">Cold open</span></button></li>
+    <li><button type="button" class="rail-item" data-goto="beat-1"><span class="rail-time">0:12</span><span class="rail-name">The pain</span></button></li>
+    <li><button type="button" class="rail-item" data-goto="beat-2"><span class="rail-time">0:35</span><span class="rail-name">The referee</span></button></li>
+    <li><button type="button" class="rail-item" data-goto="beat-3"><span class="rail-time">0:55</span><span class="rail-name">The wire</span></button></li>
+    <li><button type="button" class="rail-item" data-goto="beat-4"><span class="rail-time">1:35</span><span class="rail-name">The tie</span></button></li>
+    <li><button type="button" class="rail-item" data-goto="beat-5"><span class="rail-time">2:05</span><span class="rail-name">Tested like an enemy</span></button></li>
+    <li><button type="button" class="rail-item" data-goto="beat-6"><span class="rail-time">2:30</span><span class="rail-name">One schema</span></button></li>
+  </ol>
+  <button type="button" id="watchBtn" class="btn btn-primary rail-watch">Watch it run</button>
+  <a class="rail-link" href="#sources">Problem sources</a>
+  <a class="rail-link" href="https://github.com/AdityaPagare619/intent-lock">GitHub repo</a>
+</nav>
+
+<main id="story">
+
+  <!-- BEAT 0 · 0:00 · COLD OPEN -->
+  <section class="beat" id="beat-0" data-title="Cold open" aria-label="Beat 0, cold open">
+    <div class="beat-inner beat0">
+      <p class="eyebrow">An MCP server for Alexa+ · MCP 2025-11-25 · Streamable HTTP</p>
+      <div class="orb" role="img" aria-label="Her light: a calm blue sphere"></div>
+      <p class="beat0-sub">Alexa+ mishears.</p>
+      <div class="bubble-row">
+        <blockquote class="bubble bubble-user">
+          <span class="bubble-who">You said</span>
+          <p class="serif">Play the original Saiyaara, from Ek Tha Tiger.</p>
+        </blockquote>
+        <div class="bubble bubble-host">
+          <span class="bubble-who">She played</span>
+          <p class="mono">Saiyaara · the 2025 film version · a same-name stranger</p>
+        </div>
+      </div>
+      <div class="referee-pass" aria-hidden="true">
+        <span class="referee-pass-line"></span>
+        <span class="referee-pass-tag">the referee checks the catalog before anything plays</span>
+      </div>
+      <h1 class="display">Intent Lock.</h1>
+      <p class="spine">Alexa guesses. Intent Lock proves.</p>
+      <p class="hero-sub">Borrow the Brain, Own the Guarantee.</p>
+      <p class="lede">Alexa+ is a brilliant talker, and the conversation stays hers. Intent Lock is a tiny, stubborn referee that stands between her and the catalogs, and checks every song, cable and grocery order against the real thing before it plays, ships, or gets ordered.</p>
+      <ul class="chips">
+        <li>1 tool · intent_lock</li>
+        <li>0 LLMs inside the server</li>
+        <li>3 live catalogs + audited snapshot, one schema</li>
+      </ul>
+      <p class="beat-actions">
+        <button type="button" class="btn btn-primary" data-goto="beat-1">See the five frustrations</button>
+      </p>
+    </div>
+  </section>
+
+  <!-- BEAT 1 · 0:12 · THE PAIN -->
+  <section class="beat" id="beat-1" data-title="The pain" aria-label="Beat 1, the pain">
+    <div class="beat-inner">
+      <p class="eyebrow">0:12 · The pain</p>
+      <h2 class="h-display">Five small frustrations. Every single day.</h2>
+      <p class="lede">None of these are conversation problems. Alexa+ understands you beautifully, and the chat is hers. These failures happen in the last metre, at the exact moment a request touches a real catalog.</p>
+      <div class="pain-grid">
+        <article class="pain-card glass">
+          <p class="pain-num">01 · Music</p>
+          <h3 class="pain-ask serif">“Play the original.”</h3>
+          <p class="pain-got"><s>She plays something else.</s></p>
+          <blockquote class="pain-quote">
+            <p class="serif">When I ask it to play something specific, it plays something else.</p>
+            <cite>Real user, Amazon Forums</cite>
+          </blockquote>
+        </article>
+        <article class="pain-card glass">
+          <p class="pain-num">02 · Music</p>
+          <h3 class="pain-ask">Your accent becomes a stranger’s song.</h3>
+          <p class="pain-got"><s>She confidently plays somebody else’s song.</s></p>
+          <p class="pain-body">A name heard through an accent is a different spelling. Sound can rescue it.</p>
+        </article>
+        <article class="pain-card glass">
+          <p class="pain-num">03 · Shopping</p>
+          <h3 class="pain-ask">The cable whose name lies.</h3>
+          <p class="pain-got"><s>The title says 40 Gbps. The spec sheet says 480 Mbps.</s></p>
+          <p class="pain-body">And the sponsored swap replaces the pick you made with the pick that pays.</p>
+        </article>
+        <article class="pain-card glass">
+          <p class="pain-num">04 · Groceries</p>
+          <h3 class="pain-ask serif">“No sugar. No almond.”</h3>
+          <p class="pain-got"><s>Swapped anyway.</s></p>
+          <p class="pain-body">The cart treats a stated guard as a suggestion.</p>
+        </article>
+        <article class="pain-card glass">
+          <p class="pain-num">05 · At home</p>
+          <h3 class="pain-ask">The Wi-Fi hiccups.</h3>
+          <p class="pain-got"><s>She just... fails.</s></p>
+          <p class="pain-body">No offline answer. No honest refusal. Dead air.</p>
+        </article>
+        <article class="pain-card glass pain-counter">
+          <p class="counter-num">38</p>
+          <p class="pain-body">verified Alexa+ problems in the wild, each one tied to a dated public source.</p>
+          <p><a href="#sources">Read the source list</a></p>
+          <p class="prov">Counted from real user reports, October 2026. Fifteen further reports were rejected because they could not be tied to Alexa+ specifically.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEAT 2 · 0:35 · THE REFEREE -->
+  <section class="beat" id="beat-2" data-title="The referee" aria-label="Beat 2, the referee">
+    <div class="beat-inner">
+      <p class="eyebrow">0:35 · The referee</p>
+      <h2 class="h-display">She asks. The referee checks. Then, and only then, it happens.</h2>
+      <div class="steps">
+        <article class="step glass">
+          <p class="step-num">1</p>
+          <h3>The brain proposes</h3>
+          <p class="step-body">Alexa+ understands the words and proposes an action. Her reading of the ask is a guess, and the referee treats it as one.</p>
+          <div class="advisory">
+            <p class="advisory-tag">Advisory · a hint, never a verdict</p>
+            <p class="serif advisory-said">Alexa, play that ‘Sayaraa’ waala slow film song, woh original movie version, not the remix.</p>
+            <p class="mono advisory-hint">hint “Saiyaara” · include [slow, film, original] · exclude [remix]</p>
+          </div>
+        </article>
+        <p class="step-arrow" aria-hidden="true">→</p>
+        <article class="step glass">
+          <p class="step-num">2</p>
+          <h3>The referee verifies</h3>
+          <p class="step-body">Intent Lock races the real catalogs under one shared deadline and merges what comes back into one pool of candidates.</p>
+          <div class="race" role="img" aria-label="Catalog race: rows arrive from iTunes, Deezer and MusicBrainz into one pool">
+            <div class="race-track"><span class="race-chip">iTunes</span><span class="race-lane"><i></i><i></i><i></i><i></i></span></div>
+            <div class="race-track"><span class="race-chip">Deezer</span><span class="race-lane"><i></i><i></i><i></i></span></div>
+            <div class="race-track"><span class="race-chip">MusicBrainz</span><span class="race-lane"><i></i><i></i></span></div>
+            <p class="race-note">Catalog names are plain text. Duplicates of one recording merge into one row. A spelling oracle and an audited snapshot back the race up.</p>
+          </div>
+        </article>
+        <p class="step-arrow" aria-hidden="true">→</p>
+        <article class="step glass">
+          <p class="step-num">3</p>
+          <h3>Proof, or honesty</h3>
+          <p class="step-body">One row clears the floor with evidence, or the referee refuses and prints the reason. There is no third outcome dressed up as confidence.</p>
+          <div class="verdict-mini verdict-lock">
+            <p class="mono">status <strong>locked</strong></p>
+            <p class="mono">“Saiyaara” · Film Original · 2012</p>
+          </div>
+          <div class="verdict-mini verdict-none">
+            <p class="mono">status <strong>no_lock</strong></p>
+            <p class="mono">nothing verified · nothing plays · the reason prints</p>
+          </div>
+        </article>
+      </div>
+      <ul class="rules-row">
+        <li><strong>The floor is 0.60.</strong> Below it, the referee refuses.</li>
+        <li><strong>A tie is shown, never guessed.</strong> The user pins, the server re-verifies.</li>
+        <li><strong>Every eliminated row prints its reason.</strong> Nothing dies silently.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- BEAT 3 · 0:55 · THE WIRE -->
+  <section class="beat" id="beat-3" data-title="The wire" aria-label="Beat 3, the wire">
+    <div class="beat-inner">
+      <p class="eyebrow">0:55 · The proof</p>
+      <h2 class="h-display">Do not take our word for it. Read the wire.</h2>
+      <p class="lede">One real call, the way the server saw it. The host spoke Hinglish, misspelled the title, and banned the remix in the same breath.</p>
+
+      <div class="ladder" aria-label="Truth ladder for this call">
+        <div class="lane lane-said">
+          <p class="lane-tag">You said</p>
+          <p class="serif">Alexa, play that ‘Sayaraa’ waala slow film song, woh original movie version, not the remix.</p>
+        </div>
+        <p class="lane-arrow" aria-hidden="true">→</p>
+        <div class="lane lane-guess">
+          <p class="lane-tag">Alexa guessed · advisory</p>
+          <p class="mono">hint “Saiyaara” · include [slow, film, original] · exclude [remix]</p>
+        </div>
+        <p class="lane-arrow" aria-hidden="true">→</p>
+        <div class="lane lane-lock">
+          <p class="lane-tag">Referee locked</p>
+          <p class="mono">“Saiyaara” · Mohit Chauhan &amp; Tarannum Malik Jain · Film Original · 2012</p>
+        </div>
+      </div>
+
+      <div class="terminal" role="img" aria-label="A terminal window showing one real intent_lock call and its locked verdict">
+        <div class="terminal-bar">
+          <span class="dot dot-a"></span><span class="dot dot-b"></span><span class="dot dot-c"></span>
+          <p class="terminal-title">mcp wire · tools/call · intent_lock · MCP 2025-11-25 · Streamable HTTP</p>
+        </div>
+        <div class="terminal-body">
+          <p><span class="t-arrow">→</span> <span class="t-method">tools/call</span> intent_lock <span class="t-dim">· id 7 · Mcp-Session-Id carried on every frame</span></p>
+          <p class="t-label">utterance</p>
+          <p class="serif t-utter">Alexa, play that ‘Sayaraa’ waala slow film song, woh original movie version, not the remix.</p>
+          <div class="t-advisory">
+            <p><span class="t-label-inline">host extraction</span> <span class="t-dim">(advisory · a hint, never a verdict)</span></p>
+            <p>hint “Saiyaara” · include [slow, film, original] · exclude [remix]</p>
+          </div>
+          <p class="t-label">the kernel checks the real catalogs</p>
+          <ul class="t-stages">
+            <li><span class="t-stage">A · Operator Compiler</span> veto: remix · origin: the original · anchor: the film</li>
+            <li><span class="t-stage">B · Temporal Entity Memory</span> host clock read from _meta.host_time · rules evaluated before any fetch</li>
+            <li><span class="t-stage">C · Supply Harvester</span> real rows raced from iTunes, Deezer, MusicBrainz · one pool</li>
+            <li><span class="t-stage">D · Articulatory Grounding</span> the film anchor arbitrates the family first · PanPhon 70 · skeleton 30</li>
+            <li><span class="t-stage">E · Elimination &amp; Pin Gate</span> floor 0.60 · tie margin 0.04 · every rejection named</li>
+          </ul>
+          <div class="t-receipt">
+            <p><span class="t-arrow">←</span> response · status <strong class="t-locked">locked</strong></p>
+            <p>“Saiyaara” · Mohit Chauhan &amp; Tarannum Malik Jain</p>
+            <p>Film Original · 2012 · source: itunes · track_id 673948365</p>
+            <p class="t-locked">44 row(s) rejected on the card.</p>
+          </div>
+          <p class="t-dim">The full call took 11.59 s of wall clock in the test harness, catalog race included. The kernel prints its own measured timings on the card, and hides a number rather than estimating one.</p>
+        </div>
+      </div>
+
+      <div class="breakit glass">
+        <p class="breakit-tag">Break it · Chaos: Expire Token</p>
+        <p class="breakit-body">The same call, with the session token expired mid-flight. The referee cannot verify, so it does not guess.</p>
+        <p class="mono breakit-receipt">status <strong>NO LOCK</strong> · reason: the session token expired, so nothing was verified. Nothing verified, nothing plays.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEAT 4 · 1:35 · THE TIE -->
+  <section class="beat" id="beat-4" data-title="The tie" aria-label="Beat 4, the tie">
+    <div class="beat-inner">
+      <p class="eyebrow">1:35 · The tie</p>
+      <h2 class="h-display">A real tie, shown honestly.</h2>
+      <p class="lede">Three recordings of one song clear the floor with the same score. The referee does not pick a winner. It shows the tie, waits for a pin, and re-verifies the pinned row before anything locks.</p>
+
+      <div class="gauge glass" role="img" aria-label="Lock gauge: score 77, floor 60, passed by 17. Consonant skeleton 94 percent, articulatory features 70 percent">
+        <div class="gauge-top">
+          <p class="gauge-label">Lock score</p>
+          <p class="gauge-value">77</p>
+        </div>
+        <div class="gauge-bar"><span class="gauge-fill"></span><span class="gauge-floor" aria-hidden="true"></span></div>
+        <p class="gauge-note">Floor 60 · passed +17</p>
+        <div class="gauge-subs">
+          <p>Consonant skeleton <strong>94%</strong></p>
+          <p>Articulatory features <strong>70%</strong></p>
+        </div>
+      </div>
+
+      <div class="tie-grid">
+        <article class="cand glass cand-locked">
+          <div class="cand-head">
+            <span class="monogram" aria-hidden="true">HM</span>
+            <div>
+              <h3 class="cand-title">Hai Mera Dil</h3>
+              <p class="cand-meta">Udit Narayan &amp; Alka Yagnik · 1990 · <span class="badge">Original</span></p>
+            </div>
+            <p class="stamp stamp-lock">Locked</p>
+          </div>
+          <div class="cand-score"><span class="cand-score-fill"></span><span class="cand-floor" aria-hidden="true"></span></div>
+          <p class="cand-score-note">Score 77 · floor 60</p>
+          <p class="cand-receipt">Pinned by the user. The server re-verified this row against the floor and the vetoes, then locked it.</p>
+          <div class="waveform" aria-hidden="true"></div>
+          <p class="cand-preview">Preview unavailable in this walkthrough. The lock stands.</p>
+        </article>
+        <article class="cand glass cand-out">
+          <div class="cand-head">
+            <span class="monogram monogram-b" aria-hidden="true">HM</span>
+            <div>
+              <h3 class="cand-title">Hai Mera Dil</h3>
+              <p class="cand-meta">Vickey Ramseth &amp; Prabhu Negi · 2025 · <span class="badge">Original</span></p>
+            </div>
+          </div>
+          <div class="cand-score"><span class="cand-score-fill"></span><span class="cand-floor" aria-hidden="true"></span></div>
+          <p class="cand-score-note">Score 77 · floor 60</p>
+          <p class="cand-reason"><span class="x" aria-hidden="true">×</span> Tied: the host picked the other one.</p>
+          <p class="cand-actions"><button type="button" class="btn btn-ghost" disabled>Pin this one</button><button type="button" class="btn btn-ghost" disabled>Not this one</button></p>
+        </article>
+        <article class="cand glass cand-out">
+          <div class="cand-head">
+            <span class="monogram monogram-c" aria-hidden="true">HM</span>
+            <div>
+              <h3 class="cand-title">Hai Mera Dil</h3>
+              <p class="cand-meta">Azhar Tarafdar · 2021 · <span class="badge">Original</span></p>
+            </div>
+          </div>
+          <div class="cand-score"><span class="cand-score-fill"></span><span class="cand-floor" aria-hidden="true"></span></div>
+          <p class="cand-score-note">Score 77 · floor 60</p>
+          <p class="cand-reason"><span class="x" aria-hidden="true">×</span> Tied: the host picked the other one.</p>
+          <p class="cand-actions"><button type="button" class="btn btn-ghost" disabled>Pin this one</button><button type="button" class="btn btn-ghost" disabled>Not this one</button></p>
+        </article>
+      </div>
+      <p class="tie-note">A pin is not a vote the server trusts. Every other row on the full card is eliminated in the open, with its reason printed. Nothing plays until one row is pinned and re-verified.</p>
+    </div>
+  </section>
+
+  <!-- BEAT 5 · 2:05 · TESTED LIKE AN ENEMY -->
+  <section class="beat" id="beat-5" data-title="Tested like an enemy" aria-label="Beat 5, tested like an enemy">
+    <div class="beat-inner">
+      <p class="eyebrow">2:05 · Tested like an enemy</p>
+      <h2 class="h-display">We didn’t grade our own homework. We hired the enemy.</h2>
+      <p class="lede">The host brain in production is Alexa+. So we tested against hosts that behave worse: three Gemini personas, careful, careless and sloppy, extracting structure from 55 everyday utterances, mistakes and all. Then we published every failure and fixed them one by one.</p>
+      <p class="triple mono">165 planned · 161 completed · 36 wrong-locks</p>
+      <div class="stat-grid">
+        <article class="stat glass">
+          <p class="stat-num">165</p>
+          <p class="stat-name">Hostile-host runs, planned</p>
+          <p class="prov">55 utterances × 3 personas · matrix run, 22 Oct 2026</p>
+        </article>
+        <article class="stat glass">
+          <p class="stat-badge">Pre-fix · history</p>
+          <p class="stat-num">77.6%</p>
+          <p class="stat-name">Survival, before surgery</p>
+          <p class="prov">125 of 161 completed runs · the first honest score, published, not hidden</p>
+        </article>
+        <article class="stat glass">
+          <p class="stat-num stat-mint">0</p>
+          <p class="stat-name">Missed vetoes · smuggled pins</p>
+          <p class="prov">In all 161 completed runs, a banned row never once played, and every pin that tried to smuggle one in was refused</p>
+        </article>
+        <article class="stat glass">
+          <p class="stat-badge stat-badge-final">Final gate</p>
+          <p class="stat-num">100%</p>
+          <p class="stat-name">Survival, after surgery</p>
+          <p class="prov">Final acceptance gate on the finished tree, 22 Oct 2026 · methodology and the full gate table: docs/TESTING.md in the repo</p>
+        </article>
+      </div>
+      <div class="honesty-grid">
+        <article class="note-card glass">
+          <h3>How the 100% was computed</h3>
+          <p>The gate replayed the 36 wrong-locks against the fixed kernel: 36 fixed, 0 still wrong, 0 changed. The 125 previously-safe runs were carried, not re-fed. Both percentages use the same denominator: 161 completed runs. Four runs never reached a verdict (1 host extraction error, 3 kernel errors), and nothing played in them.</p>
+        </article>
+        <article class="note-card glass">
+          <h3>The confession</h3>
+          <p>28 of the 36 wrong locks came from clean host extractions. The hosts did their job and the referee still crowned the wrong row, so the referee was the weak link. The crowning layer was rebuilt, and the same attacks were replayed. Final gate on the finished tree: kernel suite 10/10 · saboteur battery 10/10 · demo beats 5/5 · rig left pristine.</p>
+        </article>
+        <article class="note-card glass note-limits">
+          <h3>What it still cannot do</h3>
+          <ul>
+            <li>A free-form “no added sugar” grocery ask can end in an honest no_lock. The grocery text grounding tops out below the never-guess floor, so the kernel refuses rather than guesses.</li>
+            <li>One accent-garbled ask locked a cover rendition, because the cover’s own title carries the film name and the original carries it in the album name. The card showed the artist it locked, in the open.</li>
+            <li>Preview playback depends on the browser’s decode path. The lock itself never does.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEAT 6 · 2:30 · ONE SCHEMA -->
+  <section class="beat" id="beat-6" data-title="One schema, every catalog" aria-label="Beat 6, one schema, every catalog">
+    <div class="beat-inner">
+      <p class="eyebrow">2:30 · One schema, every catalog</p>
+      <h2 class="h-display">One schema. Every catalog.</h2>
+      <p class="lede">The spine is universal: one operator grammar, one candidate tensor, one floor, one tie and pin protocol, one set of spec predicates. The crowning evidence is per domain. The music crown math does not run the grocery aisle.</p>
+      <div class="schema" role="img" aria-label="One intent_lock call feeds one Universal Candidate Tensor, which serves music, shopping and groceries, each with its own crowning evidence">
+        <p class="schema-call mono">tools/call · intent_lock · one schema</p>
+        <p class="schema-arrow" aria-hidden="true">↓</p>
+        <p class="schema-tensor">Universal Candidate Tensor</p>
+        <p class="schema-arrow" aria-hidden="true">↓</p>
+        <div class="schema-grid">
+          <article class="schema-card glass">
+            <h3>Music</h3>
+            <p class="schema-ev">Crowning evidence: phonetic grounding and creator evidence.</p>
+            <p>Kill channels printed on the card: veto, trap, rule override.</p>
+          </article>
+          <article class="schema-card glass">
+            <h3>Shopping</h3>
+            <p class="schema-ev">Crowning evidence: the spec-table auditor.</p>
+            <p>A cable whose title claims 40 Gbps and whose spec table says 480 Mbps is convicted by its own sheet.</p>
+          </article>
+          <article class="schema-card glass">
+            <h3>Groceries</h3>
+            <p class="schema-ev">Crowning evidence: the ingredient and substitution guard.</p>
+            <p>No sugar and no almond are hard constraints, not preferences.</p>
+          </article>
+        </div>
+        <p class="schema-dev">A developer use, concretely: any catalog with rows can sit behind the same call, and a brand selling through voice gets verdicts with reasons, not guesses.</p>
+      </div>
+
+      <h3 class="friction-h">Built in the open: five entries from our developer friction log</h3>
+      <div class="friction-grid">
+        <article class="friction glass">
+          <p class="friction-id">FL-17 · MCP Apps</p>
+          <dl>
+            <dt>Task</dt><dd>Render catalog artwork and preview audio inside the MCP App.</dd>
+            <dt>Expected</dt><dd>CSP failures would show an error somewhere.</dd>
+            <dt>Actual</dt><dd>MCP Apps CSP is deny-by-default. Undeclared domains fail silently; the card simply renders broken.</dd>
+            <dt>Severity</dt><dd>Medium</dd>
+            <dt>Workaround</dt><dd>Declared resource and connect domains in the app metadata; verified media loads.</dd>
+            <dt>Suggestion</dt><dd>Hosts should surface CSP-blocked resources in a debug channel. Silent media failure cost hours.</dd>
+          </dl>
+        </article>
+        <article class="friction glass">
+          <p class="friction-id">FL-18 · Spec change</p>
+          <dl>
+            <dt>Task</dt><dd>Choose the tie-breaking mechanism for the 2025-11-25 spec.</dd>
+            <dt>Expected</dt><dd>MCP sampling would be a stable foundation.</dd>
+            <dt>Actual</dt><dd>Sampling is deprecated (SEP-2577). Building on it would have dated the entry on arrival.</dd>
+            <dt>Severity</dt><dd>Medium</dd>
+            <dt>Workaround</dt><dd>The server returns tie_choice; the host re-calls with a pin; the server re-verifies. Two ordinary tool calls.</dd>
+            <dt>Suggestion</dt><dd>Deprecations belong in the tool-authoring guides, not only in the changelog.</dd>
+          </dl>
+        </article>
+        <article class="friction glass">
+          <p class="friction-id">FL-19 · Catalogs</p>
+          <dl>
+            <dt>Task</dt><dd>Fetch a spelling-mangled title, “Sayaraa”, from catalog APIs.</dd>
+            <dt>Expected</dt><dd>The catalogs would fuzzy-match a one-glide misspelling.</dd>
+            <dt>Actual</dt><dd>They are spelling-based. “Sayaraa” returns a Sahara-only pool; the correct song is absent, not merely misranked.</dd>
+            <dt>Severity</dt><dd>High</dd>
+            <dt>Workaround</dt><dd>Deterministic respelling variants race alongside the heard form, and an audited snapshot joins every race.</dd>
+            <dt>Suggestion</dt><dd>Catalog search APIs should offer a phonetic, sounds-like match mode.</dd>
+          </dl>
+        </article>
+        <article class="friction glass">
+          <p class="friction-id">FL-20 · Safety</p>
+          <dl>
+            <dt>Task</dt><dd>Prove a hosted LLM extraction could not resurrect a server-banned version.</dd>
+            <dt>Expected</dt><dd>Server vetoes would be absolute.</dd>
+            <dt>Actual</dt><dd>A host hint could reopen a hard trap. The unverified boundary existed inside our own engine.</dd>
+            <dt>Severity</dt><dd>High</dd>
+            <dt>Workaround</dt><dd>The exception now comes only from the user’s own words, and never when the class is vetoed.</dd>
+            <dt>Suggestion</dt><dd>Any host field that can weaken a server safety verdict is a vulnerability class in MCP reviews.</dd>
+          </dl>
+        </article>
+        <article class="friction glass">
+          <p class="friction-id">FL-24 · Host context</p>
+          <dl>
+            <dt>Task</dt><dd>Evaluate a spoken time rule, “after 10 PM, Saiyaara means the lofi version”, against the correct clock.</dd>
+            <dt>Expected</dt><dd>The server could use its own clock.</dd>
+            <dt>Actual</dt><dd>Server-local time is the wrong clock for a user’s rule, and a time argument would be spoofable host input.</dd>
+            <dt>Severity</dt><dd>Medium</dd>
+            <dt>Workaround</dt><dd>Host time travels only as per-request _meta.host_time. The server validates its shape and labels the clock source on the result.</dd>
+            <dt>Suggestion</dt><dd>Standardize a per-request host-context channel in MCP: clock, locale, device class.</dd>
+          </dl>
+        </article>
+      </div>
+
+      <div class="close-block">
+        <div class="orb orb-small" role="img" aria-label="Her light, small"></div>
+        <p class="spine spine-close">Alexa guesses. Intent Lock proves.</p>
+        <p class="close-team">Built by <strong>THE YAP PATROL</strong>: Aditya, founder, and Petu, his AI assistant.</p>
+        <p class="close-why serif">We built this because Aditya was frustrated. Then we found the whole world is.</p>
+        <p><a class="btn btn-primary close-repo" href="https://github.com/AdityaPagare619/intent-lock">Code, proofs and the gate itself: github.com/AdityaPagare619/intent-lock</a></p>
+        <p class="footer-line">The host brain proposes; this server proves.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOURCES · the 38 verified problems behind Beat 1 -->
+  <section class="sources" id="sources" aria-label="Sources for the 38 verified problems">
+    <div class="beat-inner">
+      <p class="eyebrow">Sources · Beat 1</p>
+      <h2 class="h-display">38 verified problems, with receipts.</h2>
+      <p class="lede">Researched 22 Oct 2026 from Amazon support forums, user groups, Reddit, Threads and long-form reviewer diaries. A problem counts only when it is tied to Alexa+ specifically and carries a dated 2025 or 2026 source. A verification gate fully addresses 7 of them, helps with 15, and honestly cannot touch 16. The 16 are printed too.</p>
+      <ol class="source-list">
+        <li><span class="src-num">P-01</span><span class="src-name">Ask for a specific song, get a different song or version</span><span class="src-gate gate-yes">gate catches this</span><a href="https://briefly.co/anchor/Gadgets/story/why-is-alexa-so-bad">WIRED, Mar 2026</a></li>
+        <li><span class="src-num">P-02</span><span class="src-name">The action hits the wrong device entirely</span><span class="src-gate gate-yes">gate catches this</span><a href="https://gadgetsnow.indiatimes.com/appliances/inside-amazons-alexa-troubles-employees-report-unbearably-erratic-performance-during-internal-testing/articleshow/126359279.cms">Business Insider tester reports, Jan 2026</a></li>
+        <li><span class="src-num">P-03</span><span class="src-name">Compound commands only partially execute</span><span class="src-gate gate-yes">gate catches this</span><a href="https://www.xda-developers.com/voice-assistants-are-getting-worse-at-simple-tasks-and-nobodys-talking-about-why/">XDA Developers, Apr 2026</a></li>
+        <li><span class="src-num">P-04</span><span class="src-name">Things happen with no command at all</span><span class="src-gate gate-yes">gate catches this</span><a href="https://attackofthefanboy.com/news/a-mom-heard-alexa-playing-music-at-7-am-and-when-she-asked-why-it-insisted-it-had-been-off-since-214-pm-and-blamed-morning-confusion/">TechRadar, Jan 2026</a></li>
+        <li><span class="src-num">P-05</span><span class="src-name">Alexa+ corrupts the user’s own setup</span><span class="src-gate gate-yes">gate catches this</span><a href="https://www.facebook.com/groups/AmazonAlexaUsersGroup/permalink/2617862261982108/">Amazon Alexa Users Group, Aug 2026</a></li>
+        <li><span class="src-num">P-06</span><span class="src-name">When challenged, it fabricates history and argues</span><span class="src-gate gate-part">gate helps</span><a href="https://www.amazonforum.com/s/question/0D5at00000fqKjbCAE/scary-alexa-have-twice-tried-alexa-and-twice-canelled-alexa">Amazon Forums, Mar 2026</a></li>
+        <li><span class="src-num">P-07</span><span class="src-name">The “lalala” loop, then denial it happened</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://windowsreport.com/alexa-plus-is-creeping-out-out-echo-speaker-users-with-bizarre-lalala-bug/">The Verge, Oct 2026</a></li>
+        <li><span class="src-num">P-08</span><span class="src-name">Confidently wrong facts: scores, dates, weather, math</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://pogueman.substack.com/p/alexa-is-a-buggy-embarrassment">David Pogue, 2026</a></li>
+        <li><span class="src-num">P-09</span><span class="src-name">It hallucinates about itself: invented menus</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://pogueman.substack.com/p/alexa-is-a-buggy-embarrassment">David Pogue, 2026</a></li>
+        <li><span class="src-num">P-10</span><span class="src-name">It forgets who you are</span><span class="src-gate gate-part">gate helps</span><a href="https://ranzware.com/alexa-plus-is-better-at-running-my-home-but-its-not-ready-to-run-my-life">The Verge, Oct 2026</a></li>
+        <li><span class="src-num">P-11</span><span class="src-name">It remembers the wrong thing, and insists</span><span class="src-gate gate-part">gate helps</span><a href="https://ranzware.com/alexa-plus-is-better-at-running-my-home-but-its-not-ready-to-run-my-life">The Verge, Oct 2026</a></li>
+        <li><span class="src-num">P-12</span><span class="src-name">“OK, I’ll remember that.” It doesn’t</span><span class="src-gate gate-part">gate helps</span><a href="https://ca.amazonforum.com/s/question/0D5at00000a421oCAA/my-awful-experience-with-alexa-can-i-roll-back?language=en_CA">Amazon Forums Canada, Dec 2025</a></li>
+        <li><span class="src-num">P-13</span><span class="src-name">Timers, alarms and reminders are unreliable</span><span class="src-gate gate-part">gate helps</span><a href="https://www.threads.com/@kurthdietrich/post/DTb1cHhDpS_">Threads, Jan 2026</a></li>
+        <li><span class="src-num">P-14</span><span class="src-name">It acts on background conversation it overhears</span><span class="src-gate gate-yes">gate catches this</span><a href="https://www.notebookcheck.net/Alexa-the-Liar-Testing-Amazon-s-new-voice-assistant.1330389.0.html">Notebookcheck, Jun 2026</a></li>
+        <li><span class="src-num">P-15</span><span class="src-name">It interrogates instead of acting</span><span class="src-gate gate-part">gate helps</span><a href="https://www.facebook.com/groups/1127185010729686/permalink/28170154736006014/">Facebook group transcript, Aug 2026</a></li>
+        <li><span class="src-num">P-16</span><span class="src-name">It interrupts and answers before you finish</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.amazonforum.com/s/question/0D5at00000cTGV9CAO/feedback-on-alexa">Amazon Forums, 2025-26</a></li>
+        <li><span class="src-num">P-17</span><span class="src-name">It joins conversations nobody invited it into</span><span class="src-gate gate-part">gate helps</span><a href="https://www.amazonforum.com/s/question/0D5at00000cTGV9CAO/feedback-on-alexa">Amazon Forums, 2025-26</a></li>
+        <li><span class="src-num">P-18</span><span class="src-name">It ignores “stop”</span><span class="src-gate gate-part">gate helps</span><a href="https://gadgetsnow.indiatimes.com/appliances/inside-amazons-alexa-troubles-employees-report-unbearably-erratic-performance-during-internal-testing/articleshow/126359279.cms">Business Insider tester reports, Jan 2026</a></li>
+        <li><span class="src-num">P-19</span><span class="src-name">Verbosity: it will not stop talking</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.amazonforum.com/s/question/0D5at00000ZGCLvCAP/alexa-is-too-chatty-how-do-i-get-it-to-shut-up-and-not-talk-so-much">Amazon Forums, Dec 2025</a></li>
+        <li><span class="src-num">P-20</span><span class="src-name">Latency: seconds of dead air on basic commands</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.amazonforum.com/s/question/0D5at00000NSFaDCAX/alexa-slow-response">Amazon Forums, 2025-26</a></li>
+        <li><span class="src-num">P-21</span><span class="src-name">Silence: commands ignored entirely</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.amazonforum.com/s/question/0D5at00000hVqxOCAS/alexa-is-not-there-yet-by-a-mile">Amazon Forums, Apr 2026</a></li>
+        <li><span class="src-num">P-22</span><span class="src-name">Routines break, fire late, or half-run</span><span class="src-gate gate-part">gate helps</span><a href="https://forums.wyze.com/t/alexa-person-detection-routine-broken-as-of-12-9-25/339479">Wyze Forums, Dec 2025</a></li>
+        <li><span class="src-num">P-23</span><span class="src-name">Skills and accessibility features break or vanish</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.amazonforum.com/s/question/0D5at00000cOvybCAC/alexa-is-not-a-plus-features-were-lost">Amazon Forums, 2025-26</a></li>
+        <li><span class="src-num">P-24</span><span class="src-name">Abilities the old Alexa had are lost</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://electronics.woot.com/review/B0BLS3Y632?itemid=WT527032C&amp;offerid=53f51116-0053-4db7-b32e-7a88881448b4&amp;filter=3">Woot product review</a></li>
+        <li><span class="src-num">P-25</span><span class="src-name">Ordering substitutes items you never asked for</span><span class="src-gate gate-yes">gate catches this</span><a href="https://ranzware.com/alexa-plus-is-better-at-running-my-home-but-its-not-ready-to-run-my-life">The Verge, Oct 2026</a></li>
+        <li><span class="src-num">P-26</span><span class="src-name">Agentic tasks hand the work back to you</span><span class="src-gate gate-part">gate helps</span><a href="https://www.xda-developers.com/alexa-google-home-ai-didnt-revolutionize-home-assistant/">XDA Developers, Jan 2026</a></li>
+        <li><span class="src-num">P-27</span><span class="src-name">Near-sound entities get misgrounded into absurd actions</span><span class="src-gate gate-part">gate helps</span><a href="https://ranzware.com/alexa-plus-is-better-at-running-my-home-but-its-not-ready-to-run-my-life">The Verge, Oct 2026</a></li>
+        <li><span class="src-num">P-28</span><span class="src-name">The Echo Show became an ad billboard</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://techiemag.co.uk/a-year-with-alexa-plus-the-ai-powered-assistant-is-better-at-running-my-home-but-its-not-ready-to-run-my-life">The Verge, Oct 2026</a></li>
+        <li><span class="src-num">P-29</span><span class="src-name">Conversational upsell: it keeps trying to sell</span><span class="src-gate gate-part">gate helps</span><a href="https://getcoai.com/news/amazons-100b-ai-bet-stumbles-as-alexa-plus-disappoints-users/">CO/AI, Oct 2025</a></li>
+        <li><span class="src-num">P-30</span><span class="src-name">The inferred profile is invasive, and sometimes absurd</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.inc.com/melissa-angell/amazons-new-ai-shopping-tool-is-making-wild-assumptions-about-customers/91416485">Inc., Oct 2026</a></li>
+        <li><span class="src-num">P-31</span><span class="src-name">Child-safety misfire in a camera feature</span><span class="src-gate gate-part">gate helps</span><a href="https://www.unilad.com/news/us-news/amazon-alexa-question-inappropriate-mom-282863-20260316">UNILAD, Mar 2026</a></li>
+        <li><span class="src-num">P-32</span><span class="src-name">Forced upgrade, installed without consent</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.techspot.com/community/topics/amazon-prime-members-are-being-auto-upgraded-to-alexa-whether-they-want-it-or-not.296051/">TechSpot, Jan 2026</a></li>
+        <li><span class="src-num">P-33</span><span class="src-name">Reverting does not restore the old setup</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.facebook.com/groups/AmazonAlexaUsersGroup/permalink/2562602870841381/">Amazon Alexa Users Group, Jun 2026</a></li>
+        <li><span class="src-num">P-34</span><span class="src-name">The voice changed without asking, and users hate it</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.amazonforum.com/s/question/0D5Kf00003dReWoKAK/hate-alexa-wretched-voice-wont-change">Amazon Forums, 2025</a></li>
+        <li><span class="src-num">P-35</span><span class="src-name">Devices misclassified; capabilities mismatched</span><span class="src-gate gate-part">gate helps</span><a href="https://pogueman.substack.com/p/alexa-is-a-buggy-embarrassment">David Pogue, 2026</a></li>
+        <li><span class="src-num">P-36</span><span class="src-name">Settings you change are simply not honoured</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://pogueman.substack.com/p/alexa-is-a-buggy-embarrassment">David Pogue, 2026</a></li>
+        <li><span class="src-num">P-37</span><span class="src-name">“Natural language” that demands magic words</span><span class="src-gate gate-part">gate helps</span><a href="https://briefly.co/anchor/Gadgets/story/why-is-alexa-so-bad">WIRED, Mar 2026</a></li>
+        <li><span class="src-num">P-38</span><span class="src-name">Music playback itself is unstable</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.facebook.com/groups/AmazonAlexaUsersGroup/permalink/2462124800889189/">Amazon Alexa Users Group, Mar 2026</a></li>
+      </ol>
+      <p class="sources-foot">Method: sweeps of Amazon’s own support forums, the Amazon Alexa Users Group, Reddit, Threads and long-form reviewer diaries. Anything that could not be tied to Alexa+ specifically was rejected. The full research file ships with the project.</p>
+    </div>
+  </section>
+</main>
+
+<div class="pager">
+  <button type="button" id="prevBtn" class="btn btn-ghost">← Prev</button>
+  <p class="pager-count"><span id="beatNow">1</span> / 7</p>
+  <button type="button" id="nextBtn" class="btn btn-ghost">Next →</button>
+</div>
+<div class="sr-only" aria-live="polite" id="announcer"></div>
+<script src="assets/js/story.js"></script>
+</body>
+</html>

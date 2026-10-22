@@ -412,8 +412,9 @@ export function TrustCardPanel() {
   const glow = st.palette;
   return (
     <div className="relative px-4 pb-4">
-      {/* ROOM GLOW — palette sampled from the locked row's real
-          artwork; absent when the artwork can't be sampled. */}
+      {/* ROOM GLOW — palette derived from the locked row's monogram
+          hue (founder §1.4: no artwork in the card path); absent until
+          a lock fires. */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 transition-all duration-700"

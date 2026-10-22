@@ -321,10 +321,12 @@ TOOL_DEFS: List[Dict[str, Any]] = [
                                "description": "The host's one-line reason for the pin, in its own words; echoed attributed to the host, never as server proof"},
                 "reject": {"type": "object",
                            "description": "{source, track_id} — veto this exact track: it can never win this call or any later one (persisted as a negative rule)"},
-                "candidate_hints": {"type": "array", "items": {"type": "string"},
-                                    "description": "Up to 4 memory-trial titles to ground through the same pipeline; outcomes return in memory_trials[] without disturbing the main lock"},
-                "party": {"type": "array", "items": {"type": "object"},
-                          "description": "Per-speaker constraints [{speaker, include_tags, exclude_tags, artist_hint, min_year, max_year}] — bans union across speakers; verdicts[] grade the lock against each speaker; an empty intersection answers no_lock with a conflicts block"},
+                # PARKED (doc 12, founder triage): "candidate_hints" and
+                # "party" are deliberately NOT advertised — the shipped
+                # contract must not promise unfinished surface (Jury 1
+                # defect 3). The code paths stay; validate_tool_args
+                # tolerates undeclared extras, so a legacy caller that
+                # still sends them is served exactly as before.
             },
             "required": ["utterance"],
         },
@@ -4190,9 +4192,18 @@ async def handle_rpc(body: Dict[str, Any], session_id: Optional[str],
 
     if method == "initialize":
         params = body.get("params") or {}
-        if params.get("protocolVersion") != PROTOCOL_VERSION:
+        # Version negotiation (spec, Lifecycle): if the client proposes a
+        # well-formed protocol version this server does not speak, the
+        # server answers with a normal initialize RESULT carrying its own
+        # version — a counter-offer the client may accept or walk away
+        # from. Only a missing or malformed version field is an error.
+        # (Jury 1 defect 1: the previous hard-400 dead-ended any host
+        # pinned to a different release before tools/list.)
+        _requested_version = params.get("protocolVersion")
+        if not (isinstance(_requested_version, str)
+                and re.fullmatch(r"\d{4}-\d{2}-\d{2}", _requested_version)):
             return 400, rpc_error(rpc_id, -32602,
-                                  f"Unsupported protocolVersion; server speaks {PROTOCOL_VERSION}"), False, None
+                                  f"Missing or malformed protocolVersion; server speaks {PROTOCOL_VERSION}"), False, None
         new_session = store.mint()
         return 200, rpc_result(rpc_id, {
             "protocolVersion": PROTOCOL_VERSION,

@@ -6,7 +6,7 @@
 
 ## How to use this packet (≈30 minutes, founder)
 
-1. **Video first — see §5.** The Intent Lock demo is being **re-shot** on the new stage; the old 2:57 cut shows the retired pre-Intent-Lock UI and must **not** be submitted. Upload the new cut per `VIDEO_UPLOAD_CHECKLIST.md` → paste the YouTube URL into §5 below and into the Devpost form.
+1. **Video first — see §5.** The final film is READY: `intent-lock-film-final.mp4` (2:18, founder-narrated, live demos + proof on screen), in the submission package. Earlier cuts (the 2:57 original, the Story-walkthrough cut) are retired and must **not** be submitted. Upload the final film per `VIDEO_UPLOAD_CHECKLIST.md` → paste the YouTube URL into §5 below and into the Devpost form.
 2. Apply `REPO_SETTINGS.md` (description + topics + homepage) — 3 minutes.
 3. Paste every field below into the Devpost "Enter a Submission" form, in order.
 4. Paste the 24 friction entries from `FRICTION_LOG_FINAL.md` into the friction-log section (worth up to a **10% judging bonus**, assessed at Stage 1). Start with the three platform discoveries: FL-17 (MCP Apps CSP silent failure), FL-18 (SEP-2577 sampling deprecation), FL-24 (host-clock isolation via `_meta.host_time`).
@@ -123,7 +123,7 @@ Model Context Protocol (spec 2025-11-25, Streamable HTTP) · Python · FastAPI �
 | Field | Value |
 |---|---|
 | GitHub repository (required) | `https://github.com/AdityaPagare619/intent-lock` (public, MIT — no invitation needed) |
-| Video (required) | **⏳ PENDING FINAL CUT.** The submission film is recorded from the redesigned Story walkthrough (2:50, public, English). Earlier cuts show retired UI and must **not** be submitted. `[PASTE PUBLIC YOUTUBE URL AFTER UPLOAD — see VIDEO_UPLOAD_CHECKLIST.md]` |
+| Video (required) | **READY — `intent-lock-film-final.mp4`** (2:18, public, English, narrated by the founder): warm opening, live services boot, live demo sessions with real MCP tool calls, architecture, and the gate report + friction log shown on screen. Upload Public per `VIDEO_UPLOAD_CHECKLIST.md`, then paste the URL here: `[PASTE PUBLIC YOUTUBE URL AFTER UPLOAD]` |
 | Demo / try-it link (optional) | Leave blank unless the Render option is approved (see gap audit in the J-09 verdict). Judges' sanctioned path is repo + video. |
 | Open Source repo | `https://github.com/AdityaPagare619/polyglot-phonetic-judo` (public, MIT) |
 
@@ -223,7 +223,7 @@ Upload to the Devpost gallery, in this order:
 
 ## 15. Final pre-submit checklist (founder, in order)
 
-- [ ] **Video re-shot on the Intent Lock stage (2:00 cut)** and uploaded **Public** on YouTube; URL pasted in §5 and the form (`VIDEO_UPLOAD_CHECKLIST.md`). The old 2:57 cut is retired — do not submit it.
+- [ ] **Final film (`intent-lock-film-final.mp4`, 2:18)** uploaded **Public** on YouTube; URL pasted in §5 and the form (`VIDEO_UPLOAD_CHECKLIST.md`). All earlier cuts are retired — do not submit them.
 - [ ] Repo description + topics + homepage applied (`REPO_SETTINGS.md`).
 - [ ] Install fix confirmed on `main` + one fresh-clone `make demo` pass witnessed (coordinator).
 - [ ] All fields above pasted; Open Source fields (§7) filled; AWS Builder **not** selected.

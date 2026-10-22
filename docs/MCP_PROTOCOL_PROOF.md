@@ -6,8 +6,7 @@ OmniBeat-MCP · captured 2026-10-19 ~03:40 IST from the live servers
 (`services/omnibeat-mcp-server`, Python/FastAPI, hand-rolled JSON-RPC).
 Every block below is a verbatim transcript. Session ids are real.
 
-> How to reproduce: `make demo`, then `./scripts/verify_mcp_wire.sh`
-> (the same 4 acts, automated).
+> (Correction, 2026-10-23: the verify_mcp_wire.sh script and chaos-suite target named here were never shipped in this repository; the protocol evidence above was produced in the build workspace. The commands a reader can run today are in docs/TESTING.md and docs/OPERATIONS.md.)
 
 > **Auditor's corrections — J-02 (MCP protocol judge), 2026-10-20.**
 > Re-verified every act against the live wire. Three corrections:
@@ -18,7 +17,9 @@ Every block below is a verbatim transcript. Session ids are real.
 >    candidates) instead of playing the vault track directly, and
 >    Act 3's "Raja Ji" may resolve directly when the catalog has one
 >    dominant match. Today's live captures are quoted in the act notes.
->    `verify_mcp_wire.sh` now asserts whichever honest outcome occurs.
+>    The wire-proof run asserts whichever honest outcome occurs (the
+>    re-run script named in the original note was never shipped in
+>    this repository — see the 2026-10-23 correction above).
 > 2. The original Act 1 note claimed bad origins get `403`. **False**
 >    against the current build — see the corrected note under Act 1.
 > 3. Act 5's block elides the `event:`/`data:` lines; the replayed
@@ -177,8 +178,10 @@ the picked artist equals the candidate at the chosen index. Per-session
 > Gurlez Akhtar)' by Deep Chahal via iTunes; in a later run, 'Raja Ji'
 > by Anand Mohan). Elicitation is collision-driven, not
 > query-driven — Act 2's utterance is the one that reliably collides
-> in the real catalog, and `verify_mcp_wire.sh` exercises the full
-> round-trip there whenever it fires.
+> in the real catalog, and the full round-trip is exercised there
+> whenever it fires (the re-run script named in the original note
+> was never shipped in this repository — see the 2026-10-23
+> correction at the top of this document).
 
 ---
 
@@ -276,5 +279,4 @@ Verified live tonight:
 reproduce only against a `--chaos` instance, exactly as designed.)
 
 ---
-*Transcripts captured from the running build; re-capture any time with
-`./scripts/verify_mcp_wire.sh` and `make chaos-suite`. — Ria "CHAOS"*
+*Transcripts captured from the running build. (Correction, 2026-10-23: the verify_mcp_wire.sh script and chaos-suite target named here were never shipped in this repository; the protocol evidence above was produced in the build workspace. The commands a reader can run today are in docs/TESTING.md and docs/OPERATIONS.md.) — the chaos engineer*

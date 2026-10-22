@@ -53,16 +53,7 @@ deliberately instead:
 xcode-select --install
 ```
 
-### 4. `jq` (only needed for `make verify`)
-
-```bash
-brew install jq
-```
-
-(No Homebrew? Download the single `jq` binary from
-https://jqlang.github.io/jq/download/ and put it on your `PATH`.)
-
-### 5. Clone and run
+### 4. Clone and run
 
 ```bash
 git clone <this-repo-url>
@@ -71,11 +62,24 @@ cd omnibeat-mcp
 # open http://localhost:3000
 ```
 
-### 6. Prove the wire (optional, recommended)
+### 5. Prove it works (optional, recommended)
+
+With the demo up (step 4), check the three backend health routes —
+the same ones `docs/OPERATIONS.md` documents:
 
 ```bash
-make verify        # 4-act MCP 2025-11-25 wire proof — needs jq (step 4)
+curl -fsS http://127.0.0.1:8080/health   # MCP server — expect "protocol": "2025-11-25"
+curl -fsS http://127.0.0.1:4000/health   # orchestrator — its "mcp.reachable" should be true
+curl -fsS http://127.0.0.1:9000/health   # chaos / provider mock
 ```
+
+And the offline walkthrough needs no server at all:
+
+```bash
+open docs/index.html
+```
+
+(`docs/TESTING.md` lists the full set of checks a reviewer can run.)
 
 ---
 
@@ -99,7 +103,6 @@ make verify        # 4-act MCP 2025-11-25 wire proof — needs jq (step 4)
 |---|---|---|
 | Bootstrap ends `NOT READY`, line says `venv python < 3.10` | Your `python3` is the Xcode CLT 3.9 | Install Python 3.11+ (step 1), delete nothing — just rerun `./scripts/bootstrap.sh` in a fresh terminal so the new `python3` wins |
 | A dialog pops up the first time you run `make` | macOS offering Command Line Tools | Accept and let it finish, then rerun `make demo` — or pre-empt it with step 3 |
-| `FATAL: 'jq' is required on PATH` (during `make verify`) | `jq` not installed | Step 4 |
 | Simulator loads and health checks pass, but the wire inspector can't reach the MCP server | `localhost` resolved to IPv6 `::1` first, while the MCP server listens on IPv4 (`127.0.0.1`) only | Start the orchestrator with `MCP_SERVER_URL=http://127.0.0.1:8080/mcp` and the simulator with `MCP_UPSTREAM=http://127.0.0.1:4000/mcp` — both env overrides are honoured by the code |
 | `node: command not found` after installing Node | Terminal predates the install | Open a new terminal window — PATH is set at shell start |
 
@@ -114,5 +117,5 @@ git clone <this-repo-url>
 cd omnibeat-mcp
 ./scripts/bootstrap.sh && make demo
 # open http://localhost:3000 in your browser
-make verify                                # optional; needs jq (brew install jq)
+curl -fsS http://127.0.0.1:8080/health     # optional wire check — see step 5
 ```

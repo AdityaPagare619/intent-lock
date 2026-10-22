@@ -112,7 +112,7 @@ In plain words: [docs/PLAIN_WORDS.md](docs/PLAIN_WORDS.md)
 
 ## The walkthrough
 
-The guided Story — seven beats, the wire at the center, every number sourced — lives in [`site/`](site/) as a static page with no backend. It is deployed via GitHub Pages: https://adityapagare619.github.io/intent-lock/
+The guided Story — seven beats, the wire at the center, every number sourced — is a static page with no backend ([`docs/index.html`](docs/index.html), open it from any clone). It is deployed via GitHub Pages: https://adityapagare619.github.io/intent-lock/
 
 ## Verify it yourself
 

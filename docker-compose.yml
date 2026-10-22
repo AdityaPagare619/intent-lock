@@ -1,0 +1,150 @@
+# =============================================================================
+# OmniBeat-MCP — docker-compose (RESTORED 4-service topology)
+# Locked 2026-10-19 ~02:54 IST · D-08 (docs/DECISION_LOG.md): the 2-service fold
+# is DEAD. Four separate servers, exactly per the blueprint docs, because
+# genuine process separation is the demo honesty story.
+#
+#   :3000  alexa-plus-simulator      — the stage (Next.js). Proxy → :4000 (D-08).
+#   :4000  alexa-agent-orchestrator  — local deterministic router + REAL MCP
+#                                     client over HTTP. NO Bedrock/Polly (D-02,
+#                                     Rs.0 law stands).
+#   :8080  omnibeat-mcp-server       — THE deliverable. MCP 2025-11-25 wire.
+#   :9000  chaos-and-provider-mock   — demo-guarantee harness: dual-mode proxy,
+#                                     30-track collision catalog, audio hooks.
+#
+# Every hop browser → :4000 → :8080 is real HTTP. Nothing is a fake import.
+# `docker compose config` must render clean on a box with no Docker engine.
+# Owner: Ria "CHAOS" lane · "Demo gods punish the unprepared."
+# =============================================================================
+name: omnibeat-mcp
+
+services:
+  chaos-and-provider-mock:
+    build:
+      context: ./services/chaos-and-provider-mock   # ← chaos lane (contract: archive/build-record/services/chaos-and-provider-mock/DECISIONS.md D-10)
+      dockerfile: Dockerfile
+    image: omnibeat/chaos-mock:local
+    container_name: omnibeat-chaos-mock
+    ports:
+      - "9000:9000"
+    environment:
+      PORT: "9000"
+      # This service arms on the STRING values live_hybrid|chaos_injection
+      # (chaos lane CD-02) — NOT 0/1 like the MCP server. Keep them separate.
+      CHAOS_MODE: "${CHAOS_MODE:-live_hybrid}"
+      MCP_SERVER_URL: http://omnibeat-mcp-server:8080/mcp
+    healthcheck:
+      # python:3.12-slim has no curl — urllib, same as the MCP server's check.
+      test: ["CMD-SHELL", "python -c \"import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://localhost:9000/health', timeout=2).status==200 else 1)\""]
+      interval: 10s
+      timeout: 3s
+      retries: 6
+      start_period: 15s
+    restart: "no"   # demo box: a crash must be LOUD, never silently restarted
+    networks:
+      - yapnet
+
+  omnibeat-mcp-server:
+    build:
+      # Context is the REPO ROOT, not the service dir: E1's Node sidecar
+      # lives in packages/polyglot-phonetic-judo and the Dockerfile must
+      # COPY it (J-04 fix — see services/omnibeat-mcp-server/Dockerfile).
+      context: .
+      dockerfile: services/omnibeat-mcp-server/Dockerfile
+    image: omnibeat/mcp-server:local
+    container_name: omnibeat-mcp-server
+    ports:
+      - "8080:8080"
+    environment:
+      MCP_PROTOCOL_VERSION: "2025-11-25"
+      # (zero-settings: CORS is derived from the request Origin in server.py;
+      #  no ALLOWED_ORIGINS env needed anymore)
+      # Arjun's server arms on CHAOS_MODE=="1" (string). Host-side var is
+      # MCP_CHAOS_MODE so it never collides with the chaos mock's
+      # live_hybrid|chaos_injection vocabulary (see chaos service above).
+      CHAOS_MODE: "${MCP_CHAOS_MODE:-0}"              # 1 = honor X-Chaos-Fault header (D-06)
+      SQLITE_LEDGER_PATH: /data/ledger.sqlite
+    volumes:
+      - mcp_ledger_data:/data
+    healthcheck:
+      # python:3.12-slim has no curl — urllib, same as the chaos service's
+      # check and the image's own HEALTHCHECK. (Previously this used curl:
+      # the container could NEVER report healthy, so the orchestrator's
+      # depends_on: service_healthy would never fire. J-04 fix.)
+      test: ["CMD-SHELL", "python -c \"import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://localhost:8080/health', timeout=2).status==200 else 1)\""]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+      start_period: 10s
+    restart: "no"
+    networks:
+      - yapnet
+
+  alexa-agent-orchestrator:
+    build:
+      context: ./services/alexa-agent-orchestrator  # ← protocol lane (contract: archive/build-record/services/alexa-agent-orchestrator/DECISIONS.md D-10)
+      dockerfile: Dockerfile
+    image: omnibeat/orchestrator:local
+    container_name: omnibeat-orchestrator
+    ports:
+      - "4000:4000"
+    environment:
+      PORT: "4000"
+      NODE_ENV: production
+      MCP_SERVER_URL: http://omnibeat-mcp-server:8080/mcp
+      MCP_PROTOCOL_VERSION: "2025-11-25"
+      ENABLE_LOCAL_ROUTER: "true"                    # deterministic router is the brain (D-02)
+      # No AWS keys. No Bedrock. No Polly. Ever. (D-02)
+    depends_on:
+      omnibeat-mcp-server:
+        condition: service_healthy
+    healthcheck:
+      # node:20-slim has no curl/wget — use node itself.
+      test: ["CMD-SHELL", "node -e \"fetch('http://localhost:4000/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))\""]
+      interval: 10s
+      timeout: 3s
+      retries: 6
+      start_period: 20s
+    restart: "no"
+    networks:
+      - yapnet
+
+  alexa-plus-simulator:
+    build:
+      context: ./apps/alexa-plus-simulator           # ← Meera's lane
+      dockerfile: Dockerfile
+    image: omnibeat/simulator:local
+    container_name: alexa-plus-simulator
+    ports:
+      - "3000:3000"
+    environment:
+      # D-08: the /api/mcp proxy repoints to the ORCHESTRATOR (:4000), not :8080.
+      # Both hops are server-side docker DNS names. (The old
+      # NEXT_PUBLIC_MCP_URL was removed by J-04: no code in the app reads
+      # it — the browser only ever talks to /api/mcp on this origin.)
+      MCP_UPSTREAM: http://alexa-agent-orchestrator:4000/mcp
+      # route.ts falls back to :8080 when :4000 is unreachable; its default
+      # is localhost, which inside THIS container is the simulator itself.
+      MCP_FALLBACK: http://omnibeat-mcp-server:8080/mcp
+    depends_on:
+      alexa-agent-orchestrator:
+        condition: service_healthy
+    healthcheck:
+      # node:20-slim has no wget/curl, and this app has no /api/health
+      # route (only /api/mcp) — the old test could never pass. Probe the
+      # demo page with node itself. (J-04 fix.)
+      test: ["CMD-SHELL", "node -e \"fetch('http://localhost:3000/').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))\""]
+      interval: 10s
+      timeout: 3s
+      retries: 6
+      start_period: 30s
+    restart: "no"
+    networks:
+      - yapnet
+
+volumes:
+  mcp_ledger_data:   # the truth ledger (E4) survives container restarts
+
+networks:
+  yapnet:
+    driver: bridge

@@ -1,0 +1,409 @@
+{
+  "_meta": {
+    "built_from": "OpenFoodFacts public API live pulls 2026-10-21 (product identity + nutriments per 100 ml as recorded, barcodes in row ids) + one composed 'audited listing pattern' row (soy) after the OFF search endpoint rate-limited (HTTP 503). 'sponsored' attributes model marketplace reorder placement for the demo scenario and are flagged as such in each affected row's audit note.",
+    "built_at": "2026-10-21",
+    "domain": "grocery",
+    "hero_query": "Reorder my usual unsweetened oat milk — not almond, and no sponsored substitutes"
+  },
+  "candidates": [
+    {
+      "id": "openfoodfacts:5411188124689",
+      "title": "Oat No Sugars",
+      "creator_or_brand": "Alpro",
+      "edition_or_variant": "No Sugars · Unsweetened",
+      "year": null,
+      "attributes": [
+        "oat",
+        "unsweetened",
+        "no-sugars",
+        "the-usual"
+      ],
+      "specs": {
+        "base": "oat",
+        "sugar_g_per_100ml": 0,
+        "kcal_per_100ml": 44,
+        "sweetened": false,
+        "barista": false
+      },
+      "source": "openfoodfacts",
+      "provenance": {
+        "origin": "openfoodfacts",
+        "fetched_at": "2026-10-21",
+        "audit": "OpenFoodFacts code 5411188124689 (brands field recorded as 'Danone Belux nv'; Alpro is Danone's plant-based brand). Sugars 0 g/100 ml, energy 44 kcal/100 ml as recorded. THE HERO ROW — the user's usual reorder."
+      }
+    },
+    {
+      "id": "openfoodfacts:7394376620157",
+      "title": "Barista Edition Oat Drink",
+      "creator_or_brand": "Oatly",
+      "edition_or_variant": "Barista Edition",
+      "year": null,
+      "attributes": [
+        "oat",
+        "barista"
+      ],
+      "specs": {
+        "base": "oat",
+        "sugar_g_per_100ml": 3.4,
+        "kcal_per_100ml": 61,
+        "sweetened": false,
+        "barista": true
+      },
+      "source": "openfoodfacts",
+      "provenance": {
+        "origin": "openfoodfacts",
+        "fetched_at": "2026-10-21",
+        "audit": "OpenFoodFacts code 7394376620157. Sugars 3.4 g/100 ml (oat-derived; no added sugar), 61 kcal/100 ml as recorded."
+      }
+    },
+    {
+      "id": "openfoodfacts:7394376123337",
+      "title": "Organic Oat Drink",
+      "creator_or_brand": "Oatly",
+      "edition_or_variant": "Organic · Original",
+      "year": null,
+      "attributes": [
+        "oat",
+        "organic",
+        "original"
+      ],
+      "specs": {
+        "base": "oat",
+        "sugar_g_per_100ml": 3.4,
+        "kcal_per_100ml": 39,
+        "sweetened": false,
+        "barista": false
+      },
+      "source": "openfoodfacts",
+      "provenance": {
+        "origin": "openfoodfacts",
+        "fetched_at": "2026-10-21",
+        "audit": "OpenFoodFacts code 7394376123337. Sugars 3.4 g/100 ml, 39 kcal/100 ml as recorded."
+      }
+    },
+    {
+      "id": "openfoodfacts:7394376665035",
+      "title": "Oat Drink Whole",
+      "creator_or_brand": "Oatly",
+      "edition_or_variant": "Whole",
+      "year": null,
+      "attributes": [
+        "oat",
+        "whole"
+      ],
+      "specs": {
+        "base": "oat",
+        "sugar_g_per_100ml": 4.1,
+        "kcal_per_100ml": 57,
+        "sweetened": false,
+        "barista": false
+      },
+      "source": "openfoodfacts",
+      "provenance": {
+        "origin": "openfoodfacts",
+        "fetched_at": "2026-10-21",
+        "audit": "OpenFoodFacts code 7394376665035. Sugars 4.1 g/100 ml, 57 kcal/100 ml as recorded."
+      }
+    },
+    {
+      "id": "openfoodfacts:5060406080452",
+      "title": "Barista Oat (Organic)",
+      "creator_or_brand": "Minor Figures",
+      "edition_or_variant": "Barista · Organic",
+      "year": null,
+      "attributes": [
+        "oat",
+        "barista",
+        "organic"
+      ],
+      "specs": {
+        "base": "oat",
+        "sugar_g_per_100ml": 2.5,
+        "kcal_per_100ml": 44,
+        "sweetened": false,
+        "barista": true
+      },
+      "source": "openfoodfacts",
+      "provenance": {
+        "origin": "openfoodfacts",
+        "fetched_at": "2026-10-21",
+        "audit": "OpenFoodFacts code 5060406080452. Sugars 2.5 g/100 ml, 44 kcal/100 ml as recorded."
+      }
+    },
+    {
+      "id": "openfoodfacts:0813636022953",
+      "title": "Oat Barista Blend",
+      "creator_or_brand": "Califia Farms",
+      "edition_or_variant": "Barista Blend",
+      "year": null,
+      "attributes": [
+        "oat",
+        "barista"
+      ],
+      "specs": {
+        "base": "oat",
+        "sugar_g_per_100ml": 2.8,
+        "kcal_per_100ml": 54,
+        "sweetened": false,
+        "barista": true
+      },
+      "source": "openfoodfacts",
+      "provenance": {
+        "origin": "openfoodfacts",
+        "fetched_at": "2026-10-21",
+        "audit": "OpenFoodFacts code 0813636022953. Sugars 2.8 g/100 ml, 54 kcal/100 ml as recorded."
+      }
+    },
+    {
+      "id": "openfoodfacts:5060362074342",
+      "title": "Organic No Added Sugar Oat Drink",
+      "creator_or_brand": "Plenish",
+      "edition_or_variant": "No Added Sugar · Organic",
+      "year": null,
+      "attributes": [
+        "oat",
+        "organic",
+        "no-added-sugar"
+      ],
+      "specs": {
+        "base": "oat",
+        "sugar_g_per_100ml": 3.1,
+        "kcal_per_100ml": 36,
+        "sweetened": false,
+        "barista": false
+      },
+      "source": "openfoodfacts",
+      "provenance": {
+        "origin": "openfoodfacts",
+        "fetched_at": "2026-10-21",
+        "audit": "OpenFoodFacts code 5060362074342. Sugars 3.1 g/100 ml (naturally occurring), 36 kcal/100 ml as recorded."
+      }
+    },
+    {
+      "id": "openfoodfacts:4056489319238",
+      "title": "Oat No Sugars Plant Based",
+      "creator_or_brand": "Lidl",
+      "edition_or_variant": "No Sugars · Store brand",
+      "year": null,
+      "attributes": [
+        "oat",
+        "unsweetened",
+        "no-sugars",
+        "store-brand"
+      ],
+      "specs": {
+        "base": "oat",
+        "sugar_g_per_100ml": 0,
+        "kcal_per_100ml": 37,
+        "sweetened": false,
+        "barista": false
+      },
+      "source": "openfoodfacts",
+      "provenance": {
+        "origin": "openfoodfacts",
+        "fetched_at": "2026-10-21",
+        "audit": "OpenFoodFacts code 4056489319238 (brands field 'LIDL'). Sugars 0 g/100 ml, 37 kcal/100 ml as recorded. A second unsweetened oat — right spec, wrong brand for a brand-anchored reorder."
+      }
+    },
+    {
+      "id": "openfoodfacts:5060120281975",
+      "title": "Oat Organic Drink",
+      "creator_or_brand": "Rude Health",
+      "edition_or_variant": "Organic · Original",
+      "year": null,
+      "attributes": [
+        "oat",
+        "organic",
+        "original"
+      ],
+      "specs": {
+        "base": "oat",
+        "sugar_g_per_100ml": 4.6,
+        "kcal_per_100ml": 49,
+        "sweetened": false,
+        "barista": false
+      },
+      "source": "openfoodfacts",
+      "provenance": {
+        "origin": "openfoodfacts",
+        "fetched_at": "2026-10-21",
+        "audit": "OpenFoodFacts code 5060120281975. Sugars 4.6 g/100 ml, 49 kcal/100 ml as recorded."
+      }
+    },
+    {
+      "id": "openfoodfacts:8423352861402",
+      "title": "Bebida de Avena (Oat Drink)",
+      "creator_or_brand": "Liquats Vegetals",
+      "edition_or_variant": "Original",
+      "year": null,
+      "attributes": [
+        "oat",
+        "original",
+        "sweet-profile"
+      ],
+      "specs": {
+        "base": "oat",
+        "sugar_g_per_100ml": 5.4,
+        "kcal_per_100ml": 47,
+        "sweetened": false,
+        "barista": false
+      },
+      "source": "openfoodfacts",
+      "provenance": {
+        "origin": "openfoodfacts",
+        "fetched_at": "2026-10-21",
+        "audit": "OpenFoodFacts code 8423352861402. Sugars 5.4 g/100 ml — the sweetest oat row in the pack; the engine can eliminate it on the sugar spec alone."
+      }
+    },
+    {
+      "id": "openfoodfacts:0041570055311",
+      "title": "Almond Breeze Unsweetened Original",
+      "creator_or_brand": "Blue Diamond",
+      "edition_or_variant": "Unsweetened · Original",
+      "year": null,
+      "attributes": [
+        "almond",
+        "unsweetened",
+        "sponsored",
+        "substitute"
+      ],
+      "specs": {
+        "base": "almond",
+        "sugar_g_per_100ml": 0,
+        "kcal_per_100ml": 12.1,
+        "sweetened": false,
+        "barista": false
+      },
+      "source": "openfoodfacts",
+      "provenance": {
+        "origin": "openfoodfacts",
+        "fetched_at": "2026-10-21",
+        "audit": "OpenFoodFacts code 0041570055311 (Almond Breeze almondmilk, Unsweetened Original). Sugars 0 g/100 ml, ~12 kcal/100 ml as recorded. 'sponsored'/'substitute' attributes are NOT from OFF — they model the marketplace reorder placement: THE SWAP TRAP, an almond row promoted in place of the oat reorder."
+      }
+    },
+    {
+      "id": "openfoodfacts:0025293001503",
+      "title": "Almond",
+      "creator_or_brand": "Silk",
+      "edition_or_variant": "Original",
+      "year": null,
+      "attributes": [
+        "almond",
+        "sponsored",
+        "substitute"
+      ],
+      "specs": {
+        "base": "almond",
+        "sugar_g_per_100ml": 0,
+        "kcal_per_100ml": 35,
+        "sweetened": false,
+        "barista": false
+      },
+      "source": "openfoodfacts",
+      "provenance": {
+        "origin": "openfoodfacts",
+        "fetched_at": "2026-10-21",
+        "audit": "OpenFoodFacts code 0025293001503 (Silk Almond). Nutriments as recorded in OFF (sugars 0 g/100 ml, 35 kcal/100 ml). 'sponsored'/'substitute' attributes model marketplace placement for the demo scenario — second swap-trap row."
+      }
+    },
+    {
+      "id": "openfoodfacts:4061459332896",
+      "title": "Almond No Sugars",
+      "creator_or_brand": "Acti Leaf (Aldi)",
+      "edition_or_variant": "No Sugars · Store brand",
+      "year": null,
+      "attributes": [
+        "almond",
+        "unsweetened",
+        "no-sugars",
+        "store-brand"
+      ],
+      "specs": {
+        "base": "almond",
+        "sugar_g_per_100ml": 0,
+        "kcal_per_100ml": 15.2,
+        "sweetened": false,
+        "barista": false
+      },
+      "source": "openfoodfacts",
+      "provenance": {
+        "origin": "openfoodfacts",
+        "fetched_at": "2026-10-21",
+        "audit": "OpenFoodFacts code 4061459332896. Sugars 0 g/100 ml, 15.2 kcal/100 ml as recorded. Honest almond row — no sponsored placement."
+      }
+    },
+    {
+      "id": "openfoodfacts:5060120285843",
+      "title": "Barista Almond",
+      "creator_or_brand": "Rude Health",
+      "edition_or_variant": "Barista",
+      "year": null,
+      "attributes": [
+        "almond",
+        "barista"
+      ],
+      "specs": {
+        "base": "almond",
+        "sugar_g_per_100ml": 4.5,
+        "kcal_per_100ml": 63,
+        "sweetened": false,
+        "barista": true
+      },
+      "source": "openfoodfacts",
+      "provenance": {
+        "origin": "openfoodfacts",
+        "fetched_at": "2026-10-21",
+        "audit": "OpenFoodFacts code 5060120285843. Sugars 4.5 g/100 ml, 63 kcal/100 ml as recorded."
+      }
+    },
+    {
+      "id": "openfoodfacts:8019428000099",
+      "title": "Bio Rice Drink Almond",
+      "creator_or_brand": "The Bridge",
+      "edition_or_variant": "Rice–Almond Blend · Organic",
+      "year": null,
+      "attributes": [
+        "rice",
+        "almond-blend",
+        "organic"
+      ],
+      "specs": {
+        "base": "rice",
+        "sugar_g_per_100ml": 5.0,
+        "kcal_per_100ml": 70,
+        "sweetened": false,
+        "barista": false
+      },
+      "source": "openfoodfacts",
+      "provenance": {
+        "origin": "openfoodfacts",
+        "fetched_at": "2026-10-21",
+        "audit": "OpenFoodFacts code 8019428000099. A rice-drink/almond blend; sugars 5.0 g/100 ml, 70 kcal/100 ml as recorded."
+      }
+    },
+    {
+      "id": "grocery:alpro-soya-no-sugars-pattern",
+      "title": "Soya No Sugars",
+      "creator_or_brand": "Alpro",
+      "edition_or_variant": "No Sugars · Unsweetened",
+      "year": null,
+      "attributes": [
+        "soy",
+        "unsweetened",
+        "no-sugars"
+      ],
+      "specs": {
+        "base": "soy",
+        "sugar_g_per_100ml": 0,
+        "sweetened": false,
+        "barista": false
+      },
+      "source": "retail listing pattern",
+      "provenance": {
+        "origin": "audited listing pattern",
+        "fetched_at": "2026-10-21",
+        "audit": "COMPOSED ROW. The OpenFoodFacts search endpoint rate-limited (HTTP 503) before a soy record could be pulled, so this row models the Alpro Soya No Sugars retail listing using only name-guaranteed facts (soy base, zero sugars). No OFF identity is claimed."
+      }
+    }
+  ]
+}

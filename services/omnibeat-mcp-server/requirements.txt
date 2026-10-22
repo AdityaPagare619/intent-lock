@@ -1,0 +1,4 @@
+fastapi==0.146.0
+uvicorn[standard]==0.54.0
+panphon>=0.22  # Layer B1: articulatory-feature distance (doc 11, D-34)
+epitran>=1.25  # Layer B1: native-script G2P, hin-Deva (doc 11, D-34)

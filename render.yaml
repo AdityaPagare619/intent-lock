@@ -1,0 +1,11 @@
+# Render free-tier deployment — one-click via the repo's "Deploy to Render" button.
+# All 4 services in one Docker container (same image as deploy/hf-spaces).
+services:
+  - type: web
+    name: omnibeat-demo
+    runtime: docker
+    dockerfilePath: ./deploy/hf-spaces/Dockerfile
+    dockerContext: .
+    plan: free
+    healthCheckPath: /
+    envVars: []

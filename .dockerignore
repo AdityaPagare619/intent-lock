@@ -1,0 +1,13 @@
+# Root build context (omnibeat-mcp-server compose build + render.yaml /
+# deploy/hf-spaces build). Keep the transfer small and deterministic: every
+# image installs/builds its own dependencies from the lockfiles.
+.git
+**/node_modules
+**/.next
+**/__pycache__
+**/*.pyc
+**/.venv
+**/venv
+logs
+**/*.log
+.DS_Store

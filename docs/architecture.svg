@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="470" viewBox="0 0 1240 470" role="img" aria-label="OmniBeat-MCP architecture: four services, real HTTP at every hop">
+  <!-- Tactile Studio tokens only (apps/alexa-plus-simulator/app/globals.css):
+       obsidian #0f1012 · panel #17191d · panel-2 #1e2127 · hairline #26292f
+       ink #f3f4f6 · mute #a7b0bc · faint #6e7683 · brand #e58e26 · sage #10b981 · coral #ef4444 -->
+  <rect width="1240" height="470" fill="#0f1012"/>
+  <text x="40" y="46" font-family="ui-sans-serif, system-ui, sans-serif" font-size="19" font-weight="700" fill="#f3f4f6">OmniBeat-MCP — four services, real HTTP at every hop</text>
+  <text x="40" y="70" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12.5" fill="#a7b0bc">The MCP server is the deliverable. The simulator is the stage. Nothing between them is mocked.</text>
+
+  <!-- user -->
+  <rect x="40" y="110" width="170" height="104" rx="14" fill="#1e2127" stroke="#26292f"/>
+  <text x="60" y="146" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" fill="#f3f4f6">You</text>
+  <text x="60" y="168" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#a7b0bc">“Alexa, play</text>
+  <text x="60" y="184" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#a7b0bc">Lolly Pop La Gelu”</text>
+  <text x="60" y="204" font-family="JetBrains Mono, ui-monospace, monospace" font-size="10" fill="#6e7683">voice · any accent</text>
+
+  <!-- arrow -->
+  <line x1="210" y1="162" x2="246" y2="162" stroke="#e58e26" stroke-width="2"/>
+  <polygon points="246,157 256,162 246,167" fill="#e58e26"/>
+
+  <!-- simulator -->
+  <rect x="258" y="110" width="216" height="104" rx="14" fill="#17191d" stroke="#26292f"/>
+  <text x="278" y="140" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="700" fill="#f3f4f6">Alexa+ Simulator</text>
+  <text x="278" y="162" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" fill="#e58e26">:3000 · Next.js</text>
+  <text x="278" y="182" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#a7b0bc">The stage — voice shell,</text>
+  <text x="278" y="198" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#a7b0bc">wire inspector (SIM-labeled)</text>
+
+  <!-- arrow -->
+  <line x1="474" y1="162" x2="510" y2="162" stroke="#e58e26" stroke-width="2"/>
+  <polygon points="510,157 520,162 510,167" fill="#e58e26"/>
+  <text x="497" y="148" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="9.5" fill="#6e7683">/api/mcp</text>
+
+  <!-- orchestrator -->
+  <rect x="522" y="110" width="216" height="104" rx="14" fill="#17191d" stroke="#26292f"/>
+  <text x="542" y="140" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="700" fill="#f3f4f6">Agent Orchestrator</text>
+  <text x="542" y="162" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" fill="#e58e26">:4000 · Node</text>
+  <text x="542" y="182" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#a7b0bc">Deterministic edge router +</text>
+  <text x="542" y="198" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#a7b0bc">real MCP client</text>
+
+  <!-- arrow -->
+  <line x1="738" y1="162" x2="774" y2="162" stroke="#10b981" stroke-width="2"/>
+  <polygon points="774,157 784,162 774,167" fill="#10b981"/>
+
+  <!-- MCP server (the deliverable) -->
+  <rect x="786" y="96" width="414" height="132" rx="14" fill="#17191d" stroke="#e58e26" stroke-width="1.6"/>
+  <text x="806" y="126" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15.5" font-weight="700" fill="#f3f4f6">OmniBeat MCP Server</text>
+  <text x="1184" y="126" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="10" font-weight="700" fill="#e58e26">THE DELIVERABLE</text>
+  <text x="806" y="148" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" fill="#e58e26">:8080 · Python / FastAPI · Streamable HTTP</text>
+  <text x="806" y="172" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#a7b0bc">E1 VPPS phonetics · E2 hydration · E3 studio purity</text>
+  <text x="806" y="190" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#a7b0bc">E4 hash-chained ledger · E5 multiroom sync + bunker</text>
+  <text x="806" y="212" font-family="JetBrains Mono, ui-monospace, monospace" font-size="10" fill="#6e7683">4 tools · 2 resources · sessions · SSE replay</text>
+
+  <!-- keyless data -->
+  <rect x="786" y="262" width="414" height="64" rx="14" fill="#1e2127" stroke="#26292f"/>
+  <text x="806" y="288" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" fill="#10b981">Keyless data — ₹0 forever</text>
+  <text x="806" y="308" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#a7b0bc">YouTube Suggest · iTunes previews · MusicBrainz canonical</text>
+  <line x1="993" y1="228" x2="993" y2="254" stroke="#26292f" stroke-width="2"/>
+  <polygon points="988,254 998,254 993,262" fill="#26292f"/>
+
+  <!-- chaos -->
+  <rect x="258" y="262" width="480" height="64" rx="14" fill="#17191d" stroke="#26292f"/>
+  <text x="278" y="288" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" fill="#ef4444">Chaos + Provider Mock</text>
+  <text x="560" y="288" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" fill="#e58e26">:9000 · FastAPI</text>
+  <text x="278" y="308" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#a7b0bc">Fault injection for the demo: upsell trap · ghost action · token expiry · ISP kill</text>
+  <line x1="630" y1="214" x2="630" y2="254" stroke="#26292f" stroke-width="2" stroke-dasharray="4 4"/>
+  <polygon points="625,254 635,254 630,262" fill="#26292f"/>
+  <text x="644" y="240" font-family="JetBrains Mono, ui-monospace, monospace" font-size="9.5" fill="#6e7683">X-Chaos-Fault · only when armed (--chaos)</text>
+
+  <!-- footer strip -->
+  <text x="40" y="392" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12.5" fill="#a7b0bc">Zero settings: <tspan font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" fill="#f3f4f6">./scripts/bootstrap.sh &amp;&amp; make demo</tspan> — no API keys, no env vars, no config files.</text>
+  <text x="40" y="416" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12.5" fill="#a7b0bc">Verify the wire yourself: <tspan font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" fill="#f3f4f6">make verify</tspan> — handshake → session → tools/call → SSE, printed raw.</text>
+  <text x="40" y="448" font-family="JetBrains Mono, ui-monospace, monospace" font-size="10.5" fill="#6e7683">SIMULATED (labeled on screen): the :3000 voice shell stands in for the Echo. REAL: the MCP wire, phonetics, purity, ledger, DSP, PID loop, chaos faults.</text>
+
+  <!-- connector label in the clear band above the boxes -->
+  <text x="761" y="90" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="9.5" fill="#10b981">MCP 2025-11-25</text>
+</svg>

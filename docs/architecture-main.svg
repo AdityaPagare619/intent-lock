@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="900" viewBox="0 0 1240 900" role="img" aria-labelledby="am-title am-desc" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">
+  <title id="am-title">Intent Lock architecture — Borrow the Brain, Own the Guarantee</title>
+  <desc id="am-desc">A human speaks; the borrowed Alexa+ host brain proposes structure over MCP 2025-11-25; the deterministic Intent Lock kernel verifies it through five stages against real catalogs and returns exactly one of three verdicts on the Trust Card.</desc>
+  <defs>
+    <marker id="am-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3EC6F3"/>
+    </marker>
+    <marker id="am-arrow-soft" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6E87A0"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1240" height="900" fill="#0B141F"/>
+
+  <!-- ===== Header ===== -->
+  <text x="40" y="52" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="12.5" letter-spacing="2.5" fill="#3EC6F3">INTENT LOCK · UNIVERSAL DETERMINISTIC ACTION FIREWALL</text>
+  <text x="40" y="90" font-size="30" font-weight="600" fill="#EAF3FA">Borrow the Brain, Own the Guarantee.</text>
+  <text x="40" y="118" font-size="14.5" fill="#9DB2C6">Alexa+ owns the conversation. Intent Lock owns the proof — one deterministic MCP tool between the host brain and every catalog.</text>
+
+  <!-- ===== Connectors (drawn before boxes) ===== -->
+  <!-- human -> host -->
+  <line x1="200" y1="282" x2="226" y2="282" stroke="#3EC6F3" stroke-width="2" marker-end="url(#am-arrow)"/>
+  <!-- host -> kernel (MCP wire) -->
+  <line x1="448" y1="282" x2="594" y2="282" stroke="#3EC6F3" stroke-width="2" marker-end="url(#am-arrow)"/>
+  <!-- kernel -> verdicts -->
+  <line x1="1000" y1="220" x2="1026" y2="220" stroke="#3EC6F3" stroke-width="2" marker-end="url(#am-arrow)"/>
+  <!-- catalogs -> stage C (supply up) -->
+  <line x1="792" y1="652" x2="792" y2="590" stroke="#6E87A0" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#am-arrow-soft)"/>
+  <!-- pin loop: trust card -> back into kernel -->
+  <path d="M1116,520 L1116,616 L880,616 L880,590" fill="none" stroke="#F2A93B" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#am-arrow-soft)"/>
+
+  <!-- MCP band labels -->
+  <text x="524" y="262" text-anchor="middle" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="11.5" fill="#3EC6F3">MCP 2025-11-25</text>
+  <text x="524" y="308" text-anchor="middle" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="10.5" fill="#6E87A0">STREAMABLE HTTP</text>
+  <text x="524" y="326" text-anchor="middle" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="10.5" fill="#6E87A0">tools/call · intent_lock</text>
+  <text x="524" y="344" text-anchor="middle" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="10.5" fill="#6E87A0">_meta.host_time</text>
+  <!-- supply label -->
+  <rect x="636" y="606" width="148" height="18" fill="#0B141F"/>
+  <text x="780" y="620" text-anchor="end" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="10.5" fill="#6E87A0">ROWS UP · STAGE C</text>
+  <!-- pin label -->
+  <rect x="876" y="606" width="244" height="18" fill="#0B141F"/>
+  <text x="998" y="620" text-anchor="middle" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="10" fill="#F2A93B">pin {source, track_id} · re-verified</text>
+
+  <!-- ===== Human ===== -->
+  <rect x="40" y="200" width="160" height="164" rx="8" fill="#111E2C" stroke="#2A4258" stroke-width="1"/>
+  <text x="56" y="226" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="10.5" letter-spacing="1.5" fill="#6E87A0">THE HUMAN</text>
+  <text x="56" y="252" font-size="17.5" font-weight="600" fill="#EAF3FA">Polyglot speech</text>
+  <text x="56" y="274" font-size="12.5" fill="#9DB2C6">code-switching, accents,</text>
+  <text x="56" y="291" font-size="12.5" fill="#9DB2C6">half-finished sentences</text>
+  <line x1="56" y1="306" x2="184" y2="306" stroke="#2A4258" stroke-width="1"/>
+  <text x="56" y="326" font-size="12" font-style="italic" fill="#EAF3FA">“Sayaraa waala slow film</text>
+  <text x="56" y="343" font-size="12" font-style="italic" fill="#EAF3FA">song — not the remix”</text>
+
+  <!-- ===== Host brain ===== -->
+  <rect x="232" y="186" width="216" height="192" rx="8" fill="#111E2C" stroke="#2A4258" stroke-width="1"/>
+  <text x="256" y="212" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="10.5" letter-spacing="1.5" fill="#3EC6F3">BORROWED · THE BRAIN</text>
+  <text x="256" y="240" font-size="22" font-weight="600" fill="#EAF3FA">Alexa+</text>
+  <text x="256" y="264" font-size="12.5" fill="#9DB2C6">frontier conversational LLM —</text>
+  <text x="256" y="281" font-size="12.5" fill="#9DB2C6">understands nuance, proposes</text>
+  <text x="256" y="298" font-size="12.5" fill="#9DB2C6">advisory structure</text>
+  <line x1="256" y1="313" x2="424" y2="313" stroke="#2A4258" stroke-width="1"/>
+  <text x="256" y="333" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="11" fill="#6E87A0">probabilistic · advisory</text>
+  <text x="256" y="351" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="11" fill="#6E87A0">in this demo: Gemini,</text>
+  <text x="256" y="367" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="11" fill="#6E87A0">a labeled stand-in</text>
+
+  <!-- ===== Kernel ===== -->
+  <rect x="600" y="156" width="400" height="428" rx="8" fill="#0E1B29" stroke="#3EC6F3" stroke-width="1.5"/>
+  <text x="624" y="184" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="10.5" letter-spacing="1.5" fill="#3EC6F3">OWNED · THE GUARANTEE</text>
+  <text x="624" y="210" font-size="20" font-weight="600" fill="#EAF3FA">Intent Lock kernel</text>
+  <text x="624" y="229" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="11" fill="#6E87A0">self-hosted MCP server · deterministic · 0 LLMs</text>
+  <line x1="624" y1="242" x2="976" y2="242" stroke="#2A4258" stroke-width="1"/>
+
+  <!-- Stage A -->
+  <rect x="616" y="252" width="368" height="52" rx="6" fill="#16283A" stroke="#2A4258" stroke-width="1"/>
+  <rect x="628" y="263" width="30" height="30" rx="4" fill="#17384C"/>
+  <text x="643" y="284" text-anchor="middle" font-size="15" font-weight="600" fill="#3EC6F3">A</text>
+  <text x="670" y="274" font-size="15.5" font-weight="600" fill="#EAF3FA">Operator Compiler</text>
+  <text x="670" y="292" font-size="12" fill="#9DB2C6">raw words → veto ≠ · origin t₀ · exact ≡ · anchor @</text>
+  <!-- Stage B -->
+  <rect x="616" y="310" width="368" height="52" rx="6" fill="#16283A" stroke="#2A4258" stroke-width="1"/>
+  <rect x="628" y="321" width="30" height="30" rx="4" fill="#17384C"/>
+  <text x="643" y="342" text-anchor="middle" font-size="15" font-weight="600" fill="#3EC6F3">B</text>
+  <text x="670" y="332" font-size="15.5" font-weight="600" fill="#EAF3FA">Temporal Entity Memory</text>
+  <text x="670" y="350" font-size="12" fill="#9DB2C6">Taste Lock rules vs the host clock — before any fetch</text>
+  <!-- Stage C -->
+  <rect x="616" y="368" width="368" height="52" rx="6" fill="#16283A" stroke="#2A4258" stroke-width="1"/>
+  <rect x="628" y="379" width="30" height="30" rx="4" fill="#17384C"/>
+  <text x="643" y="400" text-anchor="middle" font-size="15" font-weight="600" fill="#3EC6F3">C</text>
+  <text x="670" y="390" font-size="15.5" font-weight="600" fill="#EAF3FA">Supply Harvester + Variant Expander</text>
+  <text x="670" y="408" font-size="12" fill="#9DB2C6">catalogs race → one Universal Candidate Tensor</text>
+  <!-- Stage D -->
+  <rect x="616" y="426" width="368" height="52" rx="6" fill="#16283A" stroke="#2A4258" stroke-width="1"/>
+  <rect x="628" y="437" width="30" height="30" rx="4" fill="#17384C"/>
+  <text x="643" y="458" text-anchor="middle" font-size="15" font-weight="600" fill="#3EC6F3">D</text>
+  <text x="670" y="448" font-size="15.5" font-weight="600" fill="#EAF3FA">Articulatory Entity Grounding</text>
+  <text x="670" y="466" font-size="12" fill="#9DB2C6">PanPhon 70 · skeleton 30 · anchor arbitrates first</text>
+  <!-- Stage E -->
+  <rect x="616" y="484" width="368" height="52" rx="6" fill="#16283A" stroke="#3EC6F3" stroke-width="1"/>
+  <rect x="628" y="495" width="30" height="30" rx="4" fill="#17384C"/>
+  <text x="643" y="516" text-anchor="middle" font-size="15" font-weight="600" fill="#3EC6F3">E</text>
+  <text x="670" y="506" font-size="15.5" font-weight="600" fill="#EAF3FA">Transparent Elimination + Pin Gate</text>
+  <text x="670" y="524" font-size="12" fill="#9DB2C6">traps die on named channels · never-guess floor 0.60</text>
+  <text x="800" y="566" text-anchor="middle" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="10.5" fill="#6E87A0">EVERY ROW JUDGED IN THE OPEN</text>
+
+  <!-- ===== Verdicts ===== -->
+  <text x="1032" y="182" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="10.5" letter-spacing="1.5" fill="#6E87A0">EXACTLY THREE VERDICTS</text>
+  <rect x="1032" y="196" width="168" height="48" rx="6" fill="#2A2113" stroke="#F2A93B" stroke-width="1.5"/>
+  <circle cx="1050" cy="220" r="4" fill="#F2A93B"/>
+  <text x="1064" y="226" font-size="16" font-weight="600" fill="#FFD9A0">locked</text>
+  <text x="1192" y="226" text-anchor="end" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="10" fill="#F2A93B">≥ 0.60</text>
+  <rect x="1032" y="256" width="168" height="48" rx="6" fill="#111E2C" stroke="#2A4258" stroke-width="1"/>
+  <circle cx="1050" cy="280" r="4" fill="#9DB2C6"/>
+  <text x="1064" y="286" font-size="16" font-weight="600" fill="#EAF3FA">tie_choice</text>
+  <text x="1192" y="286" text-anchor="end" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="10" fill="#6E87A0">PIN →</text>
+  <rect x="1032" y="316" width="168" height="48" rx="6" fill="#111E2C" stroke="#2A4258" stroke-width="1" stroke-dasharray="5,4"/>
+  <circle cx="1050" cy="340" r="4" fill="#6E87A0"/>
+  <text x="1064" y="346" font-size="16" font-weight="600" fill="#9DB2C6">no_lock</text>
+  <text x="1192" y="346" text-anchor="end" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="10" fill="#6E87A0">REFUSES</text>
+
+  <!-- ===== Trust Card ===== -->
+  <rect x="1032" y="392" width="168" height="128" rx="8" fill="#111E2C" stroke="#2A4258" stroke-width="1"/>
+  <text x="1048" y="416" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="10" letter-spacing="1" fill="#3EC6F3">MCP APP · ui://</text>
+  <text x="1048" y="438" font-size="16.5" font-weight="600" fill="#EAF3FA">Trust Card</text>
+  <text x="1048" y="458" font-size="12" fill="#9DB2C6">the receipt — heard</text>
+  <text x="1048" y="474" font-size="12" fill="#9DB2C6">words, grounded entity,</text>
+  <text x="1048" y="490" font-size="12" fill="#9DB2C6">every elimination, the</text>
+  <text x="1048" y="506" font-size="12" fill="#9DB2C6">floor it cleared</text>
+
+  <!-- ===== Catalogs band ===== -->
+  <rect x="40" y="652" width="1160" height="148" rx="8" fill="#111E2C" stroke="#2A4258" stroke-width="1"/>
+  <text x="64" y="682" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="11" letter-spacing="1.5" fill="#3EC6F3">STAGE C SUPPLY — REAL CATALOG ROWS, RACED UNDER ONE SHARED DEADLINE</text>
+  <rect x="64" y="696" width="140" height="46" rx="6" fill="#16283A" stroke="#2A4258" stroke-width="1"/>
+  <text x="134" y="725" text-anchor="middle" font-size="13.5" font-weight="600" fill="#EAF3FA">iTunes</text>
+  <rect x="216" y="696" width="140" height="46" rx="6" fill="#16283A" stroke="#2A4258" stroke-width="1"/>
+  <text x="286" y="725" text-anchor="middle" font-size="13.5" font-weight="600" fill="#EAF3FA">Deezer</text>
+  <rect x="368" y="696" width="180" height="46" rx="6" fill="#16283A" stroke="#2A4258" stroke-width="1"/>
+  <text x="458" y="725" text-anchor="middle" font-size="13.5" font-weight="600" fill="#EAF3FA">MusicBrainz</text>
+  <rect x="560" y="696" width="280" height="46" rx="6" fill="#16283A" stroke="#2A4258" stroke-width="1"/>
+  <text x="700" y="718" text-anchor="middle" font-size="13.5" font-weight="600" fill="#EAF3FA">YouTube Suggest</text>
+  <text x="700" y="734" text-anchor="middle" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="10" fill="#6E87A0">spelling oracle — never a row</text>
+  <rect x="852" y="696" width="324" height="46" rx="6" fill="#16283A" stroke="#2A4258" stroke-width="1"/>
+  <text x="1014" y="718" text-anchor="middle" font-size="13.5" font-weight="600" fill="#EAF3FA">Audited snapshot · vault</text>
+  <text x="1014" y="734" text-anchor="middle" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="10" fill="#6E87A0">offline supply, provenance-labeled</text>
+  <text x="64" y="772" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="10.5" fill="#6E87A0">SAME KERNEL · OTHER CATALOGS — COMMERCE: SPEC-TABLE vs TITLE AUDITOR · GROCERY: INGREDIENT + SUBSTITUTION GUARD · AUDITED PACKS, SAME TENSOR</text>
+
+  <!-- ===== Footer ===== -->
+  <text x="40" y="850" font-size="13" fill="#9DB2C6">Alexa+ keeps what she owns — NLU, multi-turn dialogue, OAuth 2.1, wake-word, device sessions. Intent Lock stands only at the catalog action boundary.</text>
+  <text x="1200" y="876" text-anchor="end" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="10.5" letter-spacing="1.5" fill="#6E87A0">ONE SCHEMA · EVERY CATALOG</text>
+</svg>

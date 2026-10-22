@@ -1,0 +1,424 @@
+{
+  "_meta": {
+    "built_from": "Manufacturer/retailer published specifications for real-brand rows (Apple Support 'About the Apple Thunderbolt Pro Cables', Belkin INZ002/INZ003 spec sheets, Cable Matters 107025 listing data, specialist reviews) + composed 'audited listing pattern' rows for no-name marketplace listings (fictional stand-in brands; no real brand is given a false spec). Verified 2026-10-21.",
+    "built_at": "2026-10-21",
+    "domain": "commerce",
+    "hero_query": "Order a 2m Thunderbolt 40Gbps cable — not the USB 2.0 knockoff"
+  },
+  "candidates": [
+    {
+      "id": "commerce:apple-thunderbolt-5-pro-1.8m",
+      "title": "Apple Thunderbolt 5 (USB-C) Pro Cable (1.8 m)",
+      "creator_or_brand": "Apple",
+      "edition_or_variant": "Thunderbolt 5 Pro · 1.8 m",
+      "year": 2024,
+      "attributes": [
+        "thunderbolt-5",
+        "usb4",
+        "120gbps",
+        "240w",
+        "braided",
+        "pro"
+      ],
+      "specs": {
+        "data_rate_mbps": 120000,
+        "usb_generation": "USB4 v2 / Thunderbolt 5",
+        "charging_w": 240,
+        "length_m": 1.8,
+        "thunderbolt_certified": true,
+        "video": "DisplayPort 2.1, up to 8K"
+      },
+      "source": "manufacturer listing",
+      "provenance": {
+        "origin": "manufacturer listing",
+        "fetched_at": "2026-10-21",
+        "audit": "Apple Support, 'About the Apple Thunderbolt Pro Cables': Thunderbolt 5 up to 120Gbps, USB4 up to 80Gbps, 240W charging, 1.8 m braided cable."
+      }
+    },
+    {
+      "id": "commerce:apple-thunderbolt-4-pro-1.8m",
+      "title": "Apple Thunderbolt 4 (USB-C) Pro Cable (1.8 m)",
+      "creator_or_brand": "Apple",
+      "edition_or_variant": "Thunderbolt 4 Pro · 1.8 m",
+      "year": 2022,
+      "attributes": [
+        "thunderbolt-4",
+        "usb4",
+        "40gbps",
+        "100w",
+        "braided",
+        "pro"
+      ],
+      "specs": {
+        "data_rate_mbps": 40000,
+        "usb_generation": "USB4 / Thunderbolt 4",
+        "charging_w": 100,
+        "length_m": 1.8,
+        "thunderbolt_certified": true,
+        "video": "DisplayPort HBR3, up to 6K"
+      },
+      "source": "manufacturer listing",
+      "provenance": {
+        "origin": "manufacturer listing",
+        "fetched_at": "2026-10-21",
+        "audit": "Apple Support, 'About the Apple Thunderbolt Pro Cables': Thunderbolt 4 / USB 4 up to 40Gbps, 100W charging, 1.8 m."
+      }
+    },
+    {
+      "id": "commerce:belkin-inz002-thunderbolt-4-2m",
+      "title": "Belkin CONNECT Thunderbolt 4 Cable (2 m, Active) INZ002",
+      "creator_or_brand": "Belkin",
+      "edition_or_variant": "CONNECT · 2 m · Active",
+      "year": 2021,
+      "attributes": [
+        "thunderbolt-4",
+        "usb4",
+        "40gbps",
+        "100w",
+        "active"
+      ],
+      "specs": {
+        "data_rate_mbps": 40000,
+        "usb_generation": "USB4 / Thunderbolt 4",
+        "charging_w": 100,
+        "length_m": 2.0,
+        "thunderbolt_certified": true,
+        "video": "2x 4K or 1x 8K"
+      },
+      "source": "manufacturer listing",
+      "provenance": {
+        "origin": "manufacturer listing",
+        "fetched_at": "2026-10-21",
+        "audit": "Belkin published specs for INZ002bt2MBK: 2 m active cable, 40Gbps, 100W Power Delivery 3.0, Thunderbolt 4 certified, USB4 compliant."
+      }
+    },
+    {
+      "id": "commerce:belkin-inz003-thunderbolt-4-1m",
+      "title": "Belkin CONNECT Thunderbolt 4 Cable (1 m, Passive) INZ003",
+      "creator_or_brand": "Belkin",
+      "edition_or_variant": "CONNECT · 1 m · Passive",
+      "year": 2021,
+      "attributes": [
+        "thunderbolt-4",
+        "usb4",
+        "40gbps",
+        "100w",
+        "passive"
+      ],
+      "specs": {
+        "data_rate_mbps": 40000,
+        "usb_generation": "USB4 / Thunderbolt 4",
+        "charging_w": 100,
+        "length_m": 1.0,
+        "thunderbolt_certified": true,
+        "video": "2x 4K or 1x 8K"
+      },
+      "source": "manufacturer listing",
+      "provenance": {
+        "origin": "manufacturer listing",
+        "fetched_at": "2026-10-21",
+        "audit": "Belkin range data: INZ003bt1MBK is the 1 m passive sibling of INZ002 — 40Gbps, 100W PD 3.0, Thunderbolt 4 certified."
+      }
+    },
+    {
+      "id": "commerce:cable-matters-107025-thunderbolt-4-2m",
+      "title": "Cable Matters Thunderbolt 4 Cable (2 m) — 40Gbps, 240W",
+      "creator_or_brand": "Cable Matters",
+      "edition_or_variant": "107025 · 2 m · Active",
+      "year": 2022,
+      "attributes": [
+        "thunderbolt-4",
+        "usb4",
+        "40gbps",
+        "240w",
+        "active"
+      ],
+      "specs": {
+        "data_rate_mbps": 40000,
+        "usb_generation": "USB4 / Thunderbolt 4",
+        "charging_w": 240,
+        "length_m": 2.0,
+        "thunderbolt_certified": true,
+        "video": "Up to 8K"
+      },
+      "source": "manufacturer listing",
+      "provenance": {
+        "origin": "manufacturer listing",
+        "fetched_at": "2026-10-21",
+        "audit": "Cable Matters 107025-BLK-2m per manufacturer/specialist listings: Intel-certified Thunderbolt 4, 40Gbps, USB PD 3.1 EPR up to 240W, 2 m. (Sibling 107022 is the 100W variant.)"
+      }
+    },
+    {
+      "id": "commerce:owc-thunderbolt-4-active-2m",
+      "title": "OWC Thunderbolt 4 / USB-C Cable (2 m, Active)",
+      "creator_or_brand": "OWC",
+      "edition_or_variant": "2 m · Active",
+      "year": 2022,
+      "attributes": [
+        "thunderbolt-4",
+        "usb4",
+        "40gbps",
+        "100w",
+        "active"
+      ],
+      "specs": {
+        "data_rate_mbps": 40000,
+        "usb_generation": "USB4 / Thunderbolt 4",
+        "charging_w": 100,
+        "length_m": 2.0,
+        "thunderbolt_certified": true,
+        "video": "Up to 8K"
+      },
+      "source": "manufacturer listing",
+      "provenance": {
+        "origin": "manufacturer listing",
+        "fetched_at": "2026-10-21",
+        "audit": "OWC published specs for its Thunderbolt 4 active cable: 2.0 m, 40Gbps, 100W, Thunderbolt-certified."
+      }
+    },
+    {
+      "id": "commerce:caldigit-thunderbolt-4-0.8m",
+      "title": "CalDigit Thunderbolt 4 Cable (0.8 m)",
+      "creator_or_brand": "CalDigit",
+      "edition_or_variant": "0.8 m",
+      "year": 2021,
+      "attributes": [
+        "thunderbolt-4",
+        "usb4",
+        "40gbps",
+        "100w"
+      ],
+      "specs": {
+        "data_rate_mbps": 40000,
+        "usb_generation": "USB4 / Thunderbolt 4",
+        "charging_w": 100,
+        "length_m": 0.8,
+        "thunderbolt_certified": true,
+        "video": "Up to 8K"
+      },
+      "source": "manufacturer listing",
+      "provenance": {
+        "origin": "manufacturer listing",
+        "fetched_at": "2026-10-21",
+        "audit": "CalDigit published specs: 0.8 m Thunderbolt 4 / USB4 cable, 40Gbps, 100W, Intel certified."
+      }
+    },
+    {
+      "id": "commerce:anker-thunderbolt-4-0.7m",
+      "title": "Anker USB-C to USB-C Thunderbolt 4 Cable (2.3 ft / 0.7 m)",
+      "creator_or_brand": "Anker",
+      "edition_or_variant": "0.7 m",
+      "year": 2021,
+      "attributes": [
+        "thunderbolt-4",
+        "usb4",
+        "40gbps",
+        "100w"
+      ],
+      "specs": {
+        "data_rate_mbps": 40000,
+        "usb_generation": "USB4 / Thunderbolt 4",
+        "charging_w": 100,
+        "length_m": 0.7,
+        "thunderbolt_certified": true,
+        "video": "Dual 4K@60Hz"
+      },
+      "source": "manufacturer listing",
+      "provenance": {
+        "origin": "manufacturer listing",
+        "fetched_at": "2026-10-21",
+        "audit": "Anker published specs for its 2.3 ft Thunderbolt 4 cable: 40Gbps, 100W charging, dual 4K display support."
+      }
+    },
+    {
+      "id": "commerce:voltlink-tb4-40gbps-2m-spec-lie",
+      "title": "Thunderbolt 4 USB-C Cable 2M — 40Gbps 240W Fast Charging Cable, 4K Video, for MacBook Pro",
+      "creator_or_brand": "VoltLink",
+      "edition_or_variant": "2 m",
+      "year": 2025,
+      "attributes": [
+        "40gbps",
+        "thunderbolt-4",
+        "240w",
+        "best-seller",
+        "marketplace"
+      ],
+      "specs": {
+        "data_rate_mbps": 480,
+        "usb_generation": "USB 2.0",
+        "charging_w": 240,
+        "length_m": 2.0,
+        "thunderbolt_certified": false,
+        "video": "none stated in spec table"
+      },
+      "source": "marketplace listing",
+      "provenance": {
+        "origin": "audited listing pattern",
+        "fetched_at": "2026-10-21",
+        "audit": "COMPOSED ROW — THE HERO TRAP. Models the ubiquitous no-name marketplace pattern: the TITLE claims '40Gbps' and 'Thunderbolt' while the listing's own spec table states USB 2.0 / 480Mbps and the cable carries no Thunderbolt certification. 'VoltLink' is a fictional stand-in brand; no real product is depicted."
+      }
+    },
+    {
+      "id": "commerce:maxstream-usb4-40gbps-2m-spec-lie",
+      "title": "USB4 Cable 40Gbps — Thunderbolt Compatible USB-C Cable 2M, 100W",
+      "creator_or_brand": "MaxStream",
+      "edition_or_variant": "2 m",
+      "year": 2024,
+      "attributes": [
+        "40gbps",
+        "usb4",
+        "thunderbolt-compatible",
+        "marketplace"
+      ],
+      "specs": {
+        "data_rate_mbps": 10000,
+        "usb_generation": "USB 3.2 Gen 2",
+        "charging_w": 100,
+        "length_m": 2.0,
+        "thunderbolt_certified": false,
+        "video": "4K@60Hz"
+      },
+      "source": "marketplace listing",
+      "provenance": {
+        "origin": "audited listing pattern",
+        "fetched_at": "2026-10-21",
+        "audit": "COMPOSED ROW. Title advertises 'USB4 40Gbps'; the spec table states USB 3.2 Gen 2 (10Gbps) and no Thunderbolt certification. 'MaxStream' is a fictional stand-in brand for a common marketplace pattern."
+      }
+    },
+    {
+      "id": "commerce:linkpro-usb4-1m-sponsored",
+      "title": "LinkPro USB4 USB-C Cable 1M — 40Gbps, 100W, DisplayPort Alt Mode",
+      "creator_or_brand": "LinkPro",
+      "edition_or_variant": "1 m",
+      "year": 2024,
+      "attributes": [
+        "sponsored",
+        "usb4",
+        "40gbps",
+        "100w"
+      ],
+      "specs": {
+        "data_rate_mbps": 40000,
+        "usb_generation": "USB4",
+        "charging_w": 100,
+        "length_m": 1.0,
+        "thunderbolt_certified": false,
+        "video": "DisplayPort Alt Mode, 4K@60Hz"
+      },
+      "source": "marketplace listing",
+      "provenance": {
+        "origin": "audited listing pattern",
+        "fetched_at": "2026-10-21",
+        "audit": "COMPOSED ROW. Sponsored-placement pattern: specs are genuinely USB4 40Gbps, but the cable is 1 m — promoted above the 2 m rows the user actually asked for. 'LinkPro' is a fictional stand-in brand."
+      }
+    },
+    {
+      "id": "commerce:anker-765-usb-c-140w-1.8m",
+      "title": "Anker 765 USB-C to USB-C Cable (140W, 6 ft / 1.8 m)",
+      "creator_or_brand": "Anker",
+      "edition_or_variant": "765 · 1.8 m",
+      "year": 2022,
+      "attributes": [
+        "charging",
+        "140w",
+        "braided",
+        "usb-2.0"
+      ],
+      "specs": {
+        "data_rate_mbps": 480,
+        "usb_generation": "USB 2.0",
+        "charging_w": 140,
+        "length_m": 1.8,
+        "thunderbolt_certified": false,
+        "video": "none"
+      },
+      "source": "manufacturer listing",
+      "provenance": {
+        "origin": "manufacturer listing",
+        "fetched_at": "2026-10-21",
+        "audit": "Anker published specs for the 765: 140W charging-first cable, USB 2.0 data (480Mbps). An honest listing — it never claims 40Gbps or Thunderbolt."
+      }
+    },
+    {
+      "id": "commerce:amazon-basics-usb31-gen2-0.9m",
+      "title": "Amazon Basics USB-C to USB-C 3.1 Gen 2 Cable (0.9 m)",
+      "creator_or_brand": "Amazon Basics",
+      "edition_or_variant": "0.9 m",
+      "year": 2019,
+      "attributes": [
+        "usb-3.2-gen-2",
+        "10gbps",
+        "100w",
+        "value"
+      ],
+      "specs": {
+        "data_rate_mbps": 10000,
+        "usb_generation": "USB 3.2 Gen 2",
+        "charging_w": 100,
+        "length_m": 0.9,
+        "thunderbolt_certified": false,
+        "video": "4K@60Hz"
+      },
+      "source": "retail listing",
+      "provenance": {
+        "origin": "manufacturer listing",
+        "fetched_at": "2026-10-21",
+        "audit": "Amazon Basics published specs: USB 3.1/3.2 Gen 2, 10Gbps data, up to 100W Power Delivery — honestly labelled, no Thunderbolt claim."
+      }
+    },
+    {
+      "id": "commerce:ugreen-usb-c-100w-2m",
+      "title": "UGREEN USB-C to USB-C Cable 100W (2 m, Braided)",
+      "creator_or_brand": "UGREEN",
+      "edition_or_variant": "2 m",
+      "year": 2022,
+      "attributes": [
+        "charging",
+        "100w",
+        "braided",
+        "value",
+        "usb-2.0"
+      ],
+      "specs": {
+        "data_rate_mbps": 480,
+        "usb_generation": "USB 2.0",
+        "charging_w": 100,
+        "length_m": 2.0,
+        "thunderbolt_certified": false,
+        "video": "none"
+      },
+      "source": "retail listing",
+      "provenance": {
+        "origin": "audited listing pattern",
+        "fetched_at": "2026-10-21",
+        "audit": "Retail listing pattern for UGREEN's 100W braided charge cable family: 100W fast charging with USB 2.0 480Mbps data stated honestly in the specs — the honest cheap 2 m row."
+      }
+    },
+    {
+      "id": "commerce:chargepro-240w-charge-only-2m",
+      "title": "ChargePro 240W USB-C Charging Cable 2M — Super-Fast Charge Only (No Data Transfer)",
+      "creator_or_brand": "ChargePro",
+      "edition_or_variant": "2 m · Charge only",
+      "year": 2024,
+      "attributes": [
+        "charging-only",
+        "240w",
+        "no-data"
+      ],
+      "specs": {
+        "data_rate_mbps": 0,
+        "usb_generation": "none — charge only",
+        "charging_w": 240,
+        "length_m": 2.0,
+        "thunderbolt_certified": false,
+        "video": "none"
+      },
+      "source": "marketplace listing",
+      "provenance": {
+        "origin": "audited listing pattern",
+        "fetched_at": "2026-10-21",
+        "audit": "COMPOSED ROW. Charge-only cable pattern (data pins omitted, 0 Mbps) sold for fast charging; the no-data fact is stated honestly in the title itself. 'ChargePro' is a fictional stand-in brand."
+      }
+    }
+  ]
+}

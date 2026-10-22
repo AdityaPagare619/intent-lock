@@ -1,0 +1,45 @@
+# ── OmniBeat-MCP .gitignore ──────────────────────────────────────────────
+# Build & dependency outputs
+node_modules/
+.next/
+out/
+dist/
+build/
+*.tsbuildinfo
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# Runtime state — ledger DBs and logs are local proofs, never committed
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.log
+logs/
+
+# Test & coverage
+coverage/
+.coverage
+htmlcov/
+.pytest_cache/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Env files (there are no secrets in this repo — this is belt-and-braces)
+.env
+.env.*
+!.env.example
+*.pem
+*.key

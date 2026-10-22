@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OmniBeat Studio Deck</title>
+<style>
+  :root { --paper:#f5f5f5; --ink:#2d3142; --mute:#6b7280; --accent:#eb6c36; --line:#d8d8de; --card:#ffffff; }
+  body.dark { --paper:#101014; --ink:#ececf1; --mute:#9a9aad; --line:#2a2a33; --card:#17171d; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
+         background:var(--paper); color:var(--ink); padding:16px; }
+  .bar { display:flex; align-items:baseline; gap:10px; margin-bottom:12px; }
+  .wordmark { font-weight:800; letter-spacing:.14em; font-size:12px; }
+  .mode { font-size:11px; color:var(--mute); }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px; }
+  .track { display:flex; gap:14px; align-items:center; }
+  .art { width:84px; height:84px; border-radius:10px; object-fit:cover; background:var(--line); flex:none; }
+  .title { font-size:19px; font-weight:700; line-height:1.2; }
+  .artist { font-size:14px; color:var(--mute); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-top:8px; }
+  .badge { font-size:11px; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--mute); }
+  .badge.hot { border-color:var(--accent); color:var(--accent); font-weight:700; }
+  .verified { margin-top:10px; font-size:12.5px; }
+  .verified b { color:var(--accent); }
+  .cand { padding:10px 0; border-top:1px solid var(--line); }
+  .cand:first-of-type { border-top:none; }
+  .cand .t { font-weight:650; }
+  .msg { font-size:15px; line-height:1.45; white-space:pre-wrap; }
+  .empty { color:var(--mute); font-size:13.5px; }
+  .chips { margin-top:8px; display:flex; gap:6px; flex-wrap:wrap; }
+  .chip { font-size:10.5px; border-radius:6px; padding:2px 6px; background:var(--line); color:var(--ink); }
+  .chip.ignored { opacity:.65; text-decoration: line-through; }
+  .rescue { font-size:13px; line-height:1.45; margin:0 0 12px; }
+  .rescue .heard { color:var(--mute); }
+  .rescue .rescued { font-weight:700; color:var(--accent); }
+  .sect { font-size:11px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--mute); margin:14px 0 2px; }
+  .elim .reason { font-size:13px; margin-top:2px; }
+  .src { font-size:10px; border:1px solid var(--line); border-radius:999px; padding:1px 7px; color:var(--mute); margin-left:8px; white-space:nowrap; }
+  .flag { margin-top:12px; font-size:13px; border:1px solid var(--accent); border-radius:10px; padding:8px 10px; line-height:1.45; }
+  .flag.rule { border-color:var(--line); }
+  .statusline { font-size:14px; line-height:1.45; margin:0 0 10px; }
+</style>
+</head>
+<body>
+  <div class="bar">
+    <span class="wordmark">OMNIBEAT STUDIO DECK</span>
+    <span class="mode" id="mode">MCP Apps surface · awaiting host context</span>
+  </div>
+  <div class="card" id="root">
+    <p class="empty">Rendered by the host from <b>structuredContent</b> — play something and this deck updates with the verified result. No tool result yet.</p>
+  </div>
+
+<script>
+(function () {
+  var root = document.getElementById("root");
+  var modeEl = document.getElementById("mode");
+  var hostContext = null;
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  function applyContext(ctx) {
+    if (!ctx) return;
+    hostContext = ctx;
+    if (ctx.theme === "dark") document.body.classList.add("dark");
+    else document.body.classList.remove("dark");
+    modeEl.textContent =
+      "MCP Apps surface · " + (ctx.deviceClass || "device") +
+      " · displayMode " + (ctx.displayMode || "inline") +
+      (ctx.platform ? " · " + ctx.platform : "");
+  }
+
+  // Intent Lock result shape (the intent_lock tool): every block is
+  // guarded on its own field, so a partial payload renders honestly and
+  // older resolve payloads never enter this branch (they carry none of
+  // these keys).
+  function renderLock(sc) {
+    // 1 · Heard ➔ Phonetic & Hinglish Rescue header
+    if (sc.heard || sc.rescued) {
+      var h = el("p", "rescue");
+      if (sc.heard)
+        h.appendChild(el("span", "heard", 'Heard: "' + sc.heard + '"'));
+      if (sc.rescued) {
+        if (sc.heard) h.appendChild(document.createTextNode("  ➔  "));
+        h.appendChild(el("span", "rescued",
+          'Phonetic & Hinglish Rescue: "' + sc.rescued + '"'));
+      }
+      root.appendChild(h);
+    }
+    // 2 · Locked canonical track — never crowned a winner on a tie or
+    // a no-lock; those states say so in words instead.
+    var t = sc.locked;
+    if (sc.status === "tie_choice") {
+      root.appendChild(el("p", "statusline",
+        "Tie — two versions are still standing. No winner is locked, and nothing is guessed."));
+    }
+    if (t && sc.status !== "no_lock") {
+      var wrap = el("div", "track");
+      if (t.artwork_url) {
+        var img = el("img", "art");
+        img.src = t.artwork_url; img.alt = "";
+        wrap.appendChild(img);
+      }
+      var meta = el("div");
+      meta.appendChild(el("div", "title", t.title || "Unknown title"));
+      meta.appendChild(el("div", "artist", t.artist || ""));
+      var badges = el("div", "badges");
+      if (t.version) badges.appendChild(el("span", "badge hot", t.version));
+      if (t.year) badges.appendChild(el("span", "badge", String(t.year)));
+      if (sc.status !== "tie_choice")
+        badges.appendChild(el("span", "badge", "locked — exact version"));
+      meta.appendChild(badges);
+      wrap.appendChild(meta);
+      root.appendChild(wrap);
+    } else if (sc.status === "no_lock") {
+      root.appendChild(el("p", "statusline",
+        "No lock — nothing that came back clears the bar, so nothing plays."));
+    }
+    // 3 · Transparent elimination: the rejected rows, each with its
+    // plain reason and the catalog that returned it.
+    if (sc.eliminated && sc.eliminated.length) {
+      root.appendChild(el("div", "sect", "Rejected — and why"));
+      sc.eliminated.slice(0, 4).forEach(function (c) {
+        var row = el("div", "cand elim");
+        var head = el("div");
+        head.appendChild(el("span", "t", c.title || ""));
+        if (c.version) head.appendChild(el("span", "badge", c.version));
+        if (c.source) head.appendChild(el("span", "src", "via " + c.source));
+        row.appendChild(head);
+        if (c.artist) row.appendChild(el("div", "artist", c.artist));
+        if (c.reason) row.appendChild(el("div", "reason", c.reason));
+        root.appendChild(row);
+      });
+    }
+    // 4 · Gemini tie-break badge — one line, only when a tie was broken.
+    if (sc.tie_break) {
+      var tb = sc.tie_break;
+      var line = "Tie-break · Gemini picked " + (tb.chose || "one of them");
+      if (tb.why) line += " — " + tb.why;
+      root.appendChild(el("p", "flag", line));
+    }
+    // 5 · Active voice rule badge — one line, only when a rule fired.
+    if (sc.rule_active) {
+      root.appendChild(el("p", "flag rule", "🔒 " + sc.rule_active));
+    }
+    if (!t && sc.status !== "no_lock" && sc.status !== "tie_choice" &&
+        !(sc.eliminated && sc.eliminated.length)) {
+      root.appendChild(el("p", "empty", "Result received (no lock payload)."));
+    }
+  }
+
+  function render(sc, content) {
+    root.innerHTML = "";
+    if (!sc) {
+      root.appendChild(el("p", "empty",
+        (content && content[0] && content[0].text) || "No structured result."));
+      return;
+    }
+    var isLock = ("locked" in sc) || ("eliminated" in sc) || ("heard" in sc) ||
+      sc.status === "locked" || sc.status === "tie_choice" || sc.status === "no_lock";
+    if (isLock) {
+      renderLock(sc);
+    } else if (sc.track) {
+      var t = sc.track;
+      var wrap = el("div", "track");
+      if (t.artwork_url) {
+        var img = el("img", "art");
+        img.src = t.artwork_url; img.alt = "";
+        wrap.appendChild(img);
+      }
+      var meta = el("div");
+      meta.appendChild(el("div", "title", t.title || "Unknown title"));
+      meta.appendChild(el("div", "artist", t.artist || ""));
+      var badges = el("div", "badges");
+      if (t.kind) badges.appendChild(el("span", "badge hot", t.kind));
+      if (t.purity_score != null)
+        badges.appendChild(el("span", "badge", "purity P=" + t.purity_score));
+      if (t.source) badges.appendChild(el("span", "badge", t.source));
+      if (sc.disambiguated)
+        badges.appendChild(el("span", "badge", "you picked it — not guessed"));
+      meta.appendChild(badges);
+      wrap.appendChild(meta);
+      root.appendChild(wrap);
+      var v = el("p", "verified");
+      var b = el("b", null, "✓ Verified effect — ");
+      v.appendChild(b);
+      v.appendChild(document.createTextNode(
+        "this track passed the purity guard and is written in the truth ledger."));
+      root.appendChild(v);
+    } else if (sc.elicitation && sc.elicitation.candidates) {
+      root.appendChild(el("p", "msg",
+        sc.elicitation.message ||
+        "True title collision — OmniBeat will not guess. Pick one:"));
+      sc.elicitation.candidates.forEach(function (c) {
+        var row = el("div", "cand");
+        row.appendChild(el("span", "t",
+          (c.index != null ? c.index + " · " : "") + (c.title || "")));
+        row.appendChild(el("div", "artist", c.artist || ""));
+        root.appendChild(row);
+      });
+    } else if (sc.message) {
+      root.appendChild(el("p", "msg", sc.message));
+    } else {
+      root.appendChild(el("p", "empty", "Result received (no track payload)."));
+    }
+    if (sc.constraints) {
+      var chips = el("div", "chips");
+      (sc.constraints.applied || []).forEach(function (c) {
+        chips.appendChild(el("span", "chip", "applied: " + c));
+      });
+      (sc.constraints.ignored || []).forEach(function (c) {
+        chips.appendChild(el("span", "chip ignored", "ignored: " + c));
+      });
+      if (chips.childNodes.length) root.appendChild(chips);
+    }
+  }
+
+  window.addEventListener("message", function (ev) {
+    var msg = ev.data;
+    if (!msg || msg.jsonrpc !== "2.0") return;
+    if (msg.method === "ui/notifications/tool-result") {
+      var p = msg.params || {};
+      render(p.structuredContent, p.content);
+    } else if (msg.method === "ui/notifications/host-context-changed") {
+      applyContext((msg.params || {}).hostContext || msg.params);
+    } else if (msg.id && msg.result && msg.result.hostContext) {
+      applyContext(msg.result.hostContext);
+    }
+  });
+
+  // MCP Apps handshake: the app opens with ui/initialize; the host's
+  // reply carries hostContext. Until then the deck renders in light
+  // inline defaults and says so above.
+  try {
+    window.parent.postMessage({
+      jsonrpc: "2.0", id: "ui-init-1", method: "ui/initialize",
+      params: {
+        protocolVersion: "2026-01-26",
+        appInfo: { name: "OmniBeat Studio Deck", version: "2.0.0" },
+        appCapabilities: {}
+      }
+    }, "*");
+  } catch (e) { /* no host — standalone preview */ }
+})();
+</script>
+</body>
+</html>

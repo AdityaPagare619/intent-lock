@@ -1,0 +1,617 @@
+{
+  "_meta": {
+    "built_from": "CATALOG_AUDIT.md + catalog_raw/ live pulls (iTunes Search API x6 hero terms, MusicBrainz recording search x1), 2026-10-21",
+    "built_at": "2026-10-21",
+    "hero": "Saiyaara"
+  },
+  "candidates": [
+    {
+      "id": "musicbrainz:0a330724-8de1-4a97-b9c5-4f593337a53a",
+      "title": "Saiyaara",
+      "artist": "Mohit Chauhan & Taraannum Mallik",
+      "year": 2012,
+      "source": "musicbrainz",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:673948365",
+      "title": "Saiyaara",
+      "artist": "Mohit Chauhan & Tarannum Malik Jain",
+      "year": 2012,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f3/ca/45/f3ca4562-16ba-bdfa-289e-fd5fa2468b0a/mzaf_11100894907003374164.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/ef/eb/b9/efebb98b-c9c8-33b9-7476-2e01a622edc0/849486005914_cover.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:1843472708",
+      "title": "Saiyaara (Female Version ) [Lofi]",
+      "artist": "SS Lofis Voice",
+      "year": 2025,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/1d/a0/de/1da0de4c-ffed-86af-aee4-9f0c6f8be75a/mzaf_16607064403518198289.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/c6/e8/6e/c6e86e92-7aa6-30f1-26ed-8964c121cf64/199999447221.png/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:1838577664",
+      "title": "Saiyaara (Lofi)",
+      "artist": "Mayank Manan",
+      "year": 2025,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/74/7c/95/747c95e6-a071-c795-3d77-c3d1ec819a42/mzaf_3197585758537248100.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/1d/3b/11/1d3b1194-378d-db20-bee1-3627b9137e67/5063720112465.png/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:6771087488",
+      "title": "Saiyaara (Lofi)",
+      "artist": "SS Lofis Voice",
+      "year": 2026,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/92/f6/a4/92f6a4ab-a384-e977-982c-323546d7bba4/mzaf_6606452409859185609.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/21/65/32/2165324b-6fb0-45b1-8fbc-e9fe8efa8489/199999649304.png/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:1620148631",
+      "title": "Saiyaara - LoFi Mix",
+      "artist": "Mohit Chauhan & Tarannum Malik Jain",
+      "year": 2022,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/3c/eb/93/3ceb9360-2160-f706-17d9-9fc9600e4a8c/mzaf_3985066893545248997.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/f1/27/40/f12740bc-b23f-9d77-c587-39dbbeed812c/Saiyaara_-_LoFi_Mix.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:1621718643",
+      "title": "Saiyaara - LoFi Mix",
+      "artist": "Mohit Chauhan & Tarannum Malik Jain",
+      "year": 2022,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/41/9f/eb/419feb07-5939-6c03-8d04-208ad11865f6/mzaf_4849618341688875341.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/e2/17/2f/e2172fbd-aab9-1000-c0e3-226170f3c73d/LoFi_Mix.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:1668350080",
+      "title": "Saiyaara - LoFi Mix",
+      "artist": "Mohit Chauhan & Tarannum Malik Jain",
+      "year": 2022,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7c/71/e7/7c71e716-d1e4-1e11-37f0-4efb997e01ac/mzaf_3414800494849531164.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/90/53/e8/9053e813-c200-aaf7-402a-e968d0982114/Terrace_Playlist.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:1714435784",
+      "title": "Saiyaara - LoFi Mix",
+      "artist": "Mohit Chauhan & Tarannum Malik Jain",
+      "year": 2022,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/21/9a/4f/219a4fab-52d1-364c-fa10-48146b2256f0/mzaf_9656005425464882333.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/17/0f/0d/170f0d42-4b54-139e-d856-1e7f7feb67d1/LoFi_Love.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "musicbrainz:2112aa69-0bc9-48d7-bec4-813a0189d857",
+      "title": "Saiyaara - LoFi Mix",
+      "artist": "Mohit Chauhan, Tarannum Malik Jain",
+      "year": 2023,
+      "source": "musicbrainz",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:1801915611",
+      "title": "Saiyaara - LoFi Mix (From \"Ek Tha Tiger\")",
+      "artist": "Mohit Chauhan & Tarannum Malik Jain",
+      "year": 2022,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/74/1b/05/741b050c-18df-af27-cb5b-31c3c48ea083/mzaf_16011332840413707912.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/dc/f9/90/dcf99086-5e57-fadf-f084-84ed98568c6d/Study_and_Unwind.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:1871595061",
+      "title": "Born for the Crown (Saiyaara Remix)",
+      "artist": "KK Vex",
+      "year": 2025,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8f/67/b5/8f67b54d-600d-76d9-5514-f7c7880191d4/mzaf_9580269297275856750.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f1/28/dd/f128dd61-8496-dbac-ee8e-792bb15e9f3e/5063906616589_cover.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:1865345392",
+      "title": "Last Lap (Saiyaara Remix)",
+      "artist": "ST1G",
+      "year": 2025,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/9a/22/0b/9a220bad-e424-c079-42d7-b7cd7b7fdf05/mzaf_11611636214421820139.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/fb/eb/cb/fbebcb65-eaa5-3ff5-cbf2-ebc34e8cbf62/artwork.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:6769965945",
+      "title": "SAIYAARA (Techno Mix)",
+      "artist": "Beatsbyachraf",
+      "year": 2026,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/6d/a0/9f/6da09fdd-8b0d-6667-12f6-bbf1d1eac560/mzaf_5908501817928510879.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ee/fa/55/eefa55a6-c8d8-b54d-1a18-bc58f1b3dd14/artwork.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:6817842686",
+      "title": "Saiyaara (Edm Mix)",
+      "artist": "Harish Kariri",
+      "year": 2026,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/17/ef/d9/17efd912-166e-8006-0e80-8b8499946bd4/mzaf_12098957660404685993.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/fb/70/e3/fb70e326-baa3-ab9e-0a91-13da984e78a5/8447845280259.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:1844972643",
+      "title": "Saiyaara (House Mix)",
+      "artist": "Salman Shahid",
+      "year": 2025,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ce/98/aa/ce98aae7-c562-ecef-06c9-e7bbc61afd41/mzaf_1569954616285990328.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/07/51/1b/07511bcc-582e-6355-6dce-2a15fdd7c4ca/artwork.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:6806488694",
+      "title": "Saiyaara (Reimagined) — A Slower, Cinematic Take | Saiyaara",
+      "artist": "Midnight Remix Lab",
+      "year": 2026,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/5a/b5/c8/5ab5c8ce-0274-94c8-f6bd-7ae92ba88696/mzaf_4355938086477608770.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/39/9c/dd/399cdda7-118c-8755-42cd-39900bdcf2cd/artwork.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:964107988",
+      "title": "Saiyaara (In the Style of Ek Tha Tiger) [Karaoke Backing Track]",
+      "artist": "Bollywood Boutique",
+      "year": 2015,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/Music5/v4/20/55/75/20557557-7894-4292-dd4a-600da99e157d/mzaf_7079929692814388013.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music1/v4/8b/63/27/8b6327c3-3fbf-ab80-f5b3-bef4eee8f673/Bollywood_Boutique.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:1694478396",
+      "title": "Saiyaara",
+      "artist": "Sohail Sen, Mohit Chauhan & Tarannum Malik Jain",
+      "year": 2012,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a7/e1/51/a7e151c4-8e44-bf34-ed62-cb9470da9eed/mzaf_18162067442231130058.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/48/8e/65/488e6573-b52e-6bcf-e47a-d69fd4ac3bb0/Viral_Hit_Mix.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:971989705",
+      "title": "Saiyaara (From \"Ek Tha Tiger\")",
+      "artist": "Mohit Chauhan & Tarannum Malik Jain",
+      "year": 2012,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/9d/77/f1/9d77f124-d2ee-79e9-a662-d3aeeb06d09d/mzaf_11029995922025590843.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music3/v4/ff/87/48/ff874812-1507-f5ac-19e8-086e8aa19c69/Best-of-Mohit-Chauhan.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:694206727",
+      "title": "Saiyaara (From \"Ek Tha Tiger\")",
+      "artist": "Mohit Chauhan & Tarannum Malik Jain",
+      "year": 2012,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/0f/38/aa/0f38aa67-f9ea-f5de-8444-80452bb9e328/mzaf_3003956949296261403.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music4/v4/b6/a1/e9/b6a1e9a1-5b79-30ef-9e43-a8710aa1e0b3/Saans_Me_Teri.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:1447738174",
+      "title": "Saiyaara (From \"Ek Tha Tiger\")",
+      "artist": "Mohit Chauhan & Tarannum Malik Jain",
+      "year": 2012,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/cd/7f/06/cd7f06ee-9139-8909-bd13-a26a91399bb2/mzaf_15438724079905242286.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/8c/c0/d2/8cc0d2fa-ff85-fa48-d315-c7f1d8f0b85b/Super-Hits-of-Salman-Khan.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:694349776",
+      "title": "Saiyaara (From \"Ek Tha Tiger\")",
+      "artist": "Mohit Chauhan & Tarannum Malik Jain",
+      "year": 2012,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/3c/0e/c8/3c0ec8f4-3144-ca75-f8f8-a47a6a2f8a92/mzaf_4530297463758938772.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/6d/8d/06/6d8d0617-50f8-ecb3-63c0-841847747038/Hits_Of_Katrina_Kaif_-_Mashallah_Mashallah.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:1344225247",
+      "title": "Saiyaara (From \"Ek Tha Tiger\")",
+      "artist": "Mohit Chauhan & Tarannum Malik Jain",
+      "year": 2012,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/5d/44/69/5d4469ea-a0ad-081a-9d5b-b242e1f9c0d8/mzaf_14579349778903952170.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/fa/09/a9/fa09a943-5a97-1dbd-d1ac-ddf4b31c799c/Valentine_s_Week.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:692761303",
+      "title": "Saiyaara (From \"Ek Tha Tiger\")",
+      "artist": "Mohit Chauhan & Tarannum Malik Jain",
+      "year": 2012,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/92/57/91/9257917a-e119-025a-27e5-a5522f932c8e/mzaf_11106857526825405703.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music/v4/d1/8d/a2/d18da2c7-9a34-5522-43dc-91e2d6d05861/Ek_Duje_Ke_Vaaste.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:956072498",
+      "title": "Saiyaara (From \"Ek Tha Tiger\")",
+      "artist": "Mohit Chauhan & Tarannum Malik Jain",
+      "year": 2012,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/00/12/68/001268ce-cbeb-d6ef-3355-6b05b8a20170/mzaf_15735565925809698264.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/c5/a6/48/c5a648c4-c9ce-f081-53cf-8fad04b3ba5d/TEARS_ON_LOVE.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:1015830238",
+      "title": "Saiyaara (From \"Ek Tha Tiger\")",
+      "artist": "Mohit Chauhan & Tarannum Malik Jain",
+      "year": 2012,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/7c/d5/02/7cd502b4-7da9-5a57-8d86-76a53480cfe5/mzaf_2719044791589126303.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music1/v4/2b/aa/81/2baa8132-257f-eba5-311e-1875ec887bd5/YRF-Blockbusters.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:1720526254",
+      "title": "Saiyaara (From \"Ek Tha Tiger\")",
+      "artist": "Mohit Chauhan & Tarannum Malik Jain",
+      "year": 2012,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/13/5e/62/135e6265-fc89-0bd1-ff8d-a96bcf7e4ffe/mzaf_13402942912844935282.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/b9/eb/51/b9eb5145-7c2a-eb85-a99c-0f88aa3528c0/Non-Stop_Tiger.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:972018529",
+      "title": "Saiyaara (From \"Ek Tha Tiger\")",
+      "artist": "Mohit Chauhan & Tarannum Malik Jain",
+      "year": 2012,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/62/95/d4/6295d494-78ba-c920-22fc-1b54ed9d4cee/mzaf_6226714730318657269.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music1/v4/e7/70/3e/e7703e01-e66b-2bda-1e41-84c397a257c9/Moh-Moh-Ke-Dhaage-Final_2.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:937182992",
+      "title": "Saiyaara (From \"Ek Tha Tiger\")",
+      "artist": "Mohit Chauhan & Tarannum Malik Jain",
+      "year": 2012,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/2d/69/6b/2d696b92-cd34-2486-ea3e-e0887fce0057/mzaf_6425868932949459566.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music3/v4/37/64/ed/3764ed7d-8ae0-7306-5d6c-518fa49e809e/Romance-Forever.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:1189750101",
+      "title": "Saiyaara (From \"Ek Tha Tiger\")",
+      "artist": "Mohit Chauhan & Tarannum Malik Jain",
+      "year": 2012,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/68/c2/0e/68c20eef-caa6-4bb3-3baa-810c63759df1/mzaf_6053779124132451237.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/6b/c9/7d/6bc97d81-9166-bdc9-c680-c9e57e97e7d7/Salman_Khan_Birthday_Special.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:1503881854",
+      "title": "Saiyaara (From \"Ek Tha Tiger\")",
+      "artist": "Mohit Chauhan & Tarannum Malik Jain",
+      "year": 2012,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e4/cd/3b/e4cd3b4f-3061-2d74-bee7-fc130bd1d39a/mzaf_15654119148169307254.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/c0/82/17/c0821749-2f0d-1aa9-d264-a74cd5688784/Love-Shayaris.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:898501257",
+      "title": "Saiyaara (From \"Ek Tha Tiger\")",
+      "artist": "Mohit Chauhan & Tarannum Malik Jain",
+      "year": 2012,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/96/a4/17/96a4172f-c455-f659-7b93-a502becedcab/mzaf_724532191011083336.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music/v4/53/54/f9/5354f92d-a625-5892-9e30-5b21b9e2f77e/Hits-of-Katrina-kaif.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:1573243248",
+      "title": "Saiyaara (From \"Ek Tha Tiger\")",
+      "artist": "Mohit Chauhan & Tarannum Malik Jain",
+      "year": 2012,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/10/47/e7/1047e769-dd0f-1c0c-99d3-87ab9511752f/mzaf_3727416624816422088.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/9d/fe/c6/9dfec6d5-b245-6a11-308e-8214b786420e/YRF_Top_10_-_Broken_Hearts.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:1551118078",
+      "title": "Saiyaara (From \"Ek Tha Tiger\")",
+      "artist": "Mohit Chauhan & Tarannum Malik Jain",
+      "year": 2012,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview114/v4/fb/d9/88/fbd988af-d05f-711d-e840-e9bfd3ba37bc/mzaf_5370270771793871896.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/fb/4d/b5/fb4db55b-a932-578e-5027-67fa57bffafe/YRF_Top_10_-_Work_From_Home.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:1697307579",
+      "title": "Saiyaara (From \"Ek Tha Tiger\")",
+      "artist": "Sohail Sen, Mohit Chauhan & Tarannum Malik Jain",
+      "year": 2012,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/df/8f/29/df8f2968-6194-be09-b8e1-704b43267764/mzaf_5287234194742298494.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/39/f5/0b/39f50bfe-b1d6-59af-c602-3dced6600d98/Top_Hits_-_Katrina_Kaif.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:1544235149",
+      "title": "Saiyaara (From \"Ek Tha Tiger\")",
+      "artist": "Tarannum Malik Jain & Mohit Chauhan",
+      "year": 2012,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/de/d3/ba/ded3bab6-5bfc-baec-66b2-a300e617d69e/mzaf_6346380620683981602.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/43/2d/24/432d2463-8cfe-ea82-b52e-c468adc89b73/YRF_Top_10_-_Rewind.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:963049331",
+      "title": "Saiyaara (From \"Ek Tha Tiger\")",
+      "artist": "Tarannum Malik Jain & Mohit Chauhan",
+      "year": 2012,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/55/5f/eb/555feb9a-0f88-1829-1489-c18dea28dee8/mzaf_3326435622154686930.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music3/v4/aa/ac/a1/aaaca13b-5f76-99e0-393c-e0db37fc614e/Love-Hurts_2.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "musicbrainz:d0f305ce-de51-4c7a-937b-66c6d36c7be8",
+      "title": "Saiyaara",
+      "artist": "Faheem Abdullah",
+      "year": 2025,
+      "source": "musicbrainz",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:1824400208",
+      "title": "Saiyaara",
+      "artist": "Tanishk Bagchi, Faheem Abdullah, Arslan Nizami & Irshad Kamil",
+      "year": 2025,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/a1/d3/c2/a1d3c20d-0532-06cc-6d8d-4a2e3d83e17b/mzaf_15236486709835991249.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/c6/6a/a3/c66aa366-4522-14b8-c629-7cfee5422fc0/Saiyaara_Album_Cover.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:1838877940",
+      "title": "Saiyaara",
+      "artist": "Tanishk Bagchi, Faheem Abdullah, Arslan Nizami & Irshad Kamil",
+      "year": 2025,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d0/57/69/d05769b7-7310-0727-26cc-6169f1d17df6/mzaf_478408624982634661.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/51/76/c8/5176c863-1b58-7835-5779-d8bbe64d3020/Saiyaara_Extended_Album.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:1817818678",
+      "title": "Saiyaara (From \"Saiyaara\")",
+      "artist": "Tanishk Bagchi, Faheem Abdullah, Arslan Nizami & Irshad Kamil",
+      "year": 2025,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8b/22/b9/8b22b91d-5a87-0388-19c8-276ac0395858/mzaf_13470021155226582096.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/24/62/5d/24625d44-815e-7ef3-4bbc-291ba57e4c35/Saiyaara_Audio_Cover.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "musicbrainz:9a3e2ad4-3381-4dfc-aa6d-1e6ae09b766a",
+      "title": "Saiyaara (reprise)",
+      "artist": "Shreya Ghoshal",
+      "year": 2025,
+      "source": "musicbrainz",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    },
+    {
+      "id": "itunes:1824400214",
+      "title": "Saiyaara Reprise - Female",
+      "artist": "Tanishk Bagchi, Faheem Abdullah, Arslan Nizami, Shreya Ghoshal & Irshad Kamil",
+      "year": 2025,
+      "source": "itunes",
+      "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/61/96/ac/6196ace1-d0fe-089f-f4ff-e322160010e1/mzaf_17718692881128881262.plus.aac.p.m4a",
+      "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/c6/6a/a3/c66aa366-4522-14b8-c629-7cfee5422fc0/Saiyaara_Album_Cover.jpg/100x100bb.jpg",
+      "provenance": {
+        "origin": "vault_prefetch",
+        "fetched_at": "2026-10-21",
+        "audit": "CATALOG_AUDIT.md"
+      }
+    }
+  ]
+}

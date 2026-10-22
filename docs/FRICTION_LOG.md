@@ -1,6 +1,6 @@
 # Friction Log — the +10% bonus, written as we bleed
 
-> **Reading note (2026-10-21):** this dated build log carries FL-01…FL-16. The complete, submission-ordered log — those 16 plus the Intent Lock addendum FL-17…FL-24, including the three platform discoveries (FL-17 CSP silent failure · FL-18 SEP-2577 · FL-24 host-clock isolation) — is `docs/submission/FRICTION_LOG_FINAL.md`. Read that one.
+> **Reading note (2026-10-21):** this dated build log carries FL-01…FL-16. The complete, submission-ordered log — those 16 plus the Intent Lock addendum FL-17…FL-24, including the three platform discoveries (FL-17 CSP silent failure · FL-18 SEP-2577 · FL-24 host-clock isolation) — is `docs/FRICTION_LOG_FINAL.md`. Read that one.
 Team THE YAP PATROL · OmniBeat-MCP · owner: Ria "CHAOS"
 
 **Rule:** this log is written *as we hit the wall*, not backfilled the night

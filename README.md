@@ -169,13 +169,13 @@ services/alexa-agent-orchestrator/  host-side orchestrator (Gemini brain, adviso
 services/chaos-and-provider-mock/   fault-injection rig for the outage act
 packages/polyglot-phonetic-judo/    the phonetic grounding library (also standalone, MIT)
 scripts/                      launchers, wire suite, gate, host-matrix harness
-docs/                         spec, architecture, friction log, submission packet
+docs/                         spec, architecture, operations, development, friction logs
 ```
 
 Built for the Amazon "Build, Ship, Shape" Developer Hackathon,
 Alexa+ track, by **The Yap Patrol**. The Developer Friction Log —
 every real platform papercut, measured — is in
-[docs/submission/FRICTION_LOG_FINAL.md](docs/submission/FRICTION_LOG_FINAL.md).
+[docs/FRICTION_LOG_FINAL.md](docs/FRICTION_LOG_FINAL.md).
 
 ## License
 

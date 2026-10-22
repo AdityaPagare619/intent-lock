@@ -35,9 +35,8 @@ when :4000 is unreachable).
 
 ## Pointers
 
-- The retired first-cut video's shot list and the build record live in
-  `archive/build-record/apps/alexa-plus-simulator/` (history, not the
-  current demo). The live submission checklist is
-  `docs/submission/VIDEO_UPLOAD_CHECKLIST.md` at the repo root.
+- Operational details for the full stack live in
+  [docs/OPERATIONS.md](../../docs/OPERATIONS.md), and the project
+  documentation map is [docs/INDEX.md](../../docs/INDEX.md).
 - Voice-activity assets under `public/vad/` are real runtime files the
   stage loads locally — the demo's mic path works offline.

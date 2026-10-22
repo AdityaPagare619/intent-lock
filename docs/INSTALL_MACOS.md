@@ -57,7 +57,7 @@ xcode-select --install
 
 ```bash
 git clone <this-repo-url>
-cd omnibeat-mcp
+cd intent-lock
 ./scripts/bootstrap.sh && make demo
 # open http://localhost:3000
 ```
@@ -114,7 +114,7 @@ open docs/index.html
 python3 --version && node --version        # 3.10+ and v20.x — stop here if not
 xcode-select --install 2>/dev/null; true   # only if `make` has never run on this Mac
 git clone <this-repo-url>
-cd omnibeat-mcp
+cd intent-lock
 ./scripts/bootstrap.sh && make demo
 # open http://localhost:3000 in your browser
 curl -fsS http://127.0.0.1:8080/health     # optional wire check — see step 5

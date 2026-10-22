@@ -33,9 +33,6 @@ command -v make >/dev/null 2>&1 && ok "make present" \
   || warn "make not found — the quickstart's 'make demo' step needs it. Fix: $APT_HINT make"
 command -v curl >/dev/null 2>&1 && ok "curl present" \
   || warn "curl not found — service health checks need it. Fix: $APT_HINT curl"
-command -v jq >/dev/null 2>&1 && ok "jq present" \
-  || soft "jq not found — needed only for 'make verify' (the wire proof). Fix: $APT_HINT jq"
-
 # --- 1. Python venv (ephemeral /tmp venvs are banned; this one is durable) ---
 if [ ! -x "$VENV/bin/python" ]; then
   echo "-- creating venv at $VENV"

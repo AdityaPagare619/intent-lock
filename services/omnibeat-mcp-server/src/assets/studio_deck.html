@@ -137,11 +137,16 @@
         root.appendChild(row);
       });
     }
-    // 4 · Gemini tie-break badge — one line, only when a tie was broken.
+    // 4 · Honest-tie badge — one line, only when a tie was resolved.
+    // A true tie is never broken by a model: both survivors are shown
+    // to the user BY NAME, the user picks, and the host re-calls with
+    // that pin — the server re-verifies the pinned track against every
+    // ban before locking. This line renders only after that pin lands.
     if (sc.tie_break) {
       var tb = sc.tie_break;
-      var line = "Tie-break · Gemini picked " + (tb.chose || "one of them");
+      var line = "Tie · you picked " + (tb.chose || "one of them");
       if (tb.why) line += " — " + tb.why;
+      line += " · pin re-verified by the server";
       root.appendChild(el("p", "flag", line));
     }
     // 5 · Active voice rule badge — one line, only when a rule fired.

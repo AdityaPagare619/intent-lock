@@ -33,7 +33,7 @@ async function realToolCall(sim: Sim, def: PersonaDef) {
   const sid = sim.sessionId ?? (await sim.ensureSession());
   if (!sid) {
     sim.pushTranscript(
-      "⚠ This beat's real MCP call never fired — the music brain isn't answering, so there is no session. Nothing on this stage is faked to fill the gap; the wire below shows the failed handshake.",
+      "⚠ This beat's real MCP call never fired — the referee isn't answering, so there is no session. Nothing on this stage is faked to fill the gap; the wire below shows the failed handshake.",
       "SYS"
     );
     sim.pushLedger(`${def.tool} → NOT SENT — no live MCP session (stack unreachable)`, "LIVE");

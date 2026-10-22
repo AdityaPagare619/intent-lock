@@ -53,7 +53,7 @@ exactly the same thing; pick the shell you already have open.
 
 ```powershell
 git clone https://github.com/AdityaPagare619/omnibeat-mcp.git
-cd omnibeat-mcp
+cd intent-lock
 
 # OPTIONAL — live Gemini brain. Skip this line for the keyless local floor.
 $env:GEMINI_API_KEY = "paste-your-key-here"
@@ -98,7 +98,7 @@ cmd.exe cannot run `.ps1` files directly, so each script is invoked through
 
 ```bat
 git clone https://github.com/AdityaPagare619/omnibeat-mcp.git
-cd omnibeat-mcp
+cd intent-lock
 
 REM OPTIONAL — live Gemini brain. Skip this line for the keyless local floor.
 set GEMINI_API_KEY=paste-your-key-here

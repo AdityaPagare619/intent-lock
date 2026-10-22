@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "built_from": "OpenFoodFacts public API live pulls 2026-10-21 (product identity + nutriments per 100 ml as recorded, barcodes in row ids) + one composed 'audited listing pattern' row (soy) after the OFF search endpoint rate-limited (HTTP 503). 'sponsored' attributes model marketplace reorder placement for the demo scenario and are flagged as such in each affected row's audit note.",
+    "built_from": "OpenFoodFacts public API live pulls 2026-10-21 (product identity + nutriments per 100 ml as recorded, barcodes in row ids) + one composed 'audited listing pattern' row (soy) after the OFF search endpoint rate-limited (HTTP 503). 'sponsored' attributes model marketplace reorder placement for the demo scenario and are flagged as such in each affected row's audit note. Breakfast/snacks aisle added 2026-10-23: OpenFoodFacts live pulls (Meridian peanut/almond butters, Weetabix Original + Crispy Minis Choco, Kellogg's Corn Flakes, Tropicana + innocent orange juices — codes in row ids, nutriments + allergens_tags as recorded) after the OFF search endpoint rate-limited intermittently (HTTP 503, retried); allergen flags for solids are recorded per 100 g in specs (sugar_g_per_100g/kcal_per_100g) and mirrored in specs.base + attributes, where the engine reads them. Three composed 'audited listing pattern' rows (fictional stand-in brands) cover the sweetened peanut butter, gluten-free corn flakes, honey cereal, and unsweetened iced-tea patterns.",
     "built_at": "2026-10-21",
     "domain": "grocery",
     "hero_query": "Reorder my usual unsweetened oat milk — not almond, and no sponsored substitutes"
@@ -403,6 +403,381 @@
         "origin": "audited listing pattern",
         "fetched_at": "2026-10-21",
         "audit": "COMPOSED ROW. The OpenFoodFacts search endpoint rate-limited (HTTP 503) before a soy record could be pulled, so this row models the Alpro Soya No Sugars retail listing using only name-guaranteed facts (soy base, zero sugars). No OFF identity is claimed."
+      }
+    },
+    {
+      "id": "openfoodfacts:5014213711306",
+      "title": "Smooth Peanut Butter",
+      "creator_or_brand": "Meridian",
+      "edition_or_variant": "Smooth · No Added Sugar",
+      "year": null,
+      "attributes": [
+        "nut-butter",
+        "peanut",
+        "smooth",
+        "no-added-sugar",
+        "breakfast-aisle"
+      ],
+      "specs": {
+        "base": "peanut",
+        "sugar_g_per_100g": 5.3,
+        "kcal_per_100g": 607,
+        "sweetened": false,
+        "barista": false,
+        "allergens": [
+          "peanuts"
+        ]
+      },
+      "source": "openfoodfacts",
+      "provenance": {
+        "origin": "openfoodfacts",
+        "fetched_at": "2026-10-23",
+        "audit": "OpenFoodFacts live pull 2026-10-23, code 5014213711306: sugars 5.3 g/100 g, energy ~607 kcal/100 g, allergens_tags ['en:peanuts'] as recorded. Allergen flag mirrored in base/attributes, where the engine reads it."
+      }
+    },
+    {
+      "id": "openfoodfacts:5014213711290",
+      "title": "Crunchy Peanut Butter",
+      "creator_or_brand": "Meridian",
+      "edition_or_variant": "Crunchy · No Added Sugar",
+      "year": null,
+      "attributes": [
+        "nut-butter",
+        "peanut",
+        "crunchy",
+        "no-added-sugar",
+        "breakfast-aisle"
+      ],
+      "specs": {
+        "base": "peanut",
+        "sugar_g_per_100g": 5.3,
+        "kcal_per_100g": 606,
+        "sweetened": false,
+        "barista": false,
+        "allergens": [
+          "peanuts"
+        ]
+      },
+      "source": "openfoodfacts",
+      "provenance": {
+        "origin": "openfoodfacts",
+        "fetched_at": "2026-10-23",
+        "audit": "OpenFoodFacts live pull 2026-10-23, code 5014213711290: sugars 5.3 g/100 g, 606 kcal/100 g, allergens_tags ['en:peanuts'] as recorded."
+      }
+    },
+    {
+      "id": "openfoodfacts:5060132281796",
+      "title": "Smooth Almond Butter",
+      "creator_or_brand": "Meridian",
+      "edition_or_variant": "Smooth · No Added Sugar",
+      "year": null,
+      "attributes": [
+        "nut-butter",
+        "almond",
+        "smooth",
+        "no-added-sugar",
+        "breakfast-aisle"
+      ],
+      "specs": {
+        "base": "almond",
+        "sugar_g_per_100g": 4.0,
+        "kcal_per_100g": 650,
+        "sweetened": false,
+        "barista": false,
+        "allergens": [
+          "nuts"
+        ]
+      },
+      "source": "openfoodfacts",
+      "provenance": {
+        "origin": "openfoodfacts",
+        "fetched_at": "2026-10-23",
+        "audit": "OpenFoodFacts live pull 2026-10-23, code 5060132281796: sugars 4 g/100 g, 650 kcal/100 g, allergens_tags ['en:nuts'] as recorded. THE SAFE ROW for a peanut-veto breakfast ask."
+      }
+    },
+    {
+      "id": "openfoodfacts:5060132281857",
+      "title": "Crunchy Almond Butter",
+      "creator_or_brand": "Meridian",
+      "edition_or_variant": "Crunchy · No Added Sugar",
+      "year": null,
+      "attributes": [
+        "nut-butter",
+        "almond",
+        "crunchy",
+        "no-added-sugar",
+        "breakfast-aisle"
+      ],
+      "specs": {
+        "base": "almond",
+        "sugar_g_per_100g": 4.0,
+        "kcal_per_100g": 650,
+        "sweetened": false,
+        "barista": false,
+        "allergens": [
+          "nuts"
+        ]
+      },
+      "source": "openfoodfacts",
+      "provenance": {
+        "origin": "openfoodfacts",
+        "fetched_at": "2026-10-23",
+        "audit": "OpenFoodFacts live pull 2026-10-23, code 5060132281857: sugars 4 g/100 g, 650 kcal/100 g, allergens_tags ['en:nuts'] as recorded."
+      }
+    },
+    {
+      "id": "grocery:nutvalley-peanut-butter-sweetened-pattern",
+      "title": "Smooth Peanut Butter (Sweetened)",
+      "creator_or_brand": "NutValley",
+      "edition_or_variant": "Sweetened",
+      "year": null,
+      "attributes": [
+        "nut-butter",
+        "peanut",
+        "smooth",
+        "sweetened",
+        "breakfast-aisle"
+      ],
+      "specs": {
+        "base": "peanut",
+        "sugar_g_per_100g": 12.0,
+        "kcal_per_100g": 590,
+        "sweetened": true,
+        "barista": false,
+        "allergens": [
+          "peanuts"
+        ]
+      },
+      "source": "retail listing pattern",
+      "provenance": {
+        "origin": "audited listing pattern",
+        "fetched_at": "2026-10-23",
+        "audit": "COMPOSED ROW — audited listing pattern. Sweetened peanut-butter pattern (added sugar, ~12 g sugars/100 g class): the row a no-added-sugar ask must NOT crown. 'NutValley' is a fictional stand-in brand; no real product is depicted."
+      }
+    },
+    {
+      "id": "openfoodfacts:5010029000023",
+      "title": "Weetabix Original",
+      "creator_or_brand": "Weetabix",
+      "edition_or_variant": "Original · Whole Wheat Biscuits",
+      "year": null,
+      "attributes": [
+        "cereal",
+        "breakfast-aisle",
+        "gluten",
+        "wheat"
+      ],
+      "specs": {
+        "base": "wheat",
+        "sugar_g_per_100g": 4.2,
+        "kcal_per_100g": 362,
+        "sweetened": false,
+        "barista": false,
+        "allergens": [
+          "gluten"
+        ]
+      },
+      "source": "openfoodfacts",
+      "provenance": {
+        "origin": "openfoodfacts",
+        "fetched_at": "2026-10-23",
+        "audit": "OpenFoodFacts live pull 2026-10-23, code 5010029000023: sugars 4.2 g/100 g, 362 kcal/100 g, allergens_tags ['en:gluten'] as recorded."
+      }
+    },
+    {
+      "id": "openfoodfacts:5059319030517",
+      "title": "Corn Flakes",
+      "creator_or_brand": "Kellogg's",
+      "edition_or_variant": "The Original",
+      "year": null,
+      "attributes": [
+        "cereal",
+        "breakfast-aisle",
+        "gluten",
+        "corn"
+      ],
+      "specs": {
+        "base": "corn",
+        "sugar_g_per_100g": 8.0,
+        "kcal_per_100g": 378,
+        "sweetened": true,
+        "barista": false,
+        "allergens": [
+          "gluten"
+        ]
+      },
+      "source": "openfoodfacts",
+      "provenance": {
+        "origin": "openfoodfacts",
+        "fetched_at": "2026-10-23",
+        "audit": "OpenFoodFacts live pull 2026-10-23, code 5059319030517: sugars 8 g/100 g, 378 kcal/100 g, allergens_tags ['en:gluten'] (barley malt) as recorded."
+      }
+    },
+    {
+      "id": "openfoodfacts:5010029229110",
+      "title": "Weetabix Crispy Minis Choco",
+      "creator_or_brand": "Weetabix",
+      "edition_or_variant": "Crispy Minis · Chocolate",
+      "year": null,
+      "attributes": [
+        "cereal",
+        "breakfast-aisle",
+        "gluten",
+        "sweetened",
+        "chocolate"
+      ],
+      "specs": {
+        "base": "wheat",
+        "sugar_g_per_100g": 17.0,
+        "kcal_per_100g": 386,
+        "sweetened": true,
+        "barista": false,
+        "allergens": [
+          "gluten",
+          "soybeans"
+        ]
+      },
+      "source": "openfoodfacts",
+      "provenance": {
+        "origin": "openfoodfacts",
+        "fetched_at": "2026-10-23",
+        "audit": "OpenFoodFacts live pull 2026-10-23, code 5010029229110: sugars 17 g/100 g — the sweetest cereal row in the pack — 386 kcal/100 g, allergens_tags ['en:gluten','en:soybeans'] as recorded."
+      }
+    },
+    {
+      "id": "grocery:harvest-lane-gf-corn-flakes-pattern",
+      "title": "Gluten-Free Corn Flakes",
+      "creator_or_brand": "Harvest Lane",
+      "edition_or_variant": "Gluten-Free",
+      "year": null,
+      "attributes": [
+        "cereal",
+        "breakfast-aisle",
+        "gluten-free",
+        "corn"
+      ],
+      "specs": {
+        "base": "corn",
+        "sugar_g_per_100g": 7.0,
+        "kcal_per_100g": 380,
+        "sweetened": true,
+        "barista": false,
+        "allergens": []
+      },
+      "source": "retail listing pattern",
+      "provenance": {
+        "origin": "audited listing pattern",
+        "fetched_at": "2026-10-23",
+        "audit": "COMPOSED ROW — audited listing pattern. Gluten-free corn-flake pattern (rice/corn base, no gluten allergen): the safe row when 'gluten' is vetoed. 'Harvest Lane' is a fictional stand-in brand; no real product is depicted."
+      }
+    },
+    {
+      "id": "grocery:golden-loop-honey-cereal-pattern",
+      "title": "Honey Nut Hoops",
+      "creator_or_brand": "Golden Loop",
+      "edition_or_variant": "Honey · Sweetened",
+      "year": null,
+      "attributes": [
+        "cereal",
+        "breakfast-aisle",
+        "gluten",
+        "sweetened",
+        "honey"
+      ],
+      "specs": {
+        "base": "oat",
+        "sugar_g_per_100g": 24.0,
+        "kcal_per_100g": 390,
+        "sweetened": true,
+        "barista": false,
+        "allergens": [
+          "gluten"
+        ]
+      },
+      "source": "retail listing pattern",
+      "provenance": {
+        "origin": "audited listing pattern",
+        "fetched_at": "2026-10-23",
+        "audit": "COMPOSED ROW — audited listing pattern. Honey-loop oat cereal pattern (~24 g sugars/100 g class): a high-sugar breakfast row the sugar rules must bite. 'Golden Loop' is a fictional stand-in brand; no real product is depicted."
+      }
+    },
+    {
+      "id": "openfoodfacts:5022313729824",
+      "title": "Smooth Orange Juice",
+      "creator_or_brand": "Tropicana",
+      "edition_or_variant": "Smooth · No Bits",
+      "year": null,
+      "attributes": [
+        "juice",
+        "breakfast-aisle",
+        "orange"
+      ],
+      "specs": {
+        "base": "orange",
+        "sugar_g_per_100ml": 8.6,
+        "kcal_per_100ml": 40,
+        "sweetened": false,
+        "barista": false,
+        "allergens": []
+      },
+      "source": "openfoodfacts",
+      "provenance": {
+        "origin": "openfoodfacts",
+        "fetched_at": "2026-10-23",
+        "audit": "OpenFoodFacts live pull 2026-10-23, code 5022313729824: OFF records sugars 8.6 g and 40 kcal per 100 (sugars_100g field); recorded here per 100 ml on the same figures, as this pack's drink rows are per-100 ml. Natural fruit sugar — a 'no added sugar' ask in spec-truth terms (0 g) cannot crown it."
+      }
+    },
+    {
+      "id": "openfoodfacts:5038862102704",
+      "title": "Smooth Orange Juice",
+      "creator_or_brand": "innocent",
+      "edition_or_variant": "Pure Fruit Juice · Smooth",
+      "year": null,
+      "attributes": [
+        "juice",
+        "breakfast-aisle",
+        "orange"
+      ],
+      "specs": {
+        "base": "orange",
+        "sugar_g_per_100ml": 8.7,
+        "kcal_per_100ml": 41,
+        "sweetened": false,
+        "barista": false,
+        "allergens": []
+      },
+      "source": "openfoodfacts",
+      "provenance": {
+        "origin": "openfoodfacts",
+        "fetched_at": "2026-10-23",
+        "audit": "OpenFoodFacts live pull 2026-10-23, code 5038862102704: OFF records sugars 8.7 g and 41 kcal per 100; recorded here per 100 ml on the same figures, as this pack's drink rows are per-100 ml."
+      }
+    },
+    {
+      "id": "grocery:meadow-leaf-unsweetened-iced-tea-pattern",
+      "title": "Unsweetened Iced Tea — Breakfast Cooler",
+      "creator_or_brand": "Meadow Leaf",
+      "edition_or_variant": "Unsweetened · Zero Sugar",
+      "year": null,
+      "attributes": [
+        "iced-tea",
+        "breakfast-aisle",
+        "unsweetened",
+        "no-sugars"
+      ],
+      "specs": {
+        "base": "tea",
+        "sugar_g_per_100ml": 0,
+        "kcal_per_100ml": 1,
+        "sweetened": false,
+        "barista": false,
+        "allergens": []
+      },
+      "source": "retail listing pattern",
+      "provenance": {
+        "origin": "audited listing pattern",
+        "fetched_at": "2026-10-23",
+        "audit": "COMPOSED ROW — audited listing pattern. Unsweetened iced-tea pattern: 0 g sugar per 100 ml — the breakfast-aisle drink a spec-truth 'no added sugar' requirement CAN crown. 'Meadow Leaf' is a fictional stand-in brand; no real product is depicted."
       }
     }
   ]

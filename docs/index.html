@@ -54,6 +54,7 @@
       <p class="spine">Alexa guesses. Intent Lock proves.</p>
       <p class="hero-sub">Borrow the Brain, Own the Guarantee.</p>
       <p class="lede">Alexa+ is a brilliant talker, and the conversation stays hers. Intent Lock is a tiny, stubborn referee that stands between her and the catalogs, and checks every song, cable and grocery order against the real thing before it plays, ships, or gets ordered.</p>
+      <p class="ref-line"><span class="ref-tag">The referee</span> I don’t guess. Show me the catalog, and I’ll show you the right one — or tell you plainly why I can’t.</p>
       <ul class="chips">
         <li>1 tool · intent_lock</li>
         <li>0 LLMs inside the server</li>
@@ -71,6 +72,7 @@
       <p class="eyebrow">0:12 · The pain</p>
       <h2 class="h-display">Five small frustrations. Every single day.</h2>
       <p class="lede">None of these are conversation problems. Alexa+ understands you beautifully, and the chat is hers. These failures happen in the last metre, at the exact moment a request touches a real catalog.</p>
+      <p class="ref-line"><span class="ref-tag">The referee</span> Every one of these landed on my desk. She does the talking — beautifully. I do the checking.</p>
       <div class="pain-grid">
         <article class="pain-card glass">
           <p class="pain-num">01 · Music</p>
@@ -108,7 +110,7 @@
         <article class="pain-card glass pain-counter">
           <p class="counter-num">38</p>
           <p class="pain-body">verified Alexa+ problems in the wild, each one tied to a dated public source.</p>
-          <p><a href="#sources">Read the source list</a></p>
+          <p><a href="#sources">Browse the trap gallery</a></p>
           <p class="prov">Counted from real user reports, October 2026. Fifteen further reports were rejected because they could not be tied to Alexa+ specifically.</p>
         </article>
       </div>
@@ -120,6 +122,7 @@
     <div class="beat-inner">
       <p class="eyebrow">0:35 · The referee</p>
       <h2 class="h-display">She asks. The referee checks. Then, and only then, it happens.</h2>
+      <p class="ref-line"><span class="ref-tag">The referee</span> Bring me the words exactly as they were said. I’ll check them slowly, stubbornly, and in the open.</p>
       <div class="steps">
         <article class="step glass">
           <p class="step-num">1</p>
@@ -172,6 +175,7 @@
       <p class="eyebrow">0:55 · The proof</p>
       <h2 class="h-display">Do not take our word for it. Read the wire.</h2>
       <p class="lede">One real call, the way the server saw it. The host spoke Hinglish, misspelled the title, and banned the remix in the same breath.</p>
+      <p class="ref-line"><span class="ref-tag">The referee</span> Don’t take my word for it either. Every row I turn away gets its reason printed next to it.</p>
 
       <div class="ladder" aria-label="Truth ladder for this call">
         <div class="lane lane-said">
@@ -235,6 +239,7 @@
       <p class="eyebrow">1:35 · The tie</p>
       <h2 class="h-display">A real tie, shown honestly.</h2>
       <p class="lede">Three recordings of one song clear the floor with the same score. The referee does not pick a winner. It shows the tie, waits for a pin, and re-verifies the pinned row before anything locks.</p>
+      <p class="ref-line"><span class="ref-tag">The referee</span> Two rows, one score? Then nothing plays until you point at one. I’d rather wait than guess.</p>
 
       <div class="gauge glass" role="img" aria-label="Lock gauge: score 77, floor 60, passed by 17. Consonant skeleton 94 percent, articulatory features 70 percent">
         <div class="gauge-top">
@@ -302,6 +307,7 @@
       <p class="eyebrow">2:05 · Tested like an enemy</p>
       <h2 class="h-display">We didn’t grade our own homework. We hired the enemy.</h2>
       <p class="lede">The host brain in production is Alexa+. So we tested against hosts that behave worse: three Gemini personas, careful, careless and sloppy, extracting structure from 55 everyday utterances, mistakes and all. Then we published every failure and fixed them one by one.</p>
+      <p class="ref-line"><span class="ref-tag">The referee</span> They threw 55 everyday asks at me, three rude ways each. I got 36 wrong, in public. Then we fixed me.</p>
       <p class="triple mono">165 planned · 161 completed · 36 wrong-locks</p>
       <div class="stat-grid">
         <article class="stat glass">
@@ -354,6 +360,7 @@
       <p class="eyebrow">2:30 · One schema, every catalog</p>
       <h2 class="h-display">One schema. Every catalog.</h2>
       <p class="lede">The spine is universal: one operator grammar, one candidate tensor, one floor, one tie and pin protocol, one set of spec predicates. The crowning evidence is per domain. The music crown math does not run the grocery aisle.</p>
+      <p class="ref-line"><span class="ref-tag">The referee</span> Songs, cables, oat milk — I don’t mind what the shelf holds. The rule travels: prove it, or it doesn’t play.</p>
       <div class="schema" role="img" aria-label="One intent_lock call feeds one Universal Candidate Tensor, which serves music, shopping and groceries, each with its own crowning evidence">
         <p class="schema-call mono">tools/call · intent_lock · one schema</p>
         <p class="schema-arrow" aria-hidden="true">↓</p>
@@ -377,6 +384,33 @@
           </article>
         </div>
         <p class="schema-dev">A developer use, concretely: any catalog with rows can sit behind the same call, and a brand selling through voice gets verdicts with reasons, not guesses.</p>
+      </div>
+
+      <h3 class="proof-h">Caught in the act: two turns recorded from the live server</h3>
+      <div class="proof-block">
+        <article class="proof-strip glass proof-lock">
+          <p class="proof-tag">Recorded from the live server · Shopping</p>
+          <p class="proof-heard serif">“Thunderbolt 4 cable 40Gbps 240W 2m”</p>
+          <p class="proof-verdict mono">status <strong>locked</strong> · Cable Matters Thunderbolt 4 Cable (2 m) — 40Gbps, 240W</p>
+          <ul class="proof-elims">
+            <li><span class="x" aria-hidden="true">×</span> <strong>VoltLink</strong> · Thunderbolt 4 USB-C Cable 2M — Spec contradiction — title claims 40 Gbps, spec table proves 480 Mbps.</li>
+            <li><span class="x" aria-hidden="true">×</span> <strong>MaxStream</strong> · USB4 Cable 40Gbps — Spec contradiction — title claims 40 Gbps, spec table proves 10 Gbps.</li>
+          </ul>
+          <p class="proof-foot">14 catalog rows eliminated in all, every conviction shown. Two convictions are printed here.</p>
+        </article>
+        <article class="proof-strip glass proof-none">
+          <p class="proof-tag">Recorded from the live server · Groceries</p>
+          <p class="proof-heard serif">“Get me a no added sugar oat drink”</p>
+          <p class="proof-verdict mono">status <strong>no_lock</strong> · the referee refused, out loud</p>
+          <p class="proof-said">“No confident match for ‘Get me a no added sugar oat drink’ in the grocery catalog. I won’t guess — tell me more about the exact item.”</p>
+          <ul class="proof-elims">
+            <li><span class="x" aria-hidden="true">×</span> <strong>Silk</strong> · Almond — Sponsored substitute — an unsponsored match exists. The lock never pays for placement.</li>
+            <li><span class="x" aria-hidden="true">×</span> <strong>Blue Diamond</strong> · Almond Breeze Unsweetened Original — Sponsored substitute — an unsponsored match exists. The lock never pays for placement.</li>
+            <li><span class="x" aria-hidden="true">×</span> <strong>Oatly</strong> · Barista Edition Oat Drink — Missing what you asked for: no sugar (spec table: 0 g sugar).</li>
+            <li><span class="x" aria-hidden="true">×</span> <strong>Oatly</strong> · Organic Oat Drink — Missing what you asked for: no sugar (spec table: 0 g sugar).</li>
+          </ul>
+          <p class="proof-foot">Nothing in the pool was both oat and sugar-free, so nothing shipped. A refusal with receipts beats a confident swap.</p>
+        </article>
       </div>
 
       <h3 class="friction-h">Built in the open: five entries from our developer friction log</h3>
@@ -455,45 +489,63 @@
       <p class="eyebrow">Sources · Beat 1</p>
       <h2 class="h-display">38 verified problems, with receipts.</h2>
       <p class="lede">Researched 22 Oct 2026 from Amazon support forums, user groups, Reddit, Threads and long-form reviewer diaries. A problem counts only when it is tied to Alexa+ specifically and carries a dated 2025 or 2026 source. A verification gate fully addresses 7 of them, helps with 15, and honestly cannot touch 16. The 16 are printed too.</p>
-      <ol class="source-list">
-        <li><span class="src-num">P-01</span><span class="src-name">Ask for a specific song, get a different song or version</span><span class="src-gate gate-yes">gate catches this</span><a href="https://briefly.co/anchor/Gadgets/story/why-is-alexa-so-bad">WIRED, Mar 2026</a></li>
-        <li><span class="src-num">P-02</span><span class="src-name">The action hits the wrong device entirely</span><span class="src-gate gate-yes">gate catches this</span><a href="https://gadgetsnow.indiatimes.com/appliances/inside-amazons-alexa-troubles-employees-report-unbearably-erratic-performance-during-internal-testing/articleshow/126359279.cms">Business Insider tester reports, Jan 2026</a></li>
-        <li><span class="src-num">P-03</span><span class="src-name">Compound commands only partially execute</span><span class="src-gate gate-yes">gate catches this</span><a href="https://www.xda-developers.com/voice-assistants-are-getting-worse-at-simple-tasks-and-nobodys-talking-about-why/">XDA Developers, Apr 2026</a></li>
-        <li><span class="src-num">P-04</span><span class="src-name">Things happen with no command at all</span><span class="src-gate gate-yes">gate catches this</span><a href="https://attackofthefanboy.com/news/a-mom-heard-alexa-playing-music-at-7-am-and-when-she-asked-why-it-insisted-it-had-been-off-since-214-pm-and-blamed-morning-confusion/">TechRadar, Jan 2026</a></li>
-        <li><span class="src-num">P-05</span><span class="src-name">Alexa+ corrupts the user’s own setup</span><span class="src-gate gate-yes">gate catches this</span><a href="https://www.facebook.com/groups/AmazonAlexaUsersGroup/permalink/2617862261982108/">Amazon Alexa Users Group, Aug 2026</a></li>
-        <li><span class="src-num">P-06</span><span class="src-name">When challenged, it fabricates history and argues</span><span class="src-gate gate-part">gate helps</span><a href="https://www.amazonforum.com/s/question/0D5at00000fqKjbCAE/scary-alexa-have-twice-tried-alexa-and-twice-canelled-alexa">Amazon Forums, Mar 2026</a></li>
-        <li><span class="src-num">P-07</span><span class="src-name">The “lalala” loop, then denial it happened</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://windowsreport.com/alexa-plus-is-creeping-out-out-echo-speaker-users-with-bizarre-lalala-bug/">The Verge, Oct 2026</a></li>
-        <li><span class="src-num">P-08</span><span class="src-name">Confidently wrong facts: scores, dates, weather, math</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://pogueman.substack.com/p/alexa-is-a-buggy-embarrassment">David Pogue, 2026</a></li>
-        <li><span class="src-num">P-09</span><span class="src-name">It hallucinates about itself: invented menus</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://pogueman.substack.com/p/alexa-is-a-buggy-embarrassment">David Pogue, 2026</a></li>
-        <li><span class="src-num">P-10</span><span class="src-name">It forgets who you are</span><span class="src-gate gate-part">gate helps</span><a href="https://ranzware.com/alexa-plus-is-better-at-running-my-home-but-its-not-ready-to-run-my-life">The Verge, Oct 2026</a></li>
-        <li><span class="src-num">P-11</span><span class="src-name">It remembers the wrong thing, and insists</span><span class="src-gate gate-part">gate helps</span><a href="https://ranzware.com/alexa-plus-is-better-at-running-my-home-but-its-not-ready-to-run-my-life">The Verge, Oct 2026</a></li>
-        <li><span class="src-num">P-12</span><span class="src-name">“OK, I’ll remember that.” It doesn’t</span><span class="src-gate gate-part">gate helps</span><a href="https://ca.amazonforum.com/s/question/0D5at00000a421oCAA/my-awful-experience-with-alexa-can-i-roll-back?language=en_CA">Amazon Forums Canada, Dec 2025</a></li>
-        <li><span class="src-num">P-13</span><span class="src-name">Timers, alarms and reminders are unreliable</span><span class="src-gate gate-part">gate helps</span><a href="https://www.threads.com/@kurthdietrich/post/DTb1cHhDpS_">Threads, Jan 2026</a></li>
-        <li><span class="src-num">P-14</span><span class="src-name">It acts on background conversation it overhears</span><span class="src-gate gate-yes">gate catches this</span><a href="https://www.notebookcheck.net/Alexa-the-Liar-Testing-Amazon-s-new-voice-assistant.1330389.0.html">Notebookcheck, Jun 2026</a></li>
-        <li><span class="src-num">P-15</span><span class="src-name">It interrogates instead of acting</span><span class="src-gate gate-part">gate helps</span><a href="https://www.facebook.com/groups/1127185010729686/permalink/28170154736006014/">Facebook group transcript, Aug 2026</a></li>
-        <li><span class="src-num">P-16</span><span class="src-name">It interrupts and answers before you finish</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.amazonforum.com/s/question/0D5at00000cTGV9CAO/feedback-on-alexa">Amazon Forums, 2025-26</a></li>
-        <li><span class="src-num">P-17</span><span class="src-name">It joins conversations nobody invited it into</span><span class="src-gate gate-part">gate helps</span><a href="https://www.amazonforum.com/s/question/0D5at00000cTGV9CAO/feedback-on-alexa">Amazon Forums, 2025-26</a></li>
-        <li><span class="src-num">P-18</span><span class="src-name">It ignores “stop”</span><span class="src-gate gate-part">gate helps</span><a href="https://gadgetsnow.indiatimes.com/appliances/inside-amazons-alexa-troubles-employees-report-unbearably-erratic-performance-during-internal-testing/articleshow/126359279.cms">Business Insider tester reports, Jan 2026</a></li>
-        <li><span class="src-num">P-19</span><span class="src-name">Verbosity: it will not stop talking</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.amazonforum.com/s/question/0D5at00000ZGCLvCAP/alexa-is-too-chatty-how-do-i-get-it-to-shut-up-and-not-talk-so-much">Amazon Forums, Dec 2025</a></li>
-        <li><span class="src-num">P-20</span><span class="src-name">Latency: seconds of dead air on basic commands</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.amazonforum.com/s/question/0D5at00000NSFaDCAX/alexa-slow-response">Amazon Forums, 2025-26</a></li>
-        <li><span class="src-num">P-21</span><span class="src-name">Silence: commands ignored entirely</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.amazonforum.com/s/question/0D5at00000hVqxOCAS/alexa-is-not-there-yet-by-a-mile">Amazon Forums, Apr 2026</a></li>
-        <li><span class="src-num">P-22</span><span class="src-name">Routines break, fire late, or half-run</span><span class="src-gate gate-part">gate helps</span><a href="https://forums.wyze.com/t/alexa-person-detection-routine-broken-as-of-12-9-25/339479">Wyze Forums, Dec 2025</a></li>
-        <li><span class="src-num">P-23</span><span class="src-name">Skills and accessibility features break or vanish</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.amazonforum.com/s/question/0D5at00000cOvybCAC/alexa-is-not-a-plus-features-were-lost">Amazon Forums, 2025-26</a></li>
-        <li><span class="src-num">P-24</span><span class="src-name">Abilities the old Alexa had are lost</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://electronics.woot.com/review/B0BLS3Y632?itemid=WT527032C&amp;offerid=53f51116-0053-4db7-b32e-7a88881448b4&amp;filter=3">Woot product review</a></li>
-        <li><span class="src-num">P-25</span><span class="src-name">Ordering substitutes items you never asked for</span><span class="src-gate gate-yes">gate catches this</span><a href="https://ranzware.com/alexa-plus-is-better-at-running-my-home-but-its-not-ready-to-run-my-life">The Verge, Oct 2026</a></li>
-        <li><span class="src-num">P-26</span><span class="src-name">Agentic tasks hand the work back to you</span><span class="src-gate gate-part">gate helps</span><a href="https://www.xda-developers.com/alexa-google-home-ai-didnt-revolutionize-home-assistant/">XDA Developers, Jan 2026</a></li>
-        <li><span class="src-num">P-27</span><span class="src-name">Near-sound entities get misgrounded into absurd actions</span><span class="src-gate gate-part">gate helps</span><a href="https://ranzware.com/alexa-plus-is-better-at-running-my-home-but-its-not-ready-to-run-my-life">The Verge, Oct 2026</a></li>
-        <li><span class="src-num">P-28</span><span class="src-name">The Echo Show became an ad billboard</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://techiemag.co.uk/a-year-with-alexa-plus-the-ai-powered-assistant-is-better-at-running-my-home-but-its-not-ready-to-run-my-life">The Verge, Oct 2026</a></li>
-        <li><span class="src-num">P-29</span><span class="src-name">Conversational upsell: it keeps trying to sell</span><span class="src-gate gate-part">gate helps</span><a href="https://getcoai.com/news/amazons-100b-ai-bet-stumbles-as-alexa-plus-disappoints-users/">CO/AI, Oct 2025</a></li>
-        <li><span class="src-num">P-30</span><span class="src-name">The inferred profile is invasive, and sometimes absurd</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.inc.com/melissa-angell/amazons-new-ai-shopping-tool-is-making-wild-assumptions-about-customers/91416485">Inc., Oct 2026</a></li>
-        <li><span class="src-num">P-31</span><span class="src-name">Child-safety misfire in a camera feature</span><span class="src-gate gate-part">gate helps</span><a href="https://www.unilad.com/news/us-news/amazon-alexa-question-inappropriate-mom-282863-20260316">UNILAD, Mar 2026</a></li>
-        <li><span class="src-num">P-32</span><span class="src-name">Forced upgrade, installed without consent</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.techspot.com/community/topics/amazon-prime-members-are-being-auto-upgraded-to-alexa-whether-they-want-it-or-not.296051/">TechSpot, Jan 2026</a></li>
-        <li><span class="src-num">P-33</span><span class="src-name">Reverting does not restore the old setup</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.facebook.com/groups/AmazonAlexaUsersGroup/permalink/2562602870841381/">Amazon Alexa Users Group, Jun 2026</a></li>
-        <li><span class="src-num">P-34</span><span class="src-name">The voice changed without asking, and users hate it</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.amazonforum.com/s/question/0D5Kf00003dReWoKAK/hate-alexa-wretched-voice-wont-change">Amazon Forums, 2025</a></li>
-        <li><span class="src-num">P-35</span><span class="src-name">Devices misclassified; capabilities mismatched</span><span class="src-gate gate-part">gate helps</span><a href="https://pogueman.substack.com/p/alexa-is-a-buggy-embarrassment">David Pogue, 2026</a></li>
-        <li><span class="src-num">P-36</span><span class="src-name">Settings you change are simply not honoured</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://pogueman.substack.com/p/alexa-is-a-buggy-embarrassment">David Pogue, 2026</a></li>
-        <li><span class="src-num">P-37</span><span class="src-name">“Natural language” that demands magic words</span><span class="src-gate gate-part">gate helps</span><a href="https://briefly.co/anchor/Gadgets/story/why-is-alexa-so-bad">WIRED, Mar 2026</a></li>
-        <li><span class="src-num">P-38</span><span class="src-name">Music playback itself is unstable</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.facebook.com/groups/AmazonAlexaUsersGroup/permalink/2462124800889189/">Amazon Alexa Users Group, Mar 2026</a></li>
+      <div class="gallery-controls">
+        <div class="filter-row" role="group" aria-label="Filter the gallery by world">
+          <span class="filter-label">World</span>
+          <button type="button" class="filter-chip is-active" data-group="domain" data-value="all" aria-pressed="true">All worlds</button>
+          <button type="button" class="filter-chip" data-group="domain" data-value="music" aria-pressed="false">Music</button>
+          <button type="button" class="filter-chip" data-group="domain" data-value="cables" aria-pressed="false">Cables &amp; Gadgets</button>
+          <button type="button" class="filter-chip" data-group="domain" data-value="groceries" aria-pressed="false">Groceries</button>
+          <button type="button" class="filter-chip" data-group="domain" data-value="language" aria-pressed="false">Language &amp; Rules</button>
+        </div>
+        <div class="filter-row" role="group" aria-label="Filter the gallery by outcome">
+          <span class="filter-label">Outcome</span>
+          <button type="button" class="filter-chip is-active" data-group="outcome" data-value="all" aria-pressed="true">All outcomes</button>
+          <button type="button" class="filter-chip" data-group="outcome" data-value="catches" aria-pressed="false">Referee catches it</button>
+          <button type="button" class="filter-chip" data-group="outcome" data-value="helps" aria-pressed="false">Referee helps</button>
+          <button type="button" class="filter-chip" data-group="outcome" data-value="outside" aria-pressed="false">Outside the referee’s line</button>
+        </div>
+        <p class="gallery-count" id="galleryCount" aria-live="polite"></p>
+      </div>
+      <ol class="source-list" id="trapGallery">
+        <li data-domain="music" data-outcome="catches"><span class="src-num">P-01</span><span class="src-domain">Music</span><span class="src-name">Ask for a specific song, get a different song or version</span><span class="src-gate gate-yes">gate catches this</span><a href="https://briefly.co/anchor/Gadgets/story/why-is-alexa-so-bad">WIRED, Mar 2026</a></li>
+        <li data-domain="cables" data-outcome="catches"><span class="src-num">P-02</span><span class="src-domain">Cables & Gadgets</span><span class="src-name">The action hits the wrong device entirely</span><span class="src-gate gate-yes">gate catches this</span><a href="https://gadgetsnow.indiatimes.com/appliances/inside-amazons-alexa-troubles-employees-report-unbearably-erratic-performance-during-internal-testing/articleshow/126359279.cms">Business Insider tester reports, Jan 2026</a></li>
+        <li data-domain="language" data-outcome="catches"><span class="src-num">P-03</span><span class="src-domain">Language & Rules</span><span class="src-name">Compound commands only partially execute</span><span class="src-gate gate-yes">gate catches this</span><a href="https://www.xda-developers.com/voice-assistants-are-getting-worse-at-simple-tasks-and-nobodys-talking-about-why/">XDA Developers, Apr 2026</a></li>
+        <li data-domain="language" data-outcome="catches"><span class="src-num">P-04</span><span class="src-domain">Language & Rules</span><span class="src-name">Things happen with no command at all</span><span class="src-gate gate-yes">gate catches this</span><a href="https://attackofthefanboy.com/news/a-mom-heard-alexa-playing-music-at-7-am-and-when-she-asked-why-it-insisted-it-had-been-off-since-214-pm-and-blamed-morning-confusion/">TechRadar, Jan 2026</a></li>
+        <li data-domain="language" data-outcome="catches"><span class="src-num">P-05</span><span class="src-domain">Language & Rules</span><span class="src-name">Alexa+ corrupts the user’s own setup</span><span class="src-gate gate-yes">gate catches this</span><a href="https://www.facebook.com/groups/AmazonAlexaUsersGroup/permalink/2617862261982108/">Amazon Alexa Users Group, Aug 2026</a></li>
+        <li data-domain="language" data-outcome="helps"><span class="src-num">P-06</span><span class="src-domain">Language & Rules</span><span class="src-name">When challenged, it fabricates history and argues</span><span class="src-gate gate-part">gate helps</span><a href="https://www.amazonforum.com/s/question/0D5at00000fqKjbCAE/scary-alexa-have-twice-tried-alexa-and-twice-canelled-alexa">Amazon Forums, Mar 2026</a></li>
+        <li data-domain="language" data-outcome="outside"><span class="src-num">P-07</span><span class="src-domain">Language & Rules</span><span class="src-name">The “lalala” loop, then denial it happened</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://windowsreport.com/alexa-plus-is-creeping-out-out-echo-speaker-users-with-bizarre-lalala-bug/">The Verge, Oct 2026</a></li>
+        <li data-domain="language" data-outcome="outside"><span class="src-num">P-08</span><span class="src-domain">Language & Rules</span><span class="src-name">Confidently wrong facts: scores, dates, weather, math</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://pogueman.substack.com/p/alexa-is-a-buggy-embarrassment">David Pogue, 2026</a></li>
+        <li data-domain="language" data-outcome="outside"><span class="src-num">P-09</span><span class="src-domain">Language & Rules</span><span class="src-name">It hallucinates about itself: invented menus</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://pogueman.substack.com/p/alexa-is-a-buggy-embarrassment">David Pogue, 2026</a></li>
+        <li data-domain="language" data-outcome="helps"><span class="src-num">P-10</span><span class="src-domain">Language & Rules</span><span class="src-name">It forgets who you are</span><span class="src-gate gate-part">gate helps</span><a href="https://ranzware.com/alexa-plus-is-better-at-running-my-home-but-its-not-ready-to-run-my-life">The Verge, Oct 2026</a></li>
+        <li data-domain="language" data-outcome="helps"><span class="src-num">P-11</span><span class="src-domain">Language & Rules</span><span class="src-name">It remembers the wrong thing, and insists</span><span class="src-gate gate-part">gate helps</span><a href="https://ranzware.com/alexa-plus-is-better-at-running-my-home-but-its-not-ready-to-run-my-life">The Verge, Oct 2026</a></li>
+        <li data-domain="language" data-outcome="helps"><span class="src-num">P-12</span><span class="src-domain">Language & Rules</span><span class="src-name">“OK, I’ll remember that.” It doesn’t</span><span class="src-gate gate-part">gate helps</span><a href="https://ca.amazonforum.com/s/question/0D5at00000a421oCAA/my-awful-experience-with-alexa-can-i-roll-back?language=en_CA">Amazon Forums Canada, Dec 2025</a></li>
+        <li data-domain="language" data-outcome="helps"><span class="src-num">P-13</span><span class="src-domain">Language & Rules</span><span class="src-name">Timers, alarms and reminders are unreliable</span><span class="src-gate gate-part">gate helps</span><a href="https://www.threads.com/@kurthdietrich/post/DTb1cHhDpS_">Threads, Jan 2026</a></li>
+        <li data-domain="language" data-outcome="catches"><span class="src-num">P-14</span><span class="src-domain">Language & Rules</span><span class="src-name">It acts on background conversation it overhears</span><span class="src-gate gate-yes">gate catches this</span><a href="https://www.notebookcheck.net/Alexa-the-Liar-Testing-Amazon-s-new-voice-assistant.1330389.0.html">Notebookcheck, Jun 2026</a></li>
+        <li data-domain="language" data-outcome="helps"><span class="src-num">P-15</span><span class="src-domain">Language & Rules</span><span class="src-name">It interrogates instead of acting</span><span class="src-gate gate-part">gate helps</span><a href="https://www.facebook.com/groups/1127185010729686/permalink/28170154736006014/">Facebook group transcript, Aug 2026</a></li>
+        <li data-domain="language" data-outcome="outside"><span class="src-num">P-16</span><span class="src-domain">Language & Rules</span><span class="src-name">It interrupts and answers before you finish</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.amazonforum.com/s/question/0D5at00000cTGV9CAO/feedback-on-alexa">Amazon Forums, 2025-26</a></li>
+        <li data-domain="language" data-outcome="helps"><span class="src-num">P-17</span><span class="src-domain">Language & Rules</span><span class="src-name">It joins conversations nobody invited it into</span><span class="src-gate gate-part">gate helps</span><a href="https://www.amazonforum.com/s/question/0D5at00000cTGV9CAO/feedback-on-alexa">Amazon Forums, 2025-26</a></li>
+        <li data-domain="language" data-outcome="helps"><span class="src-num">P-18</span><span class="src-domain">Language & Rules</span><span class="src-name">It ignores “stop”</span><span class="src-gate gate-part">gate helps</span><a href="https://gadgetsnow.indiatimes.com/appliances/inside-amazons-alexa-troubles-employees-report-unbearably-erratic-performance-during-internal-testing/articleshow/126359279.cms">Business Insider tester reports, Jan 2026</a></li>
+        <li data-domain="language" data-outcome="outside"><span class="src-num">P-19</span><span class="src-domain">Language & Rules</span><span class="src-name">Verbosity: it will not stop talking</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.amazonforum.com/s/question/0D5at00000ZGCLvCAP/alexa-is-too-chatty-how-do-i-get-it-to-shut-up-and-not-talk-so-much">Amazon Forums, Dec 2025</a></li>
+        <li data-domain="language" data-outcome="outside"><span class="src-num">P-20</span><span class="src-domain">Language & Rules</span><span class="src-name">Latency: seconds of dead air on basic commands</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.amazonforum.com/s/question/0D5at00000NSFaDCAX/alexa-slow-response">Amazon Forums, 2025-26</a></li>
+        <li data-domain="language" data-outcome="outside"><span class="src-num">P-21</span><span class="src-domain">Language & Rules</span><span class="src-name">Silence: commands ignored entirely</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.amazonforum.com/s/question/0D5at00000hVqxOCAS/alexa-is-not-there-yet-by-a-mile">Amazon Forums, Apr 2026</a></li>
+        <li data-domain="language" data-outcome="helps"><span class="src-num">P-22</span><span class="src-domain">Language & Rules</span><span class="src-name">Routines break, fire late, or half-run</span><span class="src-gate gate-part">gate helps</span><a href="https://forums.wyze.com/t/alexa-person-detection-routine-broken-as-of-12-9-25/339479">Wyze Forums, Dec 2025</a></li>
+        <li data-domain="cables" data-outcome="outside"><span class="src-num">P-23</span><span class="src-domain">Cables & Gadgets</span><span class="src-name">Skills and accessibility features break or vanish</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.amazonforum.com/s/question/0D5at00000cOvybCAC/alexa-is-not-a-plus-features-were-lost">Amazon Forums, 2025-26</a></li>
+        <li data-domain="cables" data-outcome="outside"><span class="src-num">P-24</span><span class="src-domain">Cables & Gadgets</span><span class="src-name">Abilities the old Alexa had are lost</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://electronics.woot.com/review/B0BLS3Y632?itemid=WT527032C&amp;offerid=53f51116-0053-4db7-b32e-7a88881448b4&amp;filter=3">Woot product review</a></li>
+        <li data-domain="groceries" data-outcome="catches"><span class="src-num">P-25</span><span class="src-domain">Groceries</span><span class="src-name">Ordering substitutes items you never asked for</span><span class="src-gate gate-yes">gate catches this</span><a href="https://ranzware.com/alexa-plus-is-better-at-running-my-home-but-its-not-ready-to-run-my-life">The Verge, Oct 2026</a></li>
+        <li data-domain="language" data-outcome="helps"><span class="src-num">P-26</span><span class="src-domain">Language & Rules</span><span class="src-name">Agentic tasks hand the work back to you</span><span class="src-gate gate-part">gate helps</span><a href="https://www.xda-developers.com/alexa-google-home-ai-didnt-revolutionize-home-assistant/">XDA Developers, Jan 2026</a></li>
+        <li data-domain="language" data-outcome="helps"><span class="src-num">P-27</span><span class="src-domain">Language & Rules</span><span class="src-name">Near-sound entities get misgrounded into absurd actions</span><span class="src-gate gate-part">gate helps</span><a href="https://ranzware.com/alexa-plus-is-better-at-running-my-home-but-its-not-ready-to-run-my-life">The Verge, Oct 2026</a></li>
+        <li data-domain="cables" data-outcome="outside"><span class="src-num">P-28</span><span class="src-domain">Cables & Gadgets</span><span class="src-name">The Echo Show became an ad billboard</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://techiemag.co.uk/a-year-with-alexa-plus-the-ai-powered-assistant-is-better-at-running-my-home-but-its-not-ready-to-run-my-life">The Verge, Oct 2026</a></li>
+        <li data-domain="language" data-outcome="helps"><span class="src-num">P-29</span><span class="src-domain">Language & Rules</span><span class="src-name">Conversational upsell: it keeps trying to sell</span><span class="src-gate gate-part">gate helps</span><a href="https://getcoai.com/news/amazons-100b-ai-bet-stumbles-as-alexa-plus-disappoints-users/">CO/AI, Oct 2025</a></li>
+        <li data-domain="cables" data-outcome="outside"><span class="src-num">P-30</span><span class="src-domain">Cables & Gadgets</span><span class="src-name">The inferred profile is invasive, and sometimes absurd</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.inc.com/melissa-angell/amazons-new-ai-shopping-tool-is-making-wild-assumptions-about-customers/91416485">Inc., Oct 2026</a></li>
+        <li data-domain="cables" data-outcome="helps"><span class="src-num">P-31</span><span class="src-domain">Cables & Gadgets</span><span class="src-name">Child-safety misfire in a camera feature</span><span class="src-gate gate-part">gate helps</span><a href="https://www.unilad.com/news/us-news/amazon-alexa-question-inappropriate-mom-282863-20260316">UNILAD, Mar 2026</a></li>
+        <li data-domain="cables" data-outcome="outside"><span class="src-num">P-32</span><span class="src-domain">Cables & Gadgets</span><span class="src-name">Forced upgrade, installed without consent</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.techspot.com/community/topics/amazon-prime-members-are-being-auto-upgraded-to-alexa-whether-they-want-it-or-not.296051/">TechSpot, Jan 2026</a></li>
+        <li data-domain="cables" data-outcome="outside"><span class="src-num">P-33</span><span class="src-domain">Cables & Gadgets</span><span class="src-name">Reverting does not restore the old setup</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.facebook.com/groups/AmazonAlexaUsersGroup/permalink/2562602870841381/">Amazon Alexa Users Group, Jun 2026</a></li>
+        <li data-domain="language" data-outcome="outside"><span class="src-num">P-34</span><span class="src-domain">Language & Rules</span><span class="src-name">The voice changed without asking, and users hate it</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.amazonforum.com/s/question/0D5Kf00003dReWoKAK/hate-alexa-wretched-voice-wont-change">Amazon Forums, 2025</a></li>
+        <li data-domain="cables" data-outcome="helps"><span class="src-num">P-35</span><span class="src-domain">Cables & Gadgets</span><span class="src-name">Devices misclassified; capabilities mismatched</span><span class="src-gate gate-part">gate helps</span><a href="https://pogueman.substack.com/p/alexa-is-a-buggy-embarrassment">David Pogue, 2026</a></li>
+        <li data-domain="language" data-outcome="outside"><span class="src-num">P-36</span><span class="src-domain">Language & Rules</span><span class="src-name">Settings you change are simply not honoured</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://pogueman.substack.com/p/alexa-is-a-buggy-embarrassment">David Pogue, 2026</a></li>
+        <li data-domain="language" data-outcome="helps"><span class="src-num">P-37</span><span class="src-domain">Language & Rules</span><span class="src-name">“Natural language” that demands magic words</span><span class="src-gate gate-part">gate helps</span><a href="https://briefly.co/anchor/Gadgets/story/why-is-alexa-so-bad">WIRED, Mar 2026</a></li>
+        <li data-domain="music" data-outcome="outside"><span class="src-num">P-38</span><span class="src-domain">Music</span><span class="src-name">Music playback itself is unstable</span><span class="src-gate gate-no">outside a gate, honestly</span><a href="https://www.facebook.com/groups/AmazonAlexaUsersGroup/permalink/2462124800889189/">Amazon Alexa Users Group, Mar 2026</a></li>
       </ol>
       <p class="sources-foot">Method: sweeps of Amazon’s own support forums, the Amazon Alexa Users Group, Reddit, Threads and long-form reviewer diaries. Anything that could not be tied to Alexa+ specifically was rejected. The full research file ships with the project.</p>
     </div>

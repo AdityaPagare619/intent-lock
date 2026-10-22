@@ -1,29 +1,29 @@
 # Intent Lock
 
-**Borrow the Brain, Own the Guarantee.**
+**You ask for the original song — she plays a remix. Intent Lock is the referee that stops the wrong pick before it plays.**
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![MCP](https://img.shields.io/badge/MCP-2025--11--25-blueviolet.svg)](docs/MCP_PROTOCOL_PROOF.md)
-![Transport](https://img.shields.io/badge/transport-Streamable%20HTTP-blue.svg)
-![Server](https://img.shields.io/badge/server-100%25%20deterministic%20%C2%B7%200%20LLMs-success.svg)
-![Settings](https://img.shields.io/badge/settings-zero%20config-informational.svg)
+## In 10 seconds
 
-Modern voice assistants understand us brilliantly. Alexa+ hears nuance,
-code-switching, half-finished sentences — the conversation is hers, and
-she is excellent at it. The trouble starts one step later, when that
-understanding reaches into a real catalog: a wall of remixes, karaoke
-knock-offs, same-name films and spec-lying substitutes, where one wrong
-row is what actually plays, ships, or gets ordered.
+| | |
+| --- | --- |
+| **What it is** | One small referee standing between Alexa+ and every catalog. She does the talking; the referee checks each pick against your own words before anything plays, ships, or gets ordered. |
+| **How it answers** | Exactly three ways. **Locked** — proven, this is the one. **Honest tie** — two are genuinely equal; you tap, it re-checks. **Honest refusal** — nothing can be proven, so nothing plays. It never guesses. |
+| **What it runs on** | One MCP tool (`intent_lock`), spec 2025-11-25 over Streamable HTTP — zero LLMs inside the checker. Every verdict is rules, out in the open. |
 
-Intent Lock is the fence at exactly that boundary. It is a single
-deterministic MCP tool — no LLM inside, nothing probabilistic — that
-sits between any host brain and any catalog, and refuses to act until
-the request is *proven* against the user's own words: what they asked
-for, what they banned, which version, which artist, which film. The
-host proposes; Intent Lock verifies, eliminates every row that breaks
-the user's stated intent in the open, and only then locks.
+## Run it
 
-**Alexa guesses. Intent Lock proves.**
+Zero settings, no Docker, no keys required:
+
+```bash
+git clone https://github.com/AdityaPagare619/intent-lock.git
+cd intent-lock
+make demo
+```
+
+Then open **http://localhost:3000** and click a beat. Windows and macOS have native launchers — [docs/INSTALL_WINDOWS.md](docs/INSTALL_WINDOWS.md) · [docs/INSTALL_MACOS.md](docs/INSTALL_MACOS.md).
+
+**See it first:** the guided walkthrough — [docs/index.html](docs/index.html) (seven beats, runs offline in any browser).
+**The whole system on one plate:** [docs/architecture-main.png](docs/architecture-main.png).
 
 ## Judges — start here
 

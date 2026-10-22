@@ -195,7 +195,7 @@ export default function McpWireInspector() {
             MCP Wire Inspector
           </span>
           <span className="truncate font-mono text-[11px] text-mute">
-            POST /api/mcp <span aria-hidden="true" className="text-faint">→</span> :4000 orchestrator <span aria-hidden="true" className="text-faint">→</span> :8080 MCP brain <span aria-hidden="true" className="text-faint">·</span> MCP 2025-11-25 Streamable HTTP
+            POST /api/mcp <span aria-hidden="true" className="text-faint">→</span> :4000 orchestrator <span aria-hidden="true" className="text-faint">→</span> :8080 MCP referee <span aria-hidden="true" className="text-faint">·</span> MCP 2025-11-25 Streamable HTTP
           </span>
         </div>
         <div className="flex-1" />
@@ -264,7 +264,7 @@ export default function McpWireInspector() {
           busyTone={busy}
         />
         <span aria-hidden="true" className={`font-mono text-[11px] ${inFlight ? "animate-pulse text-brand" : lastServed ? "text-sage/60" : "text-faint"}`}>──▶</span>
-        <RibbonNode label="OmniBeat brain" sub=":8080" lit={!!lastServed} down={connection === "down"} busyTone={busy} />
+        <RibbonNode label="OmniBeat referee" sub=":8080" lit={!!lastServed} down={connection === "down"} busyTone={busy} />
         <span className="flex-1" />
         <span className="truncate font-mono text-[10.5px] text-faint">
           {lastServed

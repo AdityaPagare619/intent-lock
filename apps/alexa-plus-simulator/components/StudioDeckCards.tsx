@@ -517,7 +517,7 @@ function VinylSampler() {
       .find((e) => e?.candidates?.length);
     if (!elic?.candidates) {
       setPhase("unavailable");
-      pushTranscript("Could not fetch the versions to compare. The music brain (:8080) is not answering.", "SYS");
+      pushTranscript("Could not fetch the versions to compare. The referee (:8080) is not answering.", "SYS");
       return;
     }
     setCands(elic.candidates);
@@ -605,7 +605,7 @@ function VinylSampler() {
       {phase === "unavailable" && (
         <div className="mt-3 rounded-lg border border-coral/30 bg-coral/10 px-3 py-2 text-center">
           <div className="text-[12px] font-semibold text-coral/90">
-            I couldn&apos;t fetch the versions to compare. The music brain (:8080) isn&apos;t answering.
+            I couldn&apos;t fetch the versions to compare. The referee (:8080) isn&apos;t answering.
           </div>
           <div className="mt-0.5 text-[11px] text-coral/70">
             No hooks play until the server answers. Nothing is faked to fill the silence.
@@ -769,7 +769,7 @@ function LedgerCard() {
       }
     }
     if (!sid) {
-      setVerdict("The music brain (:8080) isn't answering — no challenge sent.");
+      setVerdict("The referee (:8080) isn't answering — no challenge sent.");
       setChallenging(false);
       return;
     }

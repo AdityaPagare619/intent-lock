@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "built_from": "Manufacturer/retailer published specifications for real-brand rows (Apple Support 'About the Apple Thunderbolt Pro Cables', Belkin INZ002/INZ003 spec sheets, Cable Matters 107025 listing data, specialist reviews) + composed 'audited listing pattern' rows for no-name marketplace listings (fictional stand-in brands; no real brand is given a false spec). Verified 2026-10-21.",
+    "built_from": "Manufacturer/retailer published specifications for real-brand rows (Apple Support 'About the Apple Thunderbolt Pro Cables', Belkin INZ002/INZ003 spec sheets, Cable Matters 107025 listing data, specialist reviews) + composed 'audited listing pattern' rows for no-name marketplace listings (fictional stand-in brands; no real brand is given a false spec). Verified 2026-10-21. Charger family added 2026-10-23 on the same basis: manufacturer published specifications for real-brand rows (Anker 735, Apple 70W/96W adapters, Belkin BoostCharge Pro 65W, UGREEN Nexode 100W, Samsung 45W/25W adapters, Baseus 30W GaN) + composed 'audited listing pattern' rows for the planted spec-lies and the sponsored look-alike (fictional stand-in brands; no real brand is given a false spec).",
     "built_at": "2026-10-21",
     "domain": "commerce",
     "hero_query": "Order a 2m Thunderbolt 40Gbps cable — not the USB 2.0 knockoff"
@@ -418,6 +418,332 @@
         "origin": "audited listing pattern",
         "fetched_at": "2026-10-21",
         "audit": "COMPOSED ROW. Charge-only cable pattern (data pins omitted, 0 Mbps) sold for fast charging; the no-data fact is stated honestly in the title itself. 'ChargePro' is a fictional stand-in brand."
+      }
+    },
+    {
+      "id": "commerce:anker-735-nano-ii-65w",
+      "title": "Anker 735 Charger (Nano II 65W), 3-Port USB-C Fast Wall Charger",
+      "creator_or_brand": "Anker",
+      "edition_or_variant": "735 Nano II · 3-Port",
+      "year": 2022,
+      "attributes": [
+        "wall-charger",
+        "usb-pd",
+        "gan",
+        "65w",
+        "3-port"
+      ],
+      "specs": {
+        "data_rate_mbps": 0,
+        "usb_generation": "USB PD 3.0 / PPS",
+        "charging_w": 65,
+        "length_m": 0,
+        "thunderbolt_certified": false,
+        "video": "none",
+        "pd_support": true,
+        "ports": "2x USB-C + 1x USB-A"
+      },
+      "source": "manufacturer listing",
+      "provenance": {
+        "origin": "manufacturer listing",
+        "fetched_at": "2026-10-23",
+        "audit": "Anker published specs for the 735 (Nano II): 65W total output, 2x USB-C + 1x USB-A, USB PD / PPS fast charging, GaN II. Title wattage and spec table agree."
+      }
+    },
+    {
+      "id": "commerce:apple-70w-usb-c-adapter",
+      "title": "Apple 70W USB-C Power Adapter",
+      "creator_or_brand": "Apple",
+      "edition_or_variant": "70W · 1-Port",
+      "year": 2023,
+      "attributes": [
+        "wall-charger",
+        "usb-pd",
+        "70w",
+        "1-port"
+      ],
+      "specs": {
+        "data_rate_mbps": 0,
+        "usb_generation": "USB PD 3.0",
+        "charging_w": 70,
+        "length_m": 0,
+        "thunderbolt_certified": false,
+        "video": "none",
+        "pd_support": true,
+        "ports": "1x USB-C"
+      },
+      "source": "manufacturer listing",
+      "provenance": {
+        "origin": "manufacturer listing",
+        "fetched_at": "2026-10-23",
+        "audit": "Apple published specs: 70W USB-C Power Adapter (shipped for MacBook Air M2/M3), single USB-C port, USB PD. Title wattage and spec table agree."
+      }
+    },
+    {
+      "id": "commerce:apple-96w-usb-c-adapter",
+      "title": "Apple 96W USB-C Power Adapter",
+      "creator_or_brand": "Apple",
+      "edition_or_variant": "96W · 1-Port",
+      "year": 2021,
+      "attributes": [
+        "wall-charger",
+        "usb-pd",
+        "96w",
+        "1-port"
+      ],
+      "specs": {
+        "data_rate_mbps": 0,
+        "usb_generation": "USB PD 3.0",
+        "charging_w": 96,
+        "length_m": 0,
+        "thunderbolt_certified": false,
+        "video": "none",
+        "pd_support": true,
+        "ports": "1x USB-C"
+      },
+      "source": "manufacturer listing",
+      "provenance": {
+        "origin": "manufacturer listing",
+        "fetched_at": "2026-10-23",
+        "audit": "Apple published specs: 96W USB-C Power Adapter (MacBook Pro 14-inch fast charge), single USB-C port, USB PD. Title wattage and spec table agree."
+      }
+    },
+    {
+      "id": "commerce:belkin-boostcharge-pro-65w-dual",
+      "title": "Belkin BoostCharge Pro 65W Dual USB-C GaN Wall Charger",
+      "creator_or_brand": "Belkin",
+      "edition_or_variant": "BoostCharge Pro · 2-Port",
+      "year": 2022,
+      "attributes": [
+        "wall-charger",
+        "usb-pd",
+        "gan",
+        "65w",
+        "2-port"
+      ],
+      "specs": {
+        "data_rate_mbps": 0,
+        "usb_generation": "USB PD 3.0 / PPS",
+        "charging_w": 65,
+        "length_m": 0,
+        "thunderbolt_certified": false,
+        "video": "none",
+        "pd_support": true,
+        "ports": "2x USB-C"
+      },
+      "source": "manufacturer listing",
+      "provenance": {
+        "origin": "manufacturer listing",
+        "fetched_at": "2026-10-23",
+        "audit": "Belkin published specs for the BoostCharge Pro 65W Dual USB-C GaN charger (WCH013 family): 65W total, dual USB-C, PD 3.0 with PPS. Title wattage and spec table agree."
+      }
+    },
+    {
+      "id": "commerce:ugreen-nexode-100w-gan",
+      "title": "UGREEN Nexode 100W GaN USB-C Wall Charger, 4-Port",
+      "creator_or_brand": "UGREEN",
+      "edition_or_variant": "Nexode · 4-Port",
+      "year": 2022,
+      "attributes": [
+        "wall-charger",
+        "usb-pd",
+        "gan",
+        "100w",
+        "4-port"
+      ],
+      "specs": {
+        "data_rate_mbps": 0,
+        "usb_generation": "USB PD 3.1 / PPS",
+        "charging_w": 100,
+        "length_m": 0,
+        "thunderbolt_certified": false,
+        "video": "none",
+        "pd_support": true,
+        "ports": "3x USB-C + 1x USB-A"
+      },
+      "source": "manufacturer listing",
+      "provenance": {
+        "origin": "manufacturer listing",
+        "fetched_at": "2026-10-23",
+        "audit": "UGREEN published specs for Nexode 100W: 100W total output, 3x USB-C + 1x USB-A, GaN II, PD/PPS. Title wattage and spec table agree."
+      }
+    },
+    {
+      "id": "commerce:samsung-45w-power-adapter",
+      "title": "Samsung 45W Power Adapter (USB-C)",
+      "creator_or_brand": "Samsung",
+      "edition_or_variant": "45W · 1-Port",
+      "year": 2022,
+      "attributes": [
+        "wall-charger",
+        "usb-pd",
+        "45w",
+        "1-port"
+      ],
+      "specs": {
+        "data_rate_mbps": 0,
+        "usb_generation": "USB PD 3.0 / PPS (Super Fast Charging 2.0)",
+        "charging_w": 45,
+        "length_m": 0,
+        "thunderbolt_certified": false,
+        "video": "none",
+        "pd_support": true,
+        "ports": "1x USB-C"
+      },
+      "source": "manufacturer listing",
+      "provenance": {
+        "origin": "manufacturer listing",
+        "fetched_at": "2026-10-23",
+        "audit": "Samsung published specs for the 45W Power Adapter (EP-T4510 family): 45W, USB-C, Super Fast Charging 2.0. Honest mid-wattage row — it cannot satisfy a 65W ask."
+      }
+    },
+    {
+      "id": "commerce:samsung-25w-travel-adapter",
+      "title": "Samsung 25W Travel Adapter (USB-C)",
+      "creator_or_brand": "Samsung",
+      "edition_or_variant": "25W · 1-Port",
+      "year": 2020,
+      "attributes": [
+        "wall-charger",
+        "usb-pd",
+        "25w",
+        "1-port"
+      ],
+      "specs": {
+        "data_rate_mbps": 0,
+        "usb_generation": "USB PD 3.0 (Super Fast Charging)",
+        "charging_w": 25,
+        "length_m": 0,
+        "thunderbolt_certified": false,
+        "video": "none",
+        "pd_support": true,
+        "ports": "1x USB-C"
+      },
+      "source": "manufacturer listing",
+      "provenance": {
+        "origin": "manufacturer listing",
+        "fetched_at": "2026-10-23",
+        "audit": "Samsung published specs for the 25W Travel Adapter (EP-TA800 family): 25W, USB-C. Honest low-wattage row — it cannot satisfy a 65W ask."
+      }
+    },
+    {
+      "id": "commerce:baseus-gan5s-30w-mini",
+      "title": "Baseus 30W GaN Mini USB-C Wall Charger",
+      "creator_or_brand": "Baseus",
+      "edition_or_variant": "GaN5S · 1-Port",
+      "year": 2023,
+      "attributes": [
+        "wall-charger",
+        "usb-pd",
+        "gan",
+        "30w",
+        "1-port"
+      ],
+      "specs": {
+        "data_rate_mbps": 0,
+        "usb_generation": "USB PD 3.0",
+        "charging_w": 30,
+        "length_m": 0,
+        "thunderbolt_certified": false,
+        "video": "none",
+        "pd_support": true,
+        "ports": "1x USB-C"
+      },
+      "source": "manufacturer listing",
+      "provenance": {
+        "origin": "manufacturer listing",
+        "fetched_at": "2026-10-23",
+        "audit": "Baseus published specs for its 30W GaN mini charger family: 30W single USB-C, PD 3.0. Honest low-wattage row — it cannot satisfy a 65W ask."
+      }
+    },
+    {
+      "id": "commerce:voltlink-100w-gan-spec-lie",
+      "title": "VoltLink 100W GaN Fast Charger — USB-C PD Turbo Wall Charger, Laptop Power Adapter",
+      "creator_or_brand": "VoltLink",
+      "edition_or_variant": "1-Port",
+      "year": 2025,
+      "attributes": [
+        "wall-charger",
+        "usb-pd",
+        "gan",
+        "100w",
+        "marketplace"
+      ],
+      "specs": {
+        "data_rate_mbps": 0,
+        "usb_generation": "USB PD 3.0",
+        "charging_w": 45,
+        "length_m": 0,
+        "thunderbolt_certified": false,
+        "video": "none",
+        "pd_support": true,
+        "ports": "1x USB-C"
+      },
+      "source": "marketplace listing",
+      "provenance": {
+        "origin": "marketplace listing",
+        "fetched_at": "2026-10-23",
+        "audit": "COMPOSED ROW — PLANTED SPEC-LIE (charger family). Models the no-name marketplace pattern: the TITLE claims '100W' while the listing's own spec table states 45W max output. 'VoltLink' is a fictional stand-in brand; no real product is depicted."
+      }
+    },
+    {
+      "id": "commerce:chargepro-65w-turbo-spec-lie",
+      "title": "ChargePro 65W USB-C PD Wall Charger — Laptop Turbo Charge Adapter",
+      "creator_or_brand": "ChargePro",
+      "edition_or_variant": "1-Port",
+      "year": 2025,
+      "attributes": [
+        "wall-charger",
+        "usb-pd",
+        "65w",
+        "marketplace"
+      ],
+      "specs": {
+        "data_rate_mbps": 0,
+        "usb_generation": "USB PD 3.0",
+        "charging_w": 25,
+        "length_m": 0,
+        "thunderbolt_certified": false,
+        "video": "none",
+        "pd_support": true,
+        "ports": "1x USB-C"
+      },
+      "source": "marketplace listing",
+      "provenance": {
+        "origin": "marketplace listing",
+        "fetched_at": "2026-10-23",
+        "audit": "COMPOSED ROW — PLANTED SPEC-LIE (charger family). The TITLE claims '65W' and 'Laptop Turbo Charge' while the listing's own spec table states 25W max output. 'ChargePro' is a fictional stand-in brand; no real product is depicted."
+      }
+    },
+    {
+      "id": "commerce:linkpro-65w-gan-sponsored",
+      "title": "LinkPro 65W GaN USB-C Wall Charger, 2-Port PD Fast Charge",
+      "creator_or_brand": "LinkPro",
+      "edition_or_variant": "2-Port",
+      "year": 2024,
+      "attributes": [
+        "sponsored",
+        "wall-charger",
+        "usb-pd",
+        "gan",
+        "65w",
+        "2-port"
+      ],
+      "specs": {
+        "data_rate_mbps": 0,
+        "usb_generation": "USB PD 3.0",
+        "charging_w": 65,
+        "length_m": 0,
+        "thunderbolt_certified": false,
+        "video": "none",
+        "pd_support": true,
+        "ports": "2x USB-C"
+      },
+      "source": "marketplace listing",
+      "provenance": {
+        "origin": "marketplace listing",
+        "fetched_at": "2026-10-23",
+        "audit": "COMPOSED ROW. Sponsored-placement pattern (charger family): specs are genuinely 65W PD, but the row is promoted above the organic matches. 'LinkPro' is a fictional stand-in brand."
       }
     }
   ]

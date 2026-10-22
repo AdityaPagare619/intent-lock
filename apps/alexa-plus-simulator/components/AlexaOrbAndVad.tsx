@@ -214,7 +214,7 @@ function ConnectionChip() {
     return (
       <span className="stage-card flex shrink-0 items-center gap-2 px-3 py-1.5 text-[12px] text-stage-ink-2">
         <IconWifiOff size={14} className="text-stage-ink-3" />
-        Can&apos;t reach the music brain — the engine room below shows why
+        Can&apos;t reach the referee — the engine room below shows why
       </span>
     );
   }

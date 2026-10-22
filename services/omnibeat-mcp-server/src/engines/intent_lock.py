@@ -36,6 +36,44 @@ _ACOUSTIC_RE = re.compile(r"\bacoustic\b|\bunplugged\b|\bstripped\b",
                           re.IGNORECASE)
 _REMASTER_RE = re.compile(r"remaster", re.IGNORECASE)
 
+# REISSUE PACKAGING (FIX4 guard, 2026-10-23). Measured hole: the
+# server's scoring core strips trailing bracketed tags from a title
+# before comparing ('Saiyaara (From "Ek Tha Tiger") [Rebirth]' cores
+# to 'Saiyaara'), so a reissue row enters the title family at FULL
+# similarity — while no classifier pattern knows 'rebirth', so the
+# row is labeled a plain "Original". Wrong-film can't save the call
+# when supply is degraded: if the true original never enters the
+# pool, the packaged row grounds as canonical itself and crowns as
+# sole survivor (Judge P2's cold run locked iTunes 1179020344). The
+# packaging is visible only in the title's WRAPPER segments — the
+# [...] / (...) tags and the trailing dash suffix — so the
+# detector reads exactly those, never the core name: a film
+# provenance paren ('(From "Ek Tha Tiger")') or a credit
+# ('(feat. …)') carries no version word and never fires.
+_REISSUE_WORDS_RE = re.compile(
+    r"\b(rebirth|remake|remade|reprise|redux|reissue|reissued|"
+    r"rerecorded|re-recorded|remaster|remastered|remix|remixed|"
+    r"lo[-\s]?fi|karaoke|live|acoustic|unplugged|sped|slowed|"
+    r"reverb|instrumental|cover|version|mix|edit|flip)\b",
+    re.IGNORECASE)
+_WRAPPER_SEG_RE = re.compile(r"[\(\[]([^\(\)\[\]]*)[\)\]]")
+_DASH_SUFFIX_RE = re.compile(r"\s+[-–—]\s+([^\-–—]+)$")
+
+
+def reissue_packaging(title: str) -> bool:
+    """True when the title's packaging — bracketed/parenthesized
+    tags or a trailing dash suffix — names a version or reissue
+    the plain original would not carry. Core title words are never
+    inspected: a version word inside a song's actual name is the
+    catalog's business; the same word in a wrapper tag is
+    packaging."""
+    t = str(title or "")
+    segments = [m.group(1) for m in _WRAPPER_SEG_RE.finditer(t)]
+    dash = _DASH_SUFFIX_RE.search(t)
+    if dash:
+        segments.append(dash.group(1))
+    return any(_REISSUE_WORDS_RE.search(seg) for seg in segments)
+
 
 def _lead_token(artist: str) -> str:
     """First token of the lead artist ('Mohit Chauhan & …' → 'mohit')."""
@@ -115,7 +153,8 @@ def is_wrong_film(track: Dict[str, Any],
 
 def classify(track: Dict[str, Any],
              canonical: Optional[Dict[str, Any]] = None,
-             family: bool = False
+             family: bool = False,
+             original_demanded: bool = False
              ) -> Tuple[str, Optional[str]]:
     """Return (human version label, hard trap class or None).
 
@@ -125,7 +164,11 @@ def classify(track: Dict[str, Any],
     only when the user's words ban them or a rule overrides them.
     With `canonical` (the grounded reference recording), a same-title
     row from a different film is labeled "Wrong Film" (trap class
-    "wrong-film") — see is_wrong_film for the evidence bar.
+    "wrong-film") — see is_wrong_film for the evidence bar. With
+    `original_demanded` (the user's own words demand the original),
+    a row that would otherwise pass as a plain "Original" but whose
+    title packaging names a reissue/remake is a hard trap instead
+    (trap class "reissue") — see reissue_packaging.
     """
     text = " ".join(str(track.get(k) or "") for k in
                     ("title", "collection", "artist"))
@@ -146,6 +189,13 @@ def classify(track: Dict[str, Any],
         return "Remaster", None
     if kind == "remix":
         return "Remix", None
+    if original_demanded and reissue_packaging(
+            str(track.get("title") or "")):
+        # The row calls itself the original, but its own packaging
+        # says reissue/remake — on an original demand that is a
+        # hard trap, never a crown (FIX4 guard; the reason prints
+        # via reason_reissue).
+        return "Reissue", "reissue"
     return "Original", None
 
 
@@ -247,6 +297,10 @@ def reason_wrong_film(title: str, year: Any, purana: bool = False) -> str:
     if year:
         return f"Same title, wrong film — the {year} {title}."
     return "Same title, wrong film."
+
+
+def reason_reissue() -> str:
+    return "Reissue/remake packaging — not the original recording"
 
 
 # ---------------------------------------------------------------------------
@@ -452,6 +506,53 @@ def detect_vetoes(raw: str) -> List[Dict[str, str]]:
                                 tok, "HARD_VETO", evidence)})
                 seen.add(tag)
             break
+    # FUSED-NEGATION RESCUE (FIX6, 2026-10-23): ASR run-together
+    # fuses a whole ask into ONE token ('playsaiyaaranottheremix').
+    # Tokenization then sees neither a marker token nor a noun
+    # token, so both passes above stay silent and the user's own
+    # 'not the remix' never becomes a veto — replay ASR-03 locked
+    # Deezer's 'Saiyaan Ji Remix' at 0.7717 off a sloppy host's
+    # inverted include_tags. Rescue, narrowly: scan each token for
+    # a negation stem fused to a veto noun INSIDE THE SAME TOKEN —
+    # stem directly before the noun ('notremix'), before + 'the'
+    # ('nottheremix'), or after it ('remixnahi'). A spaced
+    # utterance's tokens are single words, so no token can contain
+    # both halves — the rescue can only fire on genuinely fused
+    # tokens, and only for tags not already vetoed above (no
+    # double-counting). Emits the identical veto dict the spaced
+    # form produces, plus a 'fused' evidence flag.
+    _FUSED_STEMS = ("never", "nahi", "dont", "not", "no")
+    for tok in tokens:
+        if len(tok) < 6:
+            continue
+        for surface, ftag in sorted(_VETO_NOUNS.items(),
+                                    key=lambda kv: -len(kv[0])):
+            if ftag in seen:
+                continue
+            pos = tok.find(surface)
+            if pos < 0:
+                continue
+            marker = None
+            head, tail = tok[:pos], tok[pos + len(surface):]
+            for stem in _FUSED_STEMS:
+                if head.endswith(stem) or head.endswith(stem + "the"):
+                    marker = stem
+                    break
+            if marker is None:
+                for stem in _FUSED_STEMS:
+                    if tail.startswith(stem) or \
+                            tail.startswith("the" + stem):
+                        marker = stem
+                        break
+            if marker is None:
+                continue
+            label = next(iter(TAG_TO_LABELS[ftag]))
+            out.append({"tag": ftag, "label": label, "span": tok,
+                        "marker": marker,
+                        "locale": _attribute_locale(
+                            marker, "HARD_VETO", evidence),
+                        "fused": True})
+            seen.add(ftag)
     return out
 
 

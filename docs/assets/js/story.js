@@ -113,3 +113,60 @@
 
   setActive(0);
 })();
+
+/* Intent Lock · Trap Gallery (E2)
+   The 38 verified problems as filterable cards. Pure static filtering over
+   the data already printed on the page: world (domain) × outcome (gate tag).
+   Counts are computed from the cards themselves, never hard-coded. */
+(function () {
+  "use strict";
+
+  var gallery = document.getElementById("trapGallery");
+  if (!gallery) return;
+  var cards = Array.prototype.slice.call(gallery.querySelectorAll("li[data-domain]"));
+  var countEl = document.getElementById("galleryCount");
+  var state = { domain: "all", outcome: "all" };
+
+  document.querySelectorAll(".filter-chip").forEach(function (chip) {
+    var group = chip.getAttribute("data-group");
+    var value = chip.getAttribute("data-value");
+    var key = group === "domain" ? "data-domain" : "data-outcome";
+    var n = value === "all" ? cards.length : cards.filter(function (c) {
+      return c.getAttribute(key) === value;
+    }).length;
+    var badge = document.createElement("span");
+    badge.className = "chip-count";
+    badge.textContent = String(n);
+    chip.appendChild(badge);
+  });
+
+  function apply() {
+    var shown = 0;
+    cards.forEach(function (card) {
+      var ok = (state.domain === "all" || card.getAttribute("data-domain") === state.domain) &&
+               (state.outcome === "all" || card.getAttribute("data-outcome") === state.outcome);
+      card.classList.toggle("trap-hide", !ok);
+      if (ok) shown++;
+    });
+    if (countEl) {
+      countEl.textContent = shown === cards.length
+        ? "All " + cards.length + " traps on the wall."
+        : "Showing " + shown + " of " + cards.length + " traps.";
+    }
+  }
+
+  document.querySelectorAll(".filter-chip").forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      var group = chip.getAttribute("data-group");
+      state[group] = chip.getAttribute("data-value");
+      document.querySelectorAll('.filter-chip[data-group="' + group + '"]').forEach(function (c) {
+        var on = c === chip;
+        c.classList.toggle("is-active", on);
+        c.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+      apply();
+    });
+  });
+
+  apply();
+})();

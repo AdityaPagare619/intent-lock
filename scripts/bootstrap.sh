@@ -98,8 +98,8 @@ fi
 
 # --- 3. Orchestrator (:4000) — needs node_modules + tsc build ---
 ORCH="$OB/services/alexa-agent-orchestrator"
-if [ ! -d "$ORCH/node_modules" ]; then
-  echo "-- npm ci in orchestrator (first run only)"
+if [ ! -x "$ORCH/node_modules/.bin/tsc" ]; then
+  echo "-- npm ci in orchestrator (deps missing or incomplete)"
   mkdir -p "$OB/logs"
   if ( cd "$ORCH" && npm ci --no-audit --no-fund >"$OB/logs/npm-orchestrator.log" 2>&1 ); then
     ok "orchestrator deps installed"
@@ -121,8 +121,8 @@ fi
 
 # --- 4. Simulator (:3000) — needs node_modules ---
 SIM="$OB/apps/alexa-plus-simulator"
-if [ ! -d "$SIM/node_modules" ]; then
-  echo "-- npm ci in simulator (first run only; this one is big)"
+if [ ! -x "$SIM/node_modules/.bin/next" ]; then
+  echo "-- npm ci in simulator (deps missing or incomplete; this one is big)"
   mkdir -p "$OB/logs"
   if ( cd "$SIM" && npm ci --no-audit --no-fund >"$OB/logs/npm-simulator.log" 2>&1 ); then
     ok "simulator deps installed"

@@ -25,6 +25,23 @@ the user's stated intent in the open, and only then locks.
 
 **Alexa guesses. Intent Lock proves.**
 
+## Judges — start here
+
+Five stops, in order. Everything else in `docs/` is labeled background,
+guide, or history in [docs/INDEX.md](docs/INDEX.md).
+
+1. **The story, in plain words** — [docs/DEVPOST_STORY.md](docs/DEVPOST_STORY.md):
+   what this is, why it exists, what it still cannot do.
+2. **The walkthrough** — [docs/index.html](docs/index.html): the guided
+   Story (seven beats, the wire at the center). Open it in a browser;
+   it is static and runs offline.
+3. **The architecture picture** — [docs/architecture-main.png](docs/architecture-main.png):
+   the whole system on one plate (the same image, right below).
+4. **The spec** — [docs/12_INTENT_LOCK_SPEC.md](docs/12_INTENT_LOCK_SPEC.md):
+   the locked document of record for how the kernel works.
+5. **The proof** — [docs/TESTING.md](docs/TESTING.md): how the kernel was
+   attacked, and the acceptance-gate table it had to pass.
+
 ![Intent Lock architecture: the human speaks, the borrowed Alexa+ brain proposes over MCP 2025-11-25, and the deterministic Intent Lock kernel verifies through five stages against real catalogs before anything plays](docs/architecture-main.png)
 
 *The whole system on one plate: the borrowed brain on the left, the owned guarantee in the middle, real catalog supply underneath, and exactly three verdicts on the right.*
@@ -106,11 +123,11 @@ exactly one place: the catalog action boundary, where a brilliant
 understanding meets rows it cannot trust.
 
 Full spec: [docs/12_INTENT_LOCK_SPEC.md](docs/12_INTENT_LOCK_SPEC.md) ·
-Architecture: [docs/ARCHITECTURE_V2.md](docs/ARCHITECTURE_V2.md) ·
+Architecture picture: [docs/architecture-main.png](docs/architecture-main.png) ·
 Protocol proof: [docs/MCP_PROTOCOL_PROOF.md](docs/MCP_PROTOCOL_PROOF.md) ·
 In plain words: [docs/PLAIN_WORDS.md](docs/PLAIN_WORDS.md)
 
-## The walkthrough
+## ▶ The walkthrough (demo)
 
 The guided Story — seven beats, the wire at the center, every number sourced — is a static page with no backend: [`docs/index.html`](docs/index.html). Open it from any clone; it runs the full guided walkthrough offline.
 
@@ -158,7 +175,7 @@ docs/                         spec, architecture, friction log, submission packe
 Built for the Amazon "Build, Ship, Shape" Developer Hackathon,
 Alexa+ track, by **The Yap Patrol**. The Developer Friction Log —
 every real platform papercut, measured — is in
-[docs/FRICTION_LOG.md](docs/FRICTION_LOG.md).
+[docs/submission/FRICTION_LOG_FINAL.md](docs/submission/FRICTION_LOG_FINAL.md).
 
 ## License
 

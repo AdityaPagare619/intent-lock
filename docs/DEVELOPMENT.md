@@ -10,14 +10,12 @@ and the conventions already present in the tree.
 apps/
   alexa-plus-simulator/       Next.js stage on :3000
 services/
-  omnibeat-mcp-server/        Intent Lock MCP server on :8080
+  intent-lock-server/         Intent Lock MCP server on :8080
   alexa-agent-orchestrator/   Host-side orchestrator on :4000
   chaos-and-provider-mock/    Provider mock and fault harness on :9000
 packages/
   polyglot-phonetic-judo/     Standalone phonetic-grounding package
 scripts/                      Bootstrap and demo launchers (.sh and .ps1)
-deploy/
-  hf-spaces/                  All-in-one Docker image and supervisord config
 docs/                         Spec, guides, evidence, and project records
 ```
 
@@ -33,7 +31,7 @@ docs/                         Spec, guides, evidence, and project records
   workers.
 - `public/` — local hooks and voice-activity assets used by the stage.
 
-### The MCP server — `services/omnibeat-mcp-server/`
+### The MCP server — `services/intent-lock-server/`
 
 This is the product's center.
 
@@ -85,8 +83,6 @@ is a real MCP-over-HTTP call.
 For behavior or wire changes, begin in
 [12_INTENT_LOCK_SPEC.md](12_INTENT_LOCK_SPEC.md) and the affected
 service's README. State the intended contract before changing code.
-If the change reverses a recorded decision, update
-[DECISION_LOG.md](DECISION_LOG.md) as part of the same change.
 
 Keep the architectural boundary intact:
 
@@ -99,14 +95,14 @@ Keep the architectural boundary intact:
 
 | Kind of change | Owning place |
 | --- | --- |
-| Tool schema, verdict, elimination, or pin behavior | Spec first, then `services/omnibeat-mcp-server/src/server.py` and `src/engines/intent_lock.py` |
+| Tool schema, verdict, elimination, or pin behavior | Spec first, then `services/intent-lock-server/src/server.py` and `src/engines/intent_lock.py` |
 | Operator or locale behavior | `src/sublocal_grammar.json` when the existing operator model is sufficient; kernel code only when the model itself changes |
 | Catalog rows or domain packs | The relevant JSON supply file, preserving each row's provenance |
 | Host extraction or turn routing | `services/alexa-agent-orchestrator/` |
 | Stage or Trust Card presentation | `apps/alexa-plus-simulator/` |
 | Provider failure behavior | `services/chaos-and-provider-mock/` and the affected consumer |
 | Phonetic ranking shared with the package | `packages/polyglot-phonetic-judo/`, then verify the server's sidecar path |
-| Startup, ports, health, or deployment | `scripts/`, `Makefile`, `docker-compose.yml`, `deploy/`, and [OPERATIONS.md](OPERATIONS.md) |
+| Startup, ports, health, or deployment | `scripts/`, `Makefile`, `docker-compose.yml`, and [OPERATIONS.md](OPERATIONS.md) |
 
 ### 3. Verify at the smallest level first
 

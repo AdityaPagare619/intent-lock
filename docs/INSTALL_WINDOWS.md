@@ -75,8 +75,8 @@ Invoke-RestMethod http://127.0.0.1:8080/health
 Notes:
 
 - `bootstrap.ps1` is idempotent — safe to rerun. It creates the Python venv
-  at `%LOCALAPPDATA%\omnibeat-mcp\venv` (the Windows equivalent of the bash
-  path `~/.cache/omnibeat-mcp/venv`; the interpreter inside is
+  at `%LOCALAPPDATA%\intent-lock\venv` (the Windows equivalent of the bash
+  path `~/.cache/intent-lock/venv`; the interpreter inside is
   `Scripts\python.exe`), installs both Python services' requirements,
   builds the phonetic package and the orchestrator, and installs the
   simulator's dependencies. It ends with a readiness summary; fix any

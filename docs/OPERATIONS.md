@@ -14,7 +14,7 @@ The services are separate processes and communicate over HTTP.
 | --- | --- | --- | --- |
 | 3000 | Alexa+ simulator | `apps/alexa-plus-simulator/` | Next.js stage, Trust Card UI, wire inspector, and browser API routes |
 | 4000 | Alexa agent orchestrator | `services/alexa-agent-orchestrator/` | Host-side extraction and routing; a real MCP client to the server |
-| 8080 | Intent Lock MCP server | `services/omnibeat-mcp-server/` | The deterministic MCP 2025-11-25 server and `intent_lock` tool |
+| 8080 | Intent Lock MCP server | `services/intent-lock-server/` | The deterministic MCP 2025-11-25 server and `intent_lock` tool |
 | 9000 | Chaos and provider mock | `services/chaos-and-provider-mock/` | Provider stand-in and fault-injection harness |
 
 The normal request chain is browser → simulator `:3000` →
@@ -91,7 +91,7 @@ its root page and exposes an application-level brain probe.
 
 | Check | Expected response |
 | --- | --- |
-| `GET http://127.0.0.1:8080/health` | JSON with `status: "ok"`, `server: "omnibeat-mcp-server"`, `version: "0.1.0"`, `protocol: "2025-11-25"`, and a Boolean `chaos_mode` |
+| `GET http://127.0.0.1:8080/health` | JSON with `status: "ok"`, `server: "intent-lock-server"`, `version: "0.1.0"`, `protocol: "2025-11-25"`, and a Boolean `chaos_mode` |
 | `GET http://127.0.0.1:4000/health` | JSON with `status: "ok"`, the orchestrator service and version, a `brain` description, `protocol: "2025-11-25"`, `mcp_server_url`, an `mcp` object with `reachable` and, when available, `protocol`, plus the active cost/credential route |
 | `GET http://127.0.0.1:9000/health` | JSON with `status: "ok"`, `service: "chaos-and-provider-mock"`, `version: "0.1.0"`, the active `mode`, `catalog_tracks: 30`, and `protocol: "http-json"` |
 | `GET http://127.0.0.1:3000/` | The simulator page with a successful HTTP response |
@@ -161,13 +161,13 @@ Before starting a clean demo, confirm that this runtime file is
 absent:
 
 ```text
-services/omnibeat-mcp-server/src/intent_rules.json
+services/intent-lock-server/src/intent_rules.json
 ```
 
 POSIX check:
 
 ```bash
-test ! -e services/omnibeat-mcp-server/src/intent_rules.json
+test ! -e services/intent-lock-server/src/intent_rules.json
 ```
 
 The MCP server loads standing rules from that path. If the file is
@@ -191,15 +191,6 @@ make clean        # stop and delete the ledger volume
 
 Direct equivalents use `docker compose` from the repository root.
 
-## Render path
-
-`render.yaml` defines one Docker web service named `omnibeat-demo`.
-It uses `deploy/hf-spaces/Dockerfile` with the repository root as the
-Docker context, declares `/` as the health-check path, and supplies
-no environment variables. That image runs the four project processes
-under supervisord; see [deploy/hf-spaces/README.md](../deploy/hf-spaces/README.md)
-for the shared all-in-one container notes and its verification status.
-
 ## Troubleshooting
 
 | Symptom | Likely cause | Action |
@@ -211,7 +202,7 @@ for the shared all-in-one container notes and its verification status.
 | Simulator loads, but the wire view stays dark | Orchestrator or MCP server is down, or the simulator's upstream points elsewhere | Check `:3000/api/brain`, `MCP_UPSTREAM`, `MCP_FALLBACK`, and both backend health routes |
 | Turns work, but the UI names the local floor | No `GEMINI_API_KEY` reached the orchestrator process | This is the supported keyless mode. To use Gemini, export the key in the same shell, stop the stack, and start it again |
 | Fault headers have no effect | The relevant service was not started in armed mode | Stop the stack and start it with `CHAOS=1` on POSIX, or use the Compose chaos settings above |
-| Standing rules fire in a supposedly clean demo | `services/omnibeat-mcp-server/src/intent_rules.json` exists | Follow the clean-demo rule above |
+| Standing rules fire in a supposedly clean demo | `services/intent-lock-server/src/intent_rules.json` exists | Follow the clean-demo rule above |
 | Bootstrap reports a missing phonetic or orchestrator build | A fresh clone has no generated `dist/` output | Rerun the platform bootstrap; it builds `packages/polyglot-phonetic-judo` and `services/alexa-agent-orchestrator` |
 | Python or Node is rejected during bootstrap | The project requires Python 3.10+ and Node 20+ | Install a supported runtime, open a fresh shell, and rerun bootstrap |
 | Compose services never become healthy | A container failed its own `/health` probe | Run `docker compose ps`, inspect `docker compose logs`, and compare the failing service with the health table above |

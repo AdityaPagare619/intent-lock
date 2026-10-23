@@ -166,7 +166,7 @@ not buried: see **Known limitations** in
 
 ```
 apps/alexa-plus-simulator/    the stage: Alexa+ simulator + Trust Card UI
-services/omnibeat-mcp-server/ the Intent Lock MCP server (the hero)
+services/intent-lock-server/  the Intent Lock MCP server (the hero)
 services/alexa-agent-orchestrator/  host-side orchestrator (Gemini brain, advisory only)
 services/chaos-and-provider-mock/   fault-injection rig for the outage act
 packages/polyglot-phonetic-judo/    the phonetic grounding library (also standalone, MIT)

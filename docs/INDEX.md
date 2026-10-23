@@ -27,7 +27,7 @@ for honesty, superseded where it conflicts with a CANONICAL file.
 | `MCP_PROTOCOL_PROOF.md` | Wire-level evidence that the server speaks MCP 2025-11-25 (handshake, session, tool calls, a third-party client) | Judges and engineers verifying the protocol claim | CANONICAL |
 | `FRICTION_LOG_FINAL.md` | The complete Developer Friction Log, FL-01…FL-24, in the rules' field order | Judges (it is the bonus document); platform teams | CANONICAL |
 | `PLAIN_WORDS.md` | The project explained with no jargon at all | Non-programmers | GUIDE |
-| `OPERATIONS.md` | Service map, startup and shutdown, Docker and Render paths, health checks, configuration, and troubleshooting | Operators running the four-service stack | GUIDE |
+| `OPERATIONS.md` | Service map, startup and shutdown, Docker path, health checks, configuration, and troubleshooting | Operators running the four-service stack | GUIDE |
 | `DEVELOPMENT.md` | Contributor map, change flow, verification paths, and conventions present in the tree | Contributors and maintainers | GUIDE |
 | `INSTALL_MACOS.md` | Install and run instructions for macOS | Anyone booting the demo on a Mac | GUIDE |
 | `INSTALL_WINDOWS.md` | Install and run instructions for Windows (native PowerShell launchers) | Anyone booting the demo on Windows | GUIDE |
@@ -35,7 +35,5 @@ for honesty, superseded where it conflicts with a CANONICAL file.
 | `shots/main-interface.png` | Capture: the Alexa+ simulator stage with the live wire and Trust Card (the README hero shot) | Presentation asset | GUIDE |
 | `shots/trust-card.png` | Capture: a `locked` Trust Card with its elimination list | Presentation asset | GUIDE |
 | `shots/tie-card.png` | Capture: a `tie_choice` Trust Card awaiting a pin | Presentation asset | GUIDE |
-| `shots/devpost-thumbnail.png` | The Devpost project thumbnail (3:2) | Presentation asset | GUIDE |
-| `shots/video-poster.jpg` | Poster frame from the demo video (16:9) | Presentation asset | GUIDE |
 | `.nojekyll` | GitHub Pages marker file (serves `index.html` raw); not a document | Nobody | GUIDE |
 | `INDEX.md` | This index | Anyone lost in this folder | GUIDE |

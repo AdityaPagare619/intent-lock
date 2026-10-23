@@ -33,7 +33,7 @@ import time
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-log = logging.getLogger("omnibeat-mcp.e4")
+log = logging.getLogger("intent-lock.e4")
 
 SERVICE_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_DB = SERVICE_ROOT / "db" / "ledger.sqlite"

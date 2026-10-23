@@ -281,7 +281,7 @@ export default function McpAppsHost() {
       ) : html ? (
         <iframe
           ref={iframeRef}
-          title="OmniBeat Studio Deck (MCP Apps)"
+          title="Intent Lock Studio Deck (MCP Apps)"
           sandbox="allow-scripts"
           srcDoc={html}
           className={

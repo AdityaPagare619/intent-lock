@@ -26,7 +26,7 @@ export interface QueuedMutation {
   id: string;
   /** Lamport clock value at enqueue time — the replay order. */
   lamport: number;
-  /** MCP tool name, e.g. "omnibeat_resolve_and_play". */
+  /** MCP tool name, e.g. "resolve_and_play". */
   tool: string;
   /** Tool arguments (must be JSON-serializable). */
   args: Record<string, unknown>;

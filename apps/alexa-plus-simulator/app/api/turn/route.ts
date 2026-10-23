@@ -45,7 +45,7 @@ export async function POST(req: Request): Promise<Response> {
 
   const out = new Headers();
   out.set("Content-Type", upstream.headers.get("content-type") ?? "application/json");
-  out.set("X-OmniBeat-Upstream", TURN_URL); // honest: which hop served us
+  out.set("X-IntentLock-Upstream", TURN_URL); // honest: which hop served us
   return new Response(upstream.body, { status: upstream.status, headers: out });
 }
 

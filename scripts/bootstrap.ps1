@@ -1,4 +1,4 @@
-# OmniBeat-MCP bootstrap (Windows / native PowerShell) -- zero-settings law.
+# Intent Lock bootstrap (Windows / native PowerShell) -- zero-settings law.
 # One script takes a fresh shell from nothing to "ready to run the demo":
 #   .\scripts\bootstrap.ps1
 #   .\scripts\demo-up.ps1
@@ -6,8 +6,8 @@
 #
 # Parity spec: scripts/bootstrap.sh. This file mirrors its behaviour step
 # for step, with these Windows adaptations (also noted in the report):
-#   * venv lives at %LOCALAPPDATA%\omnibeat-mcp\venv (the Windows user-cache
-#     equivalent of ~/.cache/omnibeat-mcp/venv). Its python is
+#   * venv lives at %LOCALAPPDATA%\intent-lock\venv (the Windows user-cache
+#     equivalent of ~/.cache/intent-lock/venv). Its python is
 #     Scripts\python.exe, not bin/python.
 #   * No make / curl / jq checks: make is not used on the native path,
 #     health checks use Invoke-WebRequest, and `make verify` is bash-only.
@@ -24,10 +24,10 @@ $ErrorActionPreference = "Continue"
 $OB = Split-Path -Parent $PSScriptRoot
 if (-not $OB) { $OB = Split-Path -Parent (Get-Location) }
 
-# User-cache venv, mirroring $HOME/.cache/omnibeat-mcp/venv on POSIX.
+# User-cache venv, mirroring $HOME/.cache/intent-lock/venv on POSIX.
 $CacheRoot = $env:LOCALAPPDATA
 if (-not $CacheRoot) { $CacheRoot = Join-Path $env:USERPROFILE "AppData\Local" }
-$Venv = Join-Path $CacheRoot "omnibeat-mcp\venv"
+$Venv = Join-Path $CacheRoot "intent-lock\venv"
 $VenvPython = Join-Path $Venv "Scripts\python.exe"
 $VenvPip = Join-Path $Venv "Scripts\pip.exe"
 
@@ -121,7 +121,7 @@ if (-not $script:NpxExe) {
     if ($npxAny) { $script:NpxExe = Get-CmdPath $npxAny }
 }
 
-Write-Host "== OmniBeat-MCP bootstrap (Windows) =="
+Write-Host "== Intent Lock bootstrap (Windows) =="
 
 # --- 0. Preflight: tools the quickstart needs but nothing installs for you --
 if ($script:PythonExe) {
@@ -163,7 +163,7 @@ if ($script:PythonExe) {
     if ($LASTEXITCODE -eq 0) { Write-Ok "venv python $venvVersion" }
     else { Write-Warn "venv python $venvVersion < 3.10 (may still work, untested)" }
 
-    foreach ($svc in @("omnibeat-mcp-server", "chaos-and-provider-mock")) {
+    foreach ($svc in @("intent-lock-server", "chaos-and-provider-mock")) {
         $req = Join-Path $OB "services\$svc\requirements.txt"
         if (Test-Path $req) {
             $logsDir = Join-Path $OB "logs"

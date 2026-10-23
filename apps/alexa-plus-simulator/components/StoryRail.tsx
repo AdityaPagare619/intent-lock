@@ -4,7 +4,7 @@
  * Personas remain as the cast inside the beats; the full console is one
  * "Explore freely" toggle away and nothing is ever removed.
  *
- * This rail is OmniBeat's directing hand, so it lives in the engine
+ * This rail is Intent Lock's directing hand, so it lives in the engine
  * room's language (matte graphite + amber) — the stage above it stays
  * purely Alexa's.
  */

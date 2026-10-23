@@ -871,12 +871,12 @@ export class IntentRouter {
       resp.barge_state = "HARD_BARGE";
       this.lastYield.delete(req.session_id ?? "default");
       const call = await this.tool(
-        "omnibeat_fastpath_interrupt",
+        "fastpath_interrupt",
         { barge_in_command: "stop", interrupted_at_word_index: -1, mode: "HARD_BARGE" },
         chaos
       );
       resp.mcp = {
-        tool: "omnibeat_fastpath_interrupt",
+        tool: "fastpath_interrupt",
         frames: call.frames,
         streamed: call.streamed,
         session_id: call.sessionId || null,
@@ -890,12 +890,12 @@ export class IntentRouter {
       const resp = this.base(t0, "agentic");
       resp.barge_state = "SOFT_DUCK";
       const call = await this.tool(
-        "omnibeat_fastpath_interrupt",
+        "fastpath_interrupt",
         { barge_in_command: clean, interrupted_at_word_index: -1, mode: "SOFT_DUCK", active_utterance: this.lastSpokenText },
         chaos
       );
       resp.mcp = {
-        tool: "omnibeat_fastpath_interrupt",
+        tool: "fastpath_interrupt",
         frames: call.frames,
         streamed: call.streamed,
         session_id: call.sessionId || null,
@@ -958,9 +958,9 @@ export class IntentRouter {
         constraints.desired_version === "acoustic",
     };
     if (Object.keys(constraints).length) toolArgs.constraints = constraints;
-    const call = await this.tool("omnibeat_resolve_and_play", toolArgs, chaos);
+    const call = await this.tool("resolve_and_play", toolArgs, chaos);
     resp.mcp = {
-      tool: "omnibeat_resolve_and_play",
+      tool: "resolve_and_play",
       frames: call.frames,
       streamed: call.streamed,
       session_id: call.sessionId || null,
@@ -977,7 +977,7 @@ export class IntentRouter {
         candidates?: Array<{ index: number; title: string; artist: string }>;
       } | undefined;
       this.pending.set(pid, {
-        tool: "omnibeat_resolve_and_play",
+        tool: "resolve_and_play",
         args: toolArgs,
         elicitation,
         createdAt: Date.now(),
@@ -1022,12 +1022,12 @@ export class IntentRouter {
   ): Promise<TurnResponse> {
     const resp = this.base(t0, "agentic");
     const call = await this.tool(
-      "omnibeat_verify_ledger_or_relink",
+      "verify_ledger_or_relink",
       { user_challenge: clean },
       chaos
     );
     resp.mcp = {
-      tool: "omnibeat_verify_ledger_or_relink",
+      tool: "verify_ledger_or_relink",
       frames: call.frames,
       streamed: call.streamed,
       session_id: call.sessionId || null,
@@ -1057,9 +1057,9 @@ export class IntentRouter {
   ): Promise<TurnResponse> {
     void clean;
     const resp = this.base(t0, "fast");
-    const call = await this.tool("omnibeat_sync_multiroom_and_bunker", { rooms: ["living", "kitchen", "bedroom"] }, chaos);
+    const call = await this.tool("sync_multiroom_and_bunker", { rooms: ["living", "kitchen", "bedroom"] }, chaos);
     resp.mcp = {
-      tool: "omnibeat_sync_multiroom_and_bunker",
+      tool: "sync_multiroom_and_bunker",
       frames: call.frames,
       streamed: call.streamed,
       session_id: call.sessionId || null,

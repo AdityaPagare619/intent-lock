@@ -29,8 +29,8 @@ import secrets
 import time
 from typing import Dict, Optional, Set
 
-CLIENT_ID = os.environ.get("AUTH_DEMO_CLIENT_ID", "omnibeat-demo-client")
-CLIENT_SECRET = os.environ.get("AUTH_DEMO_CLIENT_SECRET", "omnibeat-demo-secret")
+CLIENT_ID = os.environ.get("AUTH_DEMO_CLIENT_ID", "intent-lock-demo-client")
+CLIENT_SECRET = os.environ.get("AUTH_DEMO_CLIENT_SECRET", "intent-lock-demo-secret")
 SCOPES = ["mcp:service", "mcp:tools", "mcp:resources"]
 TOKEN_TTL_S = 3600
 

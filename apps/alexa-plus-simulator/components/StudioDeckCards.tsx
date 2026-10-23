@@ -502,7 +502,7 @@ function VinylSampler() {
       setPhase("unavailable");
       return;
     }
-    const res = await mcpCallTool(pushFrame, sid, "omnibeat_resolve_and_play", {
+    const res = await mcpCallTool(pushFrame, sid, "resolve_and_play", {
       raw_utterance: "play Lollipop",
       locale_hint: "en-IN",
     }, activeChaosFault);
@@ -543,7 +543,7 @@ function VinylSampler() {
     if (!cands || !sessionId) return;
     killSequence();
     setPhase("resolving");
-    const res = await mcpCallTool(pushFrame, sessionId, "omnibeat_resolve_and_play", {
+    const res = await mcpCallTool(pushFrame, sessionId, "resolve_and_play", {
       raw_utterance: "play Lollipop",
       input_responses: { selection_index: idx },
     }, activeChaosFault);
@@ -731,7 +731,7 @@ function VinylSampler() {
 }
 
 /* ------------------------------------------------------------------ */
-/* Ledger card — REAL omnibeat://session/audit-ledger when up;          */
+/* Ledger card — REAL intent-lock://session/audit-ledger when up;          */
 /* clearly-labeled SAMPLE rows only as fallback.                        */
 /* ------------------------------------------------------------------ */
 
@@ -773,7 +773,7 @@ function LedgerCard() {
       setChallenging(false);
       return;
     }
-    const res = await mcpCallTool(pushFrame, sid, "omnibeat_verify_ledger_or_relink", {
+    const res = await mcpCallTool(pushFrame, sid, "verify_ledger_or_relink", {
       user_challenge: "did I actually ask for that?",
       ...(faults.token ? { force_oauth_expired: true } : {}),
     }, activeChaosFault);
@@ -813,7 +813,7 @@ function LedgerCard() {
       setTried(true);
       return;
     }
-    const res = await mcpRpc(pushFrame, sid, "resources/read", { uri: "omnibeat://session/audit-ledger" }, "resources/read audit-ledger");
+    const res = await mcpRpc(pushFrame, sid, "resources/read", { uri: "intent-lock://session/audit-ledger" }, "resources/read audit-ledger");
     const text = (res.payloads[0] as { result?: { contents?: { text?: string }[] } })?.result?.contents?.[0]?.text;
     if (text) {
       try {
@@ -842,7 +842,7 @@ function LedgerCard() {
         </span>
         <div className="flex items-center gap-1.5">
           <span className="rounded bg-panel-2 px-1.5 py-0.5 font-mono text-[9px] text-faint">
-            omnibeat://session/audit-ledger
+            intent-lock://session/audit-ledger
           </span>
           <button
             onClick={fetchLedger}

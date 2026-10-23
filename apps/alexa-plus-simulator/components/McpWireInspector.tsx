@@ -6,7 +6,7 @@
  * state is honest, and the on-screen ring's cap is disclosed.
  *
  * The flow ribbon (Browser → :4000 → :8080) lights from REAL frame
- * metadata — the X-OmniBeat-Upstream header each response carried —
+ * metadata — the X-IntentLock-Upstream header each response carried —
  * so a judge watches which hop actually served each answer, including
  * when the fallback served because the orchestrator was down (FM-22).
  *
@@ -250,7 +250,7 @@ export default function McpWireInspector() {
         </div>
       </div>
 
-      {/* flow ribbon — lights from the X-OmniBeat-Upstream header each
+      {/* flow ribbon — lights from the X-IntentLock-Upstream header each
           real response carried; it never animates on its own behalf */}
       <div className="flex items-center gap-3 border-b border-hairline/60 px-4 py-1.5">
         <RibbonNode label="This browser" sub="the stage" lit={frames.length > 0} pulse={inFlight} busyTone={busy} />
@@ -264,7 +264,7 @@ export default function McpWireInspector() {
           busyTone={busy}
         />
         <span aria-hidden="true" className={`font-mono text-[11px] ${inFlight ? "animate-pulse text-brand" : lastServed ? "text-sage/60" : "text-faint"}`}>──▶</span>
-        <RibbonNode label="OmniBeat referee" sub=":8080" lit={!!lastServed} down={connection === "down"} busyTone={busy} />
+        <RibbonNode label="Intent Lock referee" sub=":8080" lit={!!lastServed} down={connection === "down"} busyTone={busy} />
         <span className="flex-1" />
         <span className="truncate font-mono text-[10.5px] text-faint">
           {lastServed

@@ -32,7 +32,7 @@ import re
 import subprocess
 from typing import Optional
 
-log = logging.getLogger("omnibeat.phonetic_ipa")
+log = logging.getLogger("intent-lock.phonetic_ipa")
 
 try:
     import panphon.distance as _panphon_distance

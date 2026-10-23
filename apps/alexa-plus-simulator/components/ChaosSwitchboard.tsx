@@ -19,7 +19,7 @@ export default function ChaosSwitchboard() {
           THE YAP PATROL
         </div>
         <div className="mt-1 text-[10px] leading-snug tracking-wide text-faint">
-          <span className="block whitespace-nowrap">OmniBeat-MCP · Alexa+ sim</span>
+          <span className="block whitespace-nowrap">Intent Lock · Alexa+ sim</span>
           <span className="block whitespace-nowrap text-faint/70">Borrow the Brain, Own the Guarantee.</span>
         </div>
       </div>

@@ -71,10 +71,10 @@ export function sanitizeConstraints(raw: unknown): Constraints {
 }
 
 const TOOL_TO_INTENT: Record<string, "play" | "challenge" | "sync"> = {
-  omnibeat_resolve_and_play: "play",
-  omnibeat_verify_ledger_or_relink: "challenge",
-  omnibeat_sync_multiroom_and_bunker: "sync",
-  // omnibeat_fastpath_interrupt is deliberately absent: interrupts are
+  resolve_and_play: "play",
+  verify_ledger_or_relink: "challenge",
+  sync_multiroom_and_bunker: "sync",
+  // fastpath_interrupt is deliberately absent: interrupts are
   // reflexes, never LLM decisions.
 };
 
@@ -135,7 +135,7 @@ export class Brain {
 
   /** The resolve tool ran but honestly refused (no track, no elicitation). */
   private isAbstention(resp: TurnResponse): boolean {
-    if (resp.mcp.tool !== "omnibeat_resolve_and_play") return false;
+    if (resp.mcp.tool !== "resolve_and_play") return false;
     const sc = this.resultSc(resp);
     if (!sc) return false;
     return sc.input_required !== true && !sc.track && sc.action !== "play";

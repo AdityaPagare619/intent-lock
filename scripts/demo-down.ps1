@@ -1,4 +1,4 @@
-# OmniBeat-MCP demo stopper for the no-Docker path (Windows / native
+# Intent Lock demo stopper for the no-Docker path (Windows / native
 # PowerShell): stops whatever listens on the four demo ports. Guarded and
 # idempotent -- a port with no listener is a no-op, and the script exits 0
 # either way.
@@ -46,10 +46,10 @@ function Get-ListenerProcessIds {
 }
 
 $ports = @(
-    (Get-PortOrDefault "OMNIBEAT_SIM_PORT" 3000),
-    (Get-PortOrDefault "OMNIBEAT_ORCH_PORT" 4000),
-    (Get-PortOrDefault "OMNIBEAT_MCP_PORT" 8080),
-    (Get-PortOrDefault "OMNIBEAT_CHAOS_PORT" 9000)
+    (Get-PortOrDefault "INTENT_LOCK_SIM_PORT" 3000),
+    (Get-PortOrDefault "INTENT_LOCK_ORCH_PORT" 4000),
+    (Get-PortOrDefault "INTENT_LOCK_MCP_PORT" 8080),
+    (Get-PortOrDefault "INTENT_LOCK_CHAOS_PORT" 9000)
 )
 
 foreach ($port in $ports) {

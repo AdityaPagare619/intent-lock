@@ -1,4 +1,4 @@
-# ── OmniBeat-MCP .gitignore ──────────────────────────────────────────────
+# ── Intent Lock .gitignore ──────────────────────────────────────────────
 # Build & dependency outputs
 node_modules/
 .next/

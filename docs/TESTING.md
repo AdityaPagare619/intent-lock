@@ -46,6 +46,19 @@ and are unchanged since that selection:
   replay — confirmed again at gate run 7 (2026-10-23) over the
   shipped tree.
 
+**Gate run 8 (2026-10-23)** — run over the renamed PROOF tree (the
+one-name purge: the server directory is now `services/intent-lock-server`
+and the server introduces itself as `intent-lock-server`), with the two
+PROOF kernel upgrades in the tree: W3 unit-aware normalization in the
+spec-contradiction checker and W4 the veto subject-exemption. All
+sections PASS: suite **10/10** · replay **36/36** · saboteur **10/10** ·
+beats **5/5** · pristine start. Live seals from the same run: the
+natural-order allergy ask ("smooth almond butter, no peanut at all")
+now **locks** the almond butter (`openfoodfacts:5060132281796`) instead
+of refusing — the W4 fix working in the open; and the W3 unit battery
+reproduced the shipped commerce conviction reasons byte-identically,
+so the published proof strips remain exact transcripts.
+
 ## Interop
 
 The server was also exercised by a third-party MCP client (the official MCP

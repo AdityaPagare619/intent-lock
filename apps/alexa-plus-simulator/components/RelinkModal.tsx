@@ -130,7 +130,7 @@ export default function RelinkModal() {
           Your {name} link needs a quick reconnect.
         </h2>
         <p className="mt-2 text-[13px] leading-relaxed text-mute">
-          The link between OmniBeat and {name} has expired, so nothing can
+          The link between Intent Lock and {name} has expired, so nothing can
           play through it right now. Nothing is broken — these links expire
           on purpose, and reconnecting takes one tap.
         </p>

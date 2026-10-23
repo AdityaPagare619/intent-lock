@@ -1,9 +1,9 @@
 #!/bin/bash
-# OmniBeat-MCP demo rig: idempotent launcher. Starts any of the 4 services
+# Intent Lock demo rig: idempotent launcher. Starts any of the 4 services
 # that isn't already listening. Safe to run on a loop (cron keep-alive).
 # Repo root = this script's parent dir (works from any clone location).
 OB="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-V="$HOME/.cache/omnibeat-mcp/venv/bin/python"
+V="$HOME/.cache/intent-lock/venv/bin/python"
 mkdir -p "$OB/logs"
 
 up() { curl -s -m 3 -o /dev/null "http://127.0.0.1:$1$2" 2>/dev/null; }
@@ -27,7 +27,7 @@ if [ "${CHAOS:-}" = "1" ]; then
 fi
 
 if ! up 8080 /docs 2>/dev/null && ! curl -s -m 3 -o /dev/null http://127.0.0.1:8080/mcp 2>/dev/null; then
-  cd "$OB/services/omnibeat-mcp-server"
+  cd "$OB/services/intent-lock-server"
   # No env config: server.py derives CORS from the request Origin (zero-settings).
   nohup $V src/server.py --host 127.0.0.1 --port 8080 "${CHAOS_8080[@]}" >"$OB/logs/demo-8080.log" 2>&1 &
   echo "started :8080"

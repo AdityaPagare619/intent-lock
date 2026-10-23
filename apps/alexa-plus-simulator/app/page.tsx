@@ -106,7 +106,7 @@ function StageShell() {
             <div className="mb-2.5 flex flex-wrap items-baseline gap-x-3 px-1">
               <h2 className="text-[15px] font-bold tracking-tight text-ink">The engine room</h2>
               <p className="text-[11.5px] text-mute">
-                OmniBeat&apos;s machinery, working live under the stage — the deck, the receipts, the sync, the bunker.
+                Intent Lock&apos;s machinery, working live under the stage — the deck, the receipts, the sync, the bunker.
               </p>
               <span className="ml-auto inline-flex items-center gap-1.5 rounded-full border border-hairline bg-panel px-2 py-0.5 font-mono text-[9.5px] text-mute">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-sage" aria-hidden />

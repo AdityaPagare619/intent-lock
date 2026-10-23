@@ -1,5 +1,5 @@
 #!/bin/bash
-# OmniBeat-MCP bootstrap — zero-settings law.
+# Intent Lock bootstrap — zero-settings law.
 # One script takes a fresh shell from nothing to "ready to run the demo":
 #   ./scripts/bootstrap.sh && make demo
 # Idempotent: safe to run twice, ten times, on a cron loop. Never prompts.
@@ -7,14 +7,14 @@ set -u
 # Repo root = this script's parent dir. NEVER hardcode an absolute path:
 # a fresh clone must work wherever it lands (judge laptop, Codespace, CI).
 OB="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-VENV="$HOME/.cache/omnibeat-mcp/venv"
+VENV="$HOME/.cache/intent-lock/venv"
 PASS=0; FAIL=0
 
 ok()   { echo "  [ok] $1"; PASS=$((PASS+1)); }
 warn() { echo "  [!!] $1"; FAIL=$((FAIL+1)); }
 soft() { echo "  [!!] $1 (optional — not blocking readiness)"; }
 
-echo "== OmniBeat-MCP bootstrap =="
+echo "== Intent Lock bootstrap =="
 
 # --- 0. Preflight (J-01/B4, from J-03's Windows/macOS verdict): tools the
 # quickstart needs but nothing installs for you. Detection + the exact human
@@ -45,7 +45,7 @@ fi
   && ok "venv python $( "$VENV/bin/python" -c 'import sys; print(".".join(map(str,sys.version_info[:3])))' )" \
   || warn "venv python < 3.10 (may still work, untested)"
 
-for svc in omnibeat-mcp-server chaos-and-provider-mock; do
+for svc in intent-lock-server chaos-and-provider-mock; do
   req="$OB/services/$svc/requirements.txt"
   if [ -f "$req" ]; then
     # pip output goes to a log and its tail is SHOWN on failure (J-01) —

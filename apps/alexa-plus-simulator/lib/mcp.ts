@@ -39,7 +39,7 @@ export interface WireFrame {
   tool?: string; // tools/call target, when applicable
   status?: string; // HTTP status that carried the frame, or "SSE"
   ms?: number; // ms since the request frame was pushed (arrival offset)
-  upstream?: string; // X-OmniBeat-Upstream: which hop actually served us
+  upstream?: string; // X-IntentLock-Upstream: which hop actually served us
   eventId?: string; // SSE event id (the replay cursor material)
 }
 
@@ -237,7 +237,7 @@ export async function mcpReplay(
       },
       signal: ctrl.signal,
     });
-    const upstream = res.headers.get("X-OmniBeat-Upstream") ?? undefined;
+    const upstream = res.headers.get("X-IntentLock-Upstream") ?? undefined;
     if (!res.ok) {
       return { ok: false, sessionId, payloads: [], error: `replay HTTP ${res.status}`, httpStatus: res.status };
     }
@@ -330,7 +330,7 @@ async function rpcAttempt(
     });
 
     const newSessionId = res.headers.get("Mcp-Session-Id");
-    const upstream = res.headers.get("X-OmniBeat-Upstream") ?? undefined;
+    const upstream = res.headers.get("X-IntentLock-Upstream") ?? undefined;
     const ct = res.headers.get("Content-Type") ?? "";
     const meta: FrameMeta = {
       method,

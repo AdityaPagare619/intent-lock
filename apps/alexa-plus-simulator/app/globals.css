@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════════════════════════════════
-   OmniBeat stage transformation — two worlds, one waterline.
+   Intent Lock stage transformation — two worlds, one waterline.
    ABOVE the waterline (the Stage): Squid Ink + Alexa Blue ONLY.
    BELOW the waterline (the Engine Room): graphite + amber ONLY.
    A color crossing the waterline is a bug.
@@ -17,7 +17,7 @@
   --color-ink: #e8eaed;        /* lab primary text */
   --color-mute: #9aa3af;       /* lab secondary text */
   --color-faint: #7a828f;      /* lab tertiary (raised from #6e7683 → ≥4.5:1) */
-  --color-brand: #e58e26;      /* amber — OmniBeat's own, bench ONLY */
+  --color-brand: #e58e26;      /* amber — Intent Lock's own, bench ONLY */
   --color-brand-deep: #b96a12; /* amber pressed */
   --color-sage: #2fbf9b;       /* lab verified-green, bench ONLY */
   --color-coral: #ef5350;      /* lab fault red, bench ONLY */

@@ -1,4 +1,4 @@
-# Root build context (omnibeat-mcp-server compose build + render.yaml /
+# Root build context (intent-lock-mcp-server compose build + render.yaml /
 # deploy/hf-spaces build). Keep the transfer small and deterministic: every
 # image installs/builds its own dependencies from the lockfiles.
 .git

@@ -14,9 +14,9 @@ import "@fontsource/jetbrains-mono/700.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "OmniBeat-MCP · Alexa+ Simulator — The Yap Patrol",
+  title: "Intent Lock · Alexa+ Simulator — The Yap Patrol",
   description:
-    "Simulated Alexa+ web experience for OmniBeat-MCP. Real MCP 2025-11-25 wire to :8080; the Alexa voice shell is labeled simulated.",
+    "Simulated Alexa+ web experience for Intent Lock. Real MCP 2025-11-25 wire to :8080; the Alexa voice shell is labeled simulated.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

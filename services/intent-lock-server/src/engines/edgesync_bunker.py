@@ -22,7 +22,7 @@ import struct
 import time
 from typing import Any, Dict, List
 
-log = logging.getLogger("omnibeat-mcp.e5")
+log = logging.getLogger("intent-lock.e5")
 
 CIRCUIT_BREAKER_MS = 1200
 BUNKER_TRACKS = 5

@@ -1,4 +1,4 @@
-"""OmniBeat-MCP session store — Mcp-Session-Id minting + Last-Event-ID ring buffer.
+"""Intent Lock session store — Mcp-Session-Id minting + Last-Event-ID ring buffer.
 
 Spec: MCP 2025-11-25, Streamable HTTP (stateful sessions over stateless HTTP).
 Every SSE event the server emits carries a monotonic event id of the form

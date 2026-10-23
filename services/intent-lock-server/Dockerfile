@@ -1,4 +1,4 @@
-# omnibeat-mcp-server (:8080) — THE deliverable. MCP 2025-11-25 wire.
+# Intent Lock MCP server (:8080) — THE deliverable. MCP 2025-11-25 wire.
 #
 # BUILD CONTEXT IS THE REPO ROOT (see docker-compose.yml): this image needs
 # more than the Python service. E1 (src/engines/phonetic_judo.py, D-07) spawns
@@ -43,12 +43,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
  && rm -rf /var/lib/apt/lists/* \
  && node --version
 
-WORKDIR /repo/services/omnibeat-mcp-server
+WORKDIR /repo/services/intent-lock-server
 
-COPY services/omnibeat-mcp-server/requirements.txt .
+COPY services/intent-lock-server/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY services/omnibeat-mcp-server/src/ ./src/
+COPY services/intent-lock-server/src/ ./src/
 # The built sidecar package (sidecar.js + dist/ + data/), at the exact
 # repo-relative location phonetic_judo.py looks for it.
 COPY --from=sidecar-build /pkg /repo/packages/polyglot-phonetic-judo

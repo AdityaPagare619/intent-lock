@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OmniBeat Studio Deck</title>
+<title>Intent Lock Studio Deck</title>
 <style>
   :root { --paper:#f5f5f5; --ink:#2d3142; --mute:#6b7280; --accent:#eb6c36; --line:#d8d8de; --card:#ffffff; }
   body.dark { --paper:#101014; --ink:#ececf1; --mute:#9a9aad; --line:#2a2a33; --card:#17171d; }
@@ -44,7 +44,7 @@
 </head>
 <body>
   <div class="bar">
-    <span class="wordmark">OMNIBEAT STUDIO DECK</span>
+    <span class="wordmark">INTENT LOCK STUDIO DECK</span>
     <span class="mode" id="mode">MCP Apps surface · awaiting host context</span>
   </div>
   <div class="card" id="root">
@@ -200,7 +200,7 @@
     } else if (sc.elicitation && sc.elicitation.candidates) {
       root.appendChild(el("p", "msg",
         sc.elicitation.message ||
-        "True title collision — OmniBeat will not guess. Pick one:"));
+        "True title collision — Intent Lock will not guess. Pick one:"));
       sc.elicitation.candidates.forEach(function (c) {
         var row = el("div", "cand");
         row.appendChild(el("span", "t",
@@ -246,7 +246,7 @@
       jsonrpc: "2.0", id: "ui-init-1", method: "ui/initialize",
       params: {
         protocolVersion: "2026-01-26",
-        appInfo: { name: "OmniBeat Studio Deck", version: "2.0.0" },
+        appInfo: { name: "Intent Lock Studio Deck", version: "2.0.0" },
         appCapabilities: {}
       }
     }, "*");

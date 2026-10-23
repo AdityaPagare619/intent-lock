@@ -1,4 +1,4 @@
-# OmniBeat-MCP demo rig (Windows / native PowerShell): idempotent launcher.
+# Intent Lock demo rig (Windows / native PowerShell): idempotent launcher.
 # Starts any of the 4 services that isn't already listening, waits until
 # all 4 respond, and prints the URLs. Safe to run repeatedly.
 # Repo root = this script's parent dir (works from any clone location,
@@ -23,7 +23,7 @@ $ErrorActionPreference = "Continue"
 $OB = Split-Path -Parent $PSScriptRoot
 $CacheRoot = $env:LOCALAPPDATA
 if (-not $CacheRoot) { $CacheRoot = Join-Path $env:USERPROFILE "AppData\Local" }
-$VenvPython = Join-Path $CacheRoot "omnibeat-mcp\venv\Scripts\python.exe"
+$VenvPython = Join-Path $CacheRoot "intent-lock\venv\Scripts\python.exe"
 
 $LogsDir = Join-Path $OB "logs"
 if (-not (Test-Path $LogsDir)) { New-Item -ItemType Directory -Path $LogsDir | Out-Null }
@@ -36,10 +36,10 @@ function Get-PortOrDefault {
     return $Default
 }
 
-$McpPort   = Get-PortOrDefault "OMNIBEAT_MCP_PORT" 8080
-$ChaosPort = Get-PortOrDefault "OMNIBEAT_CHAOS_PORT" 9000
-$OrchPort  = Get-PortOrDefault "OMNIBEAT_ORCH_PORT" 4000
-$SimPort   = Get-PortOrDefault "OMNIBEAT_SIM_PORT" 3000
+$McpPort   = Get-PortOrDefault "INTENT_LOCK_MCP_PORT" 8080
+$ChaosPort = Get-PortOrDefault "INTENT_LOCK_CHAOS_PORT" 9000
+$OrchPort  = Get-PortOrDefault "INTENT_LOCK_ORCH_PORT" 4000
+$SimPort   = Get-PortOrDefault "INTENT_LOCK_SIM_PORT" 3000
 
 # "Up" for the start/skip decision, mirroring demo-up.sh's `curl -s` (no -f):
 # ANY HTTP response -- even 404/500 from something squatting the port --
@@ -98,7 +98,7 @@ if (-not $up8080) {
     # No env config: server.py derives CORS from the request Origin.
     Start-DemoService -FilePath $VenvPython `
         -ArgumentString "src/server.py --host 127.0.0.1 --port $McpPort" `
-        -WorkingDirectory (Join-Path $OB "services\omnibeat-mcp-server") `
+        -WorkingDirectory (Join-Path $OB "services\intent-lock-server") `
         -Port $McpPort
 }
 

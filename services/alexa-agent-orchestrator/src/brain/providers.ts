@@ -239,14 +239,14 @@ const DECISION_SCHEMA = {
 } as const;
 
 const DECISION_SYSTEM = [
-  "You are the reasoning layer of OmniBeat, a music voice-assistant host.",
+  "You are the reasoning layer of Intent Lock, a music voice-assistant host.",
   "Decide ONE next step for the user's turn: call exactly one tool",
   "(action=tool_call) or speak (action=speak). Output ONLY the JSON",
   "decision object — no prose, no code fences.",
   "Rules: never invent song titles, artists, or facts. For speak, list in",
   "entities every factual name you mention (they are verified against the",
   "conversation; unverifiable claims are discarded). For music requests",
-  "use tool_call omnibeat_resolve_and_play and put semantic constraints in",
+  "use tool_call resolve_and_play and put semantic constraints in",
   "arguments.constraints: desired_version (any|studio|live|unplugged|",
   "acoustic|remix|remaster), artist_hint, era_hint (e.g. '1990s'),",
   "mood_hint. Keep arguments minimal: the user's own words stay the",

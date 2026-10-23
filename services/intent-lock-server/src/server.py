@@ -1,4 +1,4 @@
-"""OmniBeat-MCP server — self-hosted MCP 2025-11-25 Streamable HTTP server.
+"""Intent Lock server — self-hosted MCP 2025-11-25 Streamable HTTP server.
 
 Single unified endpoint: POST / GET / DELETE /mcp (+ /health for Docker).
 
@@ -62,10 +62,10 @@ import auth_demo
 from deezer_adapter import (deezer_search, deezer_album_year,
                             deezer_enabled, DEEZER_TIMEOUT)
 
-log = logging.getLogger("omnibeat-mcp")
+log = logging.getLogger("intent-lock")
 
 PROTOCOL_VERSION = "2025-11-25"
-SERVER_NAME = "omnibeat-mcp-server"
+SERVER_NAME = "intent-lock-server"
 SERVER_VERSION = "0.1.0"
 
 # --------------------------------------------------------------------------
@@ -164,9 +164,9 @@ async def lifespan(app: FastAPI):  # noqa: ARG001
 # Old (pre-master) tool names -> canonical master names. Accepted with a
 # deprecation notice so the storyboard (written against old names) still reads.
 TOOL_ALIASES = {
-    "resolve_phonetic_track": "omnibeat_resolve_and_play",
-    "abort_active_yap": "omnibeat_fastpath_interrupt",
-    "sync_offline_vibe_cache": "omnibeat_sync_multiroom_and_bunker",
+    "resolve_phonetic_track": "resolve_and_play",
+    "abort_active_yap": "fastpath_interrupt",
+    "sync_offline_vibe_cache": "sync_multiroom_and_bunker",
 }
 
 # (Frame extraction, phonetic fingerprinting, and candidate scoring live in
@@ -181,7 +181,7 @@ TOOL_ALIASES = {
 # App + CORS (FL-04: expose Mcp-Session-Id and MCP-Protocol-Version).
 # DynamicCORSMiddleware: zero-settings, reflects request Origin (see above).
 # --------------------------------------------------------------------------
-app = FastAPI(title="OmniBeat-MCP", version=SERVER_VERSION, lifespan=lifespan)
+app = FastAPI(title="Intent Lock", version=SERVER_VERSION, lifespan=lifespan)
 
 app.add_middleware(DynamicCORSMiddleware)
 
@@ -209,7 +209,7 @@ def std_headers(session_id: Optional[str] = None) -> Dict[str, str]:
 # --------------------------------------------------------------------------
 TOOL_DEFS: List[Dict[str, Any]] = [
     {
-        "name": "omnibeat_resolve_and_play",
+        "name": "resolve_and_play",
         "description": "E1+E2: resolve a mangled/code-switched utterance to a canonical track "
                        "via phonetic judo + studio-purity guard; elicits on true title collision. "
                        "LEGACY: for any request carrying a constraint (a negation, a named "
@@ -237,7 +237,7 @@ TOOL_DEFS: List[Dict[str, Any]] = [
         },
     },
     {
-        "name": "omnibeat_fastpath_interrupt",
+        "name": "fastpath_interrupt",
         "description": "E3: graceful-yield barge-in. Slices the active TTS buffer at the exact "
                        "word index and returns the yield response (no guillotine).",
         "inputSchema": {
@@ -254,7 +254,7 @@ TOOL_DEFS: List[Dict[str, Any]] = [
         },
     },
     {
-        "name": "omnibeat_verify_ledger_or_relink",
+        "name": "verify_ledger_or_relink",
         "description": "E4: audit a user challenge ('why did you do that?') against the "
                        "cryptographic ledger; or render a -32042 URL elicitation to re-link "
                        "an expired provider token.",
@@ -293,7 +293,7 @@ TOOL_DEFS: List[Dict[str, Any]] = [
                        "negation in any language, a version word (original, remix, lofi, "
                        "live, karaoke), an artist, a year, or a standing rule. For a "
                        "constrained request prefer this tool over "
-                       "omnibeat_resolve_and_play: that tool is the legacy unconstrained "
+                       "resolve_and_play: that tool is the legacy unconstrained "
                        "resolver and honors no vetoes. On no_lock, tell the user the "
                        "exact item could not be verified — do NOT fall back to playing "
                        "your own best guess.",
@@ -332,7 +332,7 @@ TOOL_DEFS: List[Dict[str, Any]] = [
         },
     },
     {
-        "name": "omnibeat_sync_multiroom_and_bunker",
+        "name": "sync_multiroom_and_bunker",
         "description": "E5: session init / multi-room phase telemetry / offline bunker manifest.",
         "inputSchema": {
             "type": "object",
@@ -348,10 +348,10 @@ TOOL_DEFS: List[Dict[str, Any]] = [
 ]
 
 RESOURCE_DEFS = [
-    {"uri": "omnibeat://session/audit-ledger", "name": "audit-ledger",
+    {"uri": "intent-lock://session/audit-ledger", "name": "audit-ledger",
      "description": "E4: append-only truth ledger of state-mutating actions",
      "mimeType": "application/json"},
-    {"uri": "omnibeat://network/multiroom-telemetry", "name": "multiroom-telemetry",
+    {"uri": "intent-lock://network/multiroom-telemetry", "name": "multiroom-telemetry",
      "description": "E5: multi-room phase-alignment telemetry",
      "mimeType": "application/json"},
 ]
@@ -363,10 +363,10 @@ _DECK_FILE = Path(__file__).resolve().parent / "assets" / "studio_deck.html"
 try:
     _DECK_HTML = _DECK_FILE.read_text(encoding="utf-8")
 except OSError:  # bundle missing from a partial checkout — stay honest
-    _DECK_HTML = ("<!doctype html><title>OmniBeat Studio Deck</title>"
+    _DECK_HTML = ("<!doctype html><title>Intent Lock Studio Deck</title>"
                   "<p>Deck bundle missing from this build.</p>")
 _DECK_HASH8 = hashlib.sha256(_DECK_HTML.encode()).hexdigest()[:8]
-DECK_URI = f"ui://omnibeat/studio-deck#{_DECK_HASH8}"
+DECK_URI = f"ui://intent-lock/trust-card#{_DECK_HASH8}"
 # MCP Apps CSP is deny-by-default (SEP-1865): catalog artwork (images)
 # and preview audio (media + fetch for WebAudio decode) live on iTunes
 # CDN domains — undeclared, they fail SILENTLY on spec-faithful hosts
@@ -385,19 +385,19 @@ _DECK_CSP = {
 }
 _DECK_UI_META = {"ui": {"csp": _DECK_CSP}}
 RESOURCE_DEFS.append({
-    "uri": DECK_URI, "name": "studio-deck",
-    "description": "OmniBeat Studio Deck — MCP Apps UI rendered from "
+    "uri": DECK_URI, "name": "trust-card",
+    "description": "Intent Lock Studio Deck — MCP Apps UI rendered from "
                    "structuredContent (verified-effect playback, elicitation)",
     "mimeType": "text/html;profile=mcp-app",
     "_meta": _DECK_UI_META})
 
 _UI_STRINGS = {
-    "omnibeat_resolve_and_play": ("Resolving the exact version…",
+    "resolve_and_play": ("Resolving the exact version…",
                                   "Resolved — purity-guard verified"),
-    "omnibeat_fastpath_interrupt": ("Yielding the floor…", "Yielded gracefully"),
-    "omnibeat_verify_ledger_or_relink": ("Auditing the truth ledger…",
+    "fastpath_interrupt": ("Yielding the floor…", "Yielded gracefully"),
+    "verify_ledger_or_relink": ("Auditing the truth ledger…",
                                         "Ledger verdict ready"),
-    "omnibeat_sync_multiroom_and_bunker": ("Phase-locking the rooms…",
+    "sync_multiroom_and_bunker": ("Phase-locking the rooms…",
                                            "Rooms phase-locked"),
     "intent_lock": ("Locking the exact version…",
                     "Locked — the card shows the proof"),
@@ -461,7 +461,7 @@ def validate_tool_args(tool: str, args: Any) -> Optional[str]:
 # Keyless real-world APIs: YouTube Suggest (typo arbitration), iTunes Search
 # (30s previews + artwork), MusicBrainz (ISRC, best-effort). ₹0 forever.
 # Fallback chain: speculative hydration → local sidecar (30-track vault) → stub.
-# The demo NEVER hard-fails. OMNIBEAT_FORCE_OFFLINE=1 forces the offline path
+# The demo NEVER hard-fails. INTENT_LOCK_FORCE_OFFLINE=1 forces the offline path
 # (judge laptop with no network).
 # SPECULATIVE DEADLINE HYDRATION (FM-01/FM-02, design wave 2026-10-20):
 # the old chain was strictly serial (Suggest → iTunes → MusicBrainz), so a
@@ -486,13 +486,13 @@ import difflib
 import urllib.parse
 import urllib.request
 
-FORCE_OFFLINE = os.environ.get("OMNIBEAT_FORCE_OFFLINE", "0") == "1"
+FORCE_OFFLINE = os.environ.get("INTENT_LOCK_FORCE_OFFLINE", "0") == "1"
 # Egress reality (measured 2026-10-19, this box via proxy): Suggest p50 ~0.7s /
 # p95 ~1.7s; iTunes p50 ~0.6s / p95 ~1.2s. Timeouts cover p95 with margin —
 # a timeout flake silently degrades the demo's headline feature (real
 # hydration) to the offline vault, so these are load-bearing, not cosmetic.
 SUGGEST_TIMEOUT, ITUNES_TIMEOUT, MB_TIMEOUT, HYDRO_BUDGET = 2.5, 2.5, 1.5, 6.0
-_UA = {"User-Agent": "OmniBeat-MCP/0.1.0 (+hackathon demo; keyless)"}
+_UA = {"User-Agent": "IntentLock/0.1.0 (+hackathon demo; keyless)"}
 # J-08 (hostile panel) P1, fixed 2026-10-20: the offline vault returned a
 # ranked candidate for ANY string, and the top one PLAYED — gibberish got a
 # confident "Playing 'Dynamite'". Calibrated on the shipped catalog: real
@@ -876,7 +876,7 @@ async def hydrate_speculative(payload: str, on_hop=None) -> tuple:
                             "itunes_ms": 0.0, "suggest_ok": False,
                             "itunes_ok": False, "canonical": payload}
     if FORCE_OFFLINE:
-        meta["note"] = "OMNIBEAT_FORCE_OFFLINE=1 — externals skipped"
+        meta["note"] = "INTENT_LOCK_FORCE_OFFLINE=1 — externals skipped"
         return [], meta
 
     def remaining() -> float:
@@ -1066,9 +1066,9 @@ async def _rescue_candidates(raw: str, peeled: str, locale_hint: str,
     on the same independent bar or a >=0.90 VPPS match to the reconstructed
     query itself. B2 picks alone NEVER resurrect — ranking is not
     verification. Everything returned still faces the purity guard.
-    Disable B1 with OMNIBEAT_B1_RESCUE=0."""
+    Disable B1 with INTENT_LOCK_B1_RESCUE=0."""
     rescued: List[Dict[str, Any]] = []
-    b1_on = os.environ.get("OMNIBEAT_B1_RESCUE", "1") != "0" \
+    b1_on = os.environ.get("INTENT_LOCK_B1_RESCUE", "1") != "0" \
         and PHONETIC_IPA.available()
     if b1_on and dead:
         scored = sorted(
@@ -1203,7 +1203,7 @@ async def tool_resolve_and_play(args: Dict[str, Any], session=None,
     # J-08 P1: content-free utterances ("", "play", "play a song") stop
     # here. frame_peel's raw-fallback would hand hydration the bare verb,
     # Suggest would canonicalize it to a popular hit, and the hit would
-    # PLAY — guess-and-play, the exact behavior OmniBeat exists to kill.
+    # PLAY — guess-and-play, the exact behavior Intent Lock exists to kill.
     # Mirror frame_peel's strip chain without the fallback, then require
     # at least one token that actually names something.
     _bare = re.sub(r"\s+", " ", _FILLER_RE.sub("", _PROVIDER_RE.sub(
@@ -1290,7 +1290,7 @@ async def tool_resolve_and_play(args: Dict[str, Any], session=None,
         TRUTH.append("GHOST_EVENT", "pause", "(chaos-injected, no utterance)", 4.2,
                      f"playing:{candidates[0]['id']}", "paused")
         emit_stage("☠ chaos: ghost_action injected — a GHOST_EVENT pause is now "
-                      "in the ledger. Challenge it with omnibeat_verify_ledger_or_relink.")
+                      "in the ledger. Challenge it with verify_ledger_or_relink.")
 
     # Layer C ranking signals (never filters): artist_hint / era_hint adjust
     # candidate scores BEFORE the guard ranks. The guard's math is untouched
@@ -3142,21 +3142,60 @@ def _load_pack(domain: str) -> List[Dict[str, Any]]:
     return _PACK_CACHE[domain]
 
 
-def _spec_claims(title: str) -> List[Tuple[str, float, str]]:
+# --- W3 (PROOF wave): unit-aware dimensional normalization -------
+# Quantities meet in canonical units — data rate in Mbps, power in
+# W, length in m, mass in g — so a title and a spec table written
+# in different units of the same dimension are still compared.
+# Each claim carries a legacy flag: True only when the pre-W3
+# parser could have produced that exact claim (Gbps/Mbps titles,
+# bare-W titles). Legacy claims against numeric spec values keep
+# the historic reason string byte-for-byte; only pairs the old
+# code could not judge — new units, string spec values, the new
+# length/mass dimensions — earn the ratio phrasing.
+_RATE_UNITS = {"gbps": 1000.0, "mbps": 1.0, "kbps": 0.001,
+               "mb/s": 8.0}
+_RATE_DISP = {"gbps": "Gbps", "mbps": "Mbps", "kbps": "Kbps",
+              "mb/s": "MB/s"}
+_POWER_UNITS = {"w": 1.0, "mw": 0.001, "kw": 1000.0}
+_LEN_UNITS = {"m": 1.0, "cm": 0.01, "mm": 0.001, "ft": 0.3048,
+              "in": 0.0254}
+_MASS_UNITS = {"g": 1.0, "kg": 1000.0, "mg": 0.001}
+# Nominal physical lengths are rounded across unit systems (a
+# "6 ft" cable is sold as 1.8 m): a length contradiction must clear
+# the spec value by more than this relative tolerance. Stated
+# tolerance: 5%.
+_LEN_TOLERANCE = 0.05
+
+
+def _spec_claims(title: str) -> List[Tuple[str, float, str, bool]]:
     """Numeric claims a title makes about itself, normalized:
-    (kind, value, display) — data rates in Mbps, watts in W."""
-    out: List[Tuple[str, float, str]] = []
-    m = re.search(r"(\d+(?:\.\d+)?)\s*(gbps|mbps)", title.lower())
+    (kind, value, display, legacy) — data rates in Mbps, watts in
+    W, lengths in m, mass in g."""
+    out: List[Tuple[str, float, str, bool]] = []
+    low = title.lower()
+    m = re.search(r"(\d+(?:\.\d+)?)\s*(gbps|mbps|kbps|mb/s)", low)
     if m:
-        n = float(m.group(1))
-        mbps = n * 1000.0 if m.group(2) == "gbps" else n
-        disp = (f"{n:g} Gbps" if m.group(2) == "gbps"
-                else f"{n:g} Mbps")
-        out.append(("data_rate_mbps", mbps, disp))
-    m = re.search(r"(\d+(?:\.\d+)?)\s*W\b", title)
+        n, unit = float(m.group(1)), m.group(2)
+        out.append(("data_rate_mbps", n * _RATE_UNITS[unit],
+                    f"{n:g} {_RATE_DISP[unit]}",
+                    unit in ("gbps", "mbps")))
+    m = re.search(r"(\d+(?:\.\d+)?)\s*(mw|kw|w)\b", low)
     if m:
-        out.append(("charging_w", float(m.group(1)),
-                    f"{float(m.group(1)):g} W"))
+        n, unit = float(m.group(1)), m.group(2)
+        disp = {"w": f"{n:g} W", "mw": f"{n:g} mW",
+                "kw": f"{n:g} kW"}[unit]
+        out.append(("charging_w", n * _POWER_UNITS[unit], disp,
+                    unit == "w"))
+    m = re.search(r"(\d+(?:\.\d+)?)\s*(mm|cm|ft|in|m)\b", low)
+    if m:
+        n, unit = float(m.group(1)), m.group(2)
+        out.append(("length_m", n * _LEN_UNITS[unit],
+                    f"{n:g} {unit}", False))
+    m = re.search(r"(\d+(?:\.\d+)?)\s*(kg|mg|g)\b", low)
+    if m:
+        n, unit = float(m.group(1)), m.group(2)
+        out.append(("weight_g", n * _MASS_UNITS[unit],
+                    f"{n:g} {unit}", False))
     return out
 
 
@@ -3164,14 +3203,57 @@ def _fmt_spec(kind: str, value: float) -> str:
     if kind == "data_rate_mbps":
         return (f"{value:g} Mbps" if value < 1000
                 else f"{value / 1000:g} Gbps")
+    if kind == "length_m":
+        return f"{value:g} m"
+    if kind == "weight_g":
+        return f"{value:g} g"
     return f"{value:g} W"
+
+
+def _parse_spec_value(kind: str, raw: Any) -> Optional[
+        Tuple[float, str, bool]]:
+    """A spec-table value as (value, display, legacy). Numbers are
+    already canonical — the legacy path, historic phrasing. Bare
+    numeric strings likewise. Unit-carrying strings ('0.48 Gbps',
+    '65 cm') are parsed through the same unit tables as title
+    claims and marked non-legacy: the old code could not judge
+    them (it parsed nothing, or crashed on float())."""
+    if isinstance(raw, (int, float)):
+        return float(raw), _fmt_spec(kind, float(raw)), True
+    if not isinstance(raw, str):
+        return None
+    try:
+        v = float(raw)
+        return v, _fmt_spec(kind, v), True
+    except ValueError:
+        pass
+    tables = {"data_rate_mbps": (_RATE_UNITS, _RATE_DISP),
+              "charging_w": (_POWER_UNITS,
+                             {"w": "W", "mw": "mW", "kw": "kW"}),
+              "length_m": (_LEN_UNITS, None),
+              "weight_g": (_MASS_UNITS, None)}
+    units, disp_map = tables[kind]
+    m = re.search(r"(\d+(?:\.\d+)?)\s*("
+                  + "|".join(sorted(units, key=len, reverse=True))
+                  + r")\b", raw.strip().lower())
+    if not m:
+        return None
+    n, unit = float(m.group(1)), m.group(2)
+    disp = (f"{n:g} {disp_map[unit]}" if disp_map
+            else f"{n:g} {unit}")
+    return n * units[unit], disp, False
+
+
+def _fmt_ratio(ratio: float) -> str:
+    r = round(ratio) if ratio >= 10 else round(ratio, 1)
+    return f"{r:g}"
 
 
 def _domain_lock(*, domain: str, raw: str, query: str,
                  intents: Dict[str, Any],
                  include_tags: List[str], exclude_tags: List[str],
                  pin_ref: Optional[Dict[str, str]], pin_reason: str,
-                 exact_lock: bool) -> Dict[str, Any]:
+                 exact_lock: bool, subject: str = "") -> Dict[str, Any]:
     """Stage C→E for commerce/grocery (v1.2 Seam 2): the SAME
     deterministic spine as music — operator grammar in, phonetic
     grounding, transparent elimination, decide — over the audited
@@ -3203,7 +3285,13 @@ def _domain_lock(*, domain: str, raw: str, query: str,
             _seen_req.add(label)
             reqs.append((label, pred))
 
-    for kind, val, disp in _spec_claims(raw):
+    for kind, val, disp, _legacy in _spec_claims(raw):
+        if kind not in ("data_rate_mbps", "charging_w"):
+            # W3: length/mass claims are contradiction evidence,
+            # not requirement classes — the exact-length
+            # requirement below keeps its historic semantics and
+            # its historic reason string.
+            continue
         _add_req(f"{disp} class", lambda c, k=kind, v=val:
                  float((c.get("specs") or {}).get(k) or 0) >= v)
     # SPEC-TRUTH REQUIREMENT (Council C2, F6): a stated ABSENCE of
@@ -3284,13 +3372,27 @@ def _domain_lock(*, domain: str, raw: str, query: str,
                   for o in (intents.get("operators") or [])
                   if o.get("op") in ("CONTEXT_ANCHOR",
                                      "CANONICAL_ORIGIN")}
-    for _kind, _val, _disp in _spec_claims(raw):
+    for _kind, _val, _disp, _lg in _spec_claims(raw):
         _protected.add(_disp.lower().replace(" ", ""))
+    # SUBJECT EXEMPTION (W4, PROOF wave): the grounded subject —
+    # the host's extracted title hint plus its candidate hints —
+    # names what the user is asking FOR. A veto binds the attribute
+    # the negation modifies; a subject token must never enter the
+    # ban set from window proximity alone ('smooth almond butter,
+    # no peanut at all' — 'almond' sits within ±3 of 'no' but names
+    # the subject; 'peanut', which the marker actually binds, is
+    # not a subject token and still bans). Only the proximity scan
+    # is exempted: host exclude_tags are deliberate, never shielded.
+    _subject_toks = {t for t in re.findall(r"[a-z0-9']+",
+                                           subject.lower())
+                     if len(t) >= 3
+                     and t not in INTENT_LOCK._NEG_MARKERS}
     for i, tok in enumerate(_toks):
         if tok in INTENT_LOCK._NEG_MARKERS:
             for j in range(max(0, i - 3), min(len(_toks), i + 4)):
                 if j != i and _toks[j] in _singles \
-                        and _toks[j] not in _protected:
+                        and _toks[j] not in _protected \
+                        and _toks[j] not in _subject_toks:
                     banned.add(_toks[j])
 
     def _carries(c: Dict[str, Any], b: str) -> bool:
@@ -3377,14 +3479,42 @@ def _domain_lock(*, domain: str, raw: str, query: str,
     survivors: List[Dict[str, Any]] = []
     for c in cands:
         _kill = None
-        for kind, claimed, disp in _spec_claims(str(c["title"])):
-            _actual = (c.get("specs") or {}).get(kind)
-            if _actual is not None and claimed > float(_actual):
+        for kind, claimed, disp, legacy in _spec_claims(
+                str(c["title"])):
+            _parsed = _parse_spec_value(
+                kind, (c.get("specs") or {}).get(kind))
+            if _parsed is None:
+                continue
+            _actual, _act_disp, _act_legacy = _parsed
+            _limit = _actual * (1.0 + _LEN_TOLERANCE) \
+                if kind == "length_m" else _actual
+            if claimed <= _limit:
+                continue
+            if legacy and _act_legacy:
+                # The historic pair, judged by the historic rule —
+                # the historic string, byte-for-byte.
                 _kill = (f"Spec contradiction — title claims {disp}, "
                          f"spec table proves "
-                         f"{_fmt_spec(kind, float(_actual))}.",
+                         f"{_fmt_spec(kind, _actual)}.",
                          "spec_contradiction")
-                break
+            elif _actual > 0:
+                # W3: a pair the old code could not judge (unit-
+                # mismatched or new-dimension) — the card shows the
+                # measured ratio, not just the two numbers.
+                _word = {"data_rate_mbps": "slower",
+                         "charging_w": "weaker",
+                         "length_m": "shorter",
+                         "weight_g": "lighter"}[kind]
+                _kill = (f"Spec contradiction — title claims {disp}, "
+                         f"spec table proves {_act_disp} "
+                         f"({_fmt_ratio(claimed / _actual)}× "
+                         f"{_word}).",
+                         "spec_contradiction")
+            else:
+                _kill = (f"Spec contradiction — title claims {disp}, "
+                         f"spec table proves {_act_disp}.",
+                         "spec_contradiction")
+            break
         if _kill is None:
             for b in sorted(banned):
                 if _carries(c, b):
@@ -3692,7 +3822,8 @@ async def tool_intent_lock(args: Dict[str, Any], session=None,
             domain=_domain, raw=raw, query=query, intents=intents,
             include_tags=eff_include, exclude_tags=exclude_tags,
             pin_ref=pin_ref, pin_reason=pin_reason,
-            exact_lock=bool(intents.get("exact_lock")))
+            exact_lock=bool(intents.get("exact_lock")),
+            subject=" ".join([hint] + memory_hints))
         d_status = d_out["status"]
         d_winner = d_out["winner"]
         d_tied = d_out["tied"] if d_status == "tie_choice" else []
@@ -4101,7 +4232,7 @@ def _elicitation_result(raw_utterance: str, cands: List[Dict[str, Any]]) -> Dict
                 "message": text,
                 "query": raw_utterance,
                 "candidates": cards,
-                "respond_via": {"tool": "omnibeat_resolve_and_play",
+                "respond_via": {"tool": "resolve_and_play",
                                 "argument": "input_responses.selection_index"},
             },
         },
@@ -4165,10 +4296,10 @@ def tool_sync_multiroom_and_bunker(args: Dict[str, Any], session=None,
 
 TOOL_IMPL = {
     "intent_lock": tool_intent_lock,
-    "omnibeat_resolve_and_play": tool_resolve_and_play,
-    "omnibeat_fastpath_interrupt": tool_fastpath_interrupt,
-    "omnibeat_verify_ledger_or_relink": tool_verify_ledger_or_relink,
-    "omnibeat_sync_multiroom_and_bunker": tool_sync_multiroom_and_bunker,
+    "resolve_and_play": tool_resolve_and_play,
+    "fastpath_interrupt": tool_fastpath_interrupt,
+    "verify_ledger_or_relink": tool_verify_ledger_or_relink,
+    "sync_multiroom_and_bunker": tool_sync_multiroom_and_bunker,
 }
 
 
@@ -4241,7 +4372,7 @@ async def handle_rpc(body: Dict[str, Any], session_id: Optional[str],
 
     if method == "tools/list":
         # The product surface is ONE tool (doc 12): intent_lock. The four
-        # legacy OmniBeat tools remain callable via tools/call for
+        # legacy tools remain callable via tools/call for
         # back-compat, but they are advertised only when
         # INTENT_LOCK_LEGACY_TOOLS=1 — a judge's first tools/list must
         # meet the one-tool referee the story promises.
@@ -4257,14 +4388,14 @@ async def handle_rpc(body: Dict[str, Any], session_id: Optional[str],
 
     if method == "resources/read":
         uri = (body.get("params") or {}).get("uri", "")
-        if uri == DECK_URI or uri == "ui://omnibeat/studio-deck":
+        if uri == DECK_URI or uri == "ui://intent-lock/trust-card":
             return 200, rpc_result(rpc_id, {"contents": [
                 {"uri": DECK_URI, "mimeType": "text/html;profile=mcp-app",
                  "text": _DECK_HTML, "_meta": _DECK_UI_META}]}), False, None
-        if uri == "omnibeat://session/audit-ledger":
+        if uri == "intent-lock://session/audit-ledger":
             assert TRUTH is not None, "engines not initialized"
             payload = json.dumps(TRUTH.recent(50), indent=2)
-        elif uri == "omnibeat://network/multiroom-telemetry":
+        elif uri == "intent-lock://network/multiroom-telemetry":
             payload = json.dumps(tool_sync_multiroom_and_bunker({})["structuredContent"]["sync_telemetry"], indent=2)
         else:
             return 200, rpc_error(rpc_id, -32002, f"Unknown resource: {uri}"), False, None
@@ -4310,9 +4441,9 @@ async def handle_rpc(body: Dict[str, Any], session_id: Optional[str],
         deprecation_note = ({"_meta": {"deprecated_alias": name, "canonical": canonical}}
                             if canonical != name else {})
 
-        if canonical in ("omnibeat_resolve_and_play", "intent_lock"):
+        if canonical in ("resolve_and_play", "intent_lock"):
             wants_sse = "text/event-stream" in request.headers.get("accept", "")
-            if canonical == "omnibeat_resolve_and_play" and wants_sse:
+            if canonical == "resolve_and_play" and wants_sse:
                 # Spec (Progress): notifications MUST reference the token the
                 # client provided in params._meta — never invent one. When
                 # the client provided none we still stream the stages with
@@ -4415,7 +4546,7 @@ async def resolve_live_stream(session_id: str, rpc_id: Any, impl,
         return
     if deprecation_note:
         result = {**result, **deprecation_note}
-    result = _with_ui_meta(result, "omnibeat_resolve_and_play")
+    result = _with_ui_meta(result, "resolve_and_play")
     for msg in stages[stages_sent:]:
         yield await _emit(msg)
         await asyncio.sleep(0.12)  # human-watchable cadence for the tail only
@@ -4535,7 +4666,7 @@ async def mcp_get(request: Request):
         else:
             hello = {"jsonrpc": "2.0", "method": "notifications/message",
                      "params": {"level": "info",
-                                "message": f"OmniBeat-MCP session {session_id[:8]}… live. "
+                                "message": f"Intent Lock session {session_id[:8]}… live. "
                                            "Send Last-Event-ID to replay missed events."}}
             eid = store.append_event(session_id, "hello", hello)
             yield sse_event(eid, hello)
@@ -4635,7 +4766,7 @@ async def oauth_authorize(request: Request):
                f"&code_challenge={q.get('code_challenge', '')}"
                f"&scope={q.get('scope', '')}")
     return HTMLResponse(
-        "<!doctype html><title>OmniBeat DEMO IdP</title>"
+        "<!doctype html><title>Intent Lock DEMO IdP</title>"
         "<body style='font-family:sans-serif;background:#101014;color:#eee;"
         "padding:2rem'><h1>Demo identity provider — NOT Amazon</h1>"
         "<p>This labeled demo consent screen stands in for Amazon's "
@@ -4657,7 +4788,7 @@ def main() -> None:
         # Ghost seed row lands in lifespan() once the ledger is open.
         CHAOS_MODE = True
     logging.basicConfig(level=logging.INFO)
-    log.info("OmniBeat-MCP on %s:%d (chaos=%s)", args.host, args.port, CHAOS_MODE)
+    log.info("Intent Lock server on %s:%d (chaos=%s)", args.host, args.port, CHAOS_MODE)
     uvicorn.run(app, host=args.host, port=args.port, log_level="info")
 
 

@@ -92,7 +92,7 @@ async function proxy(req: Request): Promise<Response> {
   const outSid = upstream.headers.get("mcp-session-id");
   if (outSid) out.set("Mcp-Session-Id", outSid);
   out.set("Content-Type", upstream.headers.get("content-type") ?? "application/json");
-  out.set("X-OmniBeat-Upstream", via); // honest: which hop served this frame
+  out.set("X-IntentLock-Upstream", via); // honest: which hop served this frame
 
   return new Response(upstream.body, { status: upstream.status, headers: out });
 }

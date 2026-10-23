@@ -31,7 +31,7 @@ import os
 import urllib.request
 from typing import Any, Dict, List, Optional
 
-log = logging.getLogger("omnibeat.reconstructor")
+log = logging.getLogger("intent-lock.reconstructor")
 
 _TIMEOUT_S = 6.0
 _MAX_QUERIES = 3

@@ -3,7 +3,7 @@
 
 Stdlib-only, no server needed: imports the real kernel module and
 asserts on the compiled operator/veto evidence for the grammar in
-services/omnibeat-mcp-server/src/sublocal_grammar.json.
+services/intent-lock-server/src/sublocal_grammar.json.
 
 What this pins down:
   1. The JSON loads under the file's own schema, with no duplicate
@@ -32,7 +32,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC = ROOT / "services" / "omnibeat-mcp-server" / "src"
+SRC = ROOT / "services" / "intent-lock-server" / "src"
 sys.path.insert(0, str(SRC))
 
 import engines.intent_lock as IL  # noqa: E402

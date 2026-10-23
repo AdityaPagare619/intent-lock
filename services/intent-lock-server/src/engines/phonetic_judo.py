@@ -25,7 +25,7 @@ import threading
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-log = logging.getLogger("omnibeat-mcp.e1")
+log = logging.getLogger("intent-lock.e1")
 
 SERVICE_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_SIDECAR = (SERVICE_ROOT.parent.parent

@@ -21,7 +21,7 @@ from __future__ import annotations
 import logging
 from typing import Any, Dict, Tuple
 
-log = logging.getLogger("omnibeat-mcp.e3")
+log = logging.getLogger("intent-lock.e3")
 
 # What counts as an explicit stop. Everything else is a conversation.
 _HARD_STOP_PHRASES = frozenset({

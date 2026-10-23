@@ -11,7 +11,7 @@ COPY src/ ./src/
 RUN npm ci --no-audit --no-fund && npx tsc -p tsconfig.json && npm prune --omit=dev && npm cache clean --force
 
 ENV PORT=4000
-ENV MCP_SERVER_URL=http://omnibeat-mcp-server:8080/mcp
+ENV MCP_SERVER_URL=http://intent-lock-mcp-server:8080/mcp
 
 EXPOSE 4000
 

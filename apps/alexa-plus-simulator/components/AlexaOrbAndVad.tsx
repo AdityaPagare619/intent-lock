@@ -8,7 +8,7 @@
  * Everything Alexa DOES here is unchanged: the VAD engine (Silero WASM
  * primary, WebAudio fallback — lib/vad.ts), the scripted beats
  * (lib/demo.ts), and the LIVE interrupt path (a real tools/call
- * omnibeat_fastpath_interrupt at the exact word index). Only the
+ * fastpath_interrupt at the exact word index). Only the
  * presentation moved worlds.
  */
 "use client";
@@ -186,7 +186,7 @@ function StageUtterance() {
         <div className="mt-2 max-w-[52ch] text-[13.5px] leading-relaxed text-stage-ink-2">
           {lastAsr
             ? "Heard by the simulated mic. The rescue itself happens on the real wire — watch it travel below."
-            : "She mishears accents, guesses between same-name songs, and won't stop talking. OmniBeat catches all three — live, underneath her."}
+            : "She mishears accents, guesses between same-name songs, and won't stop talking. Intent Lock catches all three — live, underneath her."}
         </div>
       )}
       {lastAlexa && (
@@ -322,7 +322,7 @@ export default function AlexaOrbAndVad({ thinking = false }: { thinking?: boolea
     // REAL wire call: the exact word index where she was interrupted.
     let ledgerNote: string;
     if (s.sessionId) {
-      const res = await mcpCallTool(s.pushFrame, s.sessionId, "omnibeat_fastpath_interrupt", {
+      const res = await mcpCallTool(s.pushFrame, s.sessionId, "fastpath_interrupt", {
         interrupted_at_word_index: idx,
         barge_in_command: bargeCmd,
       }, s.activeChaosFault);

@@ -1,6 +1,6 @@
 # FRICTION LOG — FINAL (paste-ready for the Devpost form)
 
-**What this is:** the complete friction log — **24 real entries** — in the exact field structure the official rules specify for the friction-log bonus: one Devpost entry per block below, fields in Devpost's order: *Task attempted · Steps taken · Expected vs. actual · Severity · Workaround · Actionable suggestion*. Entries 1–16 (FL-01…FL-16) come from the dated build log `docs/FRICTION_LOG.md`; Entries 17–23 (FL-17…FL-23) are the Intent Lock build addendum of 2026-10-21; Entry 24 (FL-24) is clarified in this final pass from the locked spec (`docs/12_INTENT_LOCK_SPEC.md`) and the code that implements it (`server.py`, host-clock block) — it documents a design discovery, not a crash, and is labeled as such.
+**What this is:** the complete friction log — **24 real entries** — in the exact field structure the official rules specify for the friction-log bonus: one Devpost entry per block below, fields in Devpost's order: *Task attempted · Steps taken · Expected vs. actual · Severity · Workaround · Actionable suggestion*. Entries 1–16 (FL-01…FL-16) come from the team's dated build log; Entries 17–23 (FL-17…FL-23) are the Intent Lock build addendum of 2026-10-21; Entry 24 (FL-24) is clarified in this final pass from the locked spec (`docs/12_INTENT_LOCK_SPEC.md`) and the code that implements it (`server.py`, host-clock block) — it documents a design discovery, not a crash, and is labeled as such.
 
 ## The three platform discoveries (read these first)
 
@@ -160,7 +160,7 @@
 
 ---
 
-*Source: `docs/FRICTION_LOG.md` (repo), entries FL-01…FL-16, written during the build (Oct 18–20, 2026); Entries 17–23 added during the Intent Lock build (2026-10-21); Entry 24 (FL-24, host-clock isolation) clarified in the final pass from `docs/12_INTENT_LOCK_SPEC.md` and `server.py` — a documented design discovery, not an invented incident. This final version only re-orders, de-duplicates meta-commentary, and maps each entry onto Devpost's six required fields — no entry was softened, dropped, or invented. Prepared by Judge J-09, 2026-10-20; final pass 2026-10-21.*
+*Source: the team's working build log, entries FL-01…FL-16, written during the build (Oct 18–20, 2026); Entries 17–23 added during the Intent Lock build (2026-10-21); Entry 24 (FL-24, host-clock isolation) clarified in the final pass from `docs/12_INTENT_LOCK_SPEC.md` and `server.py` — a documented design discovery, not an invented incident. This final version only re-orders, de-duplicates meta-commentary, and maps each entry onto Devpost's six required fields — no entry was softened, dropped, or invented. Prepared 2026-10-20; final pass 2026-10-21.*
 
 
 ---

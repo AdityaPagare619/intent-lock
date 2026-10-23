@@ -70,16 +70,16 @@ from typing import Any, Callable, Dict, List, Optional, Sequence, Set, Tuple
 DEEZER_TIMEOUT = 2.5
 ALBUM_TIMEOUT = 1.5
 
-_UA = {"User-Agent": "OmniBeat-MCP/0.1.0 (+hackathon demo; keyless)"}
+_UA = {"User-Agent": "IntentLock/0.1.0 (+hackathon demo; keyless)"}
 _API = "https://api.deezer.com"
 
 
 def deezer_enabled() -> bool:
     """Env kill-switch for the kernel owner's race wiring.
 
-    ``OMNIBEAT_DEEZER=0`` disables the Deezer leg; anything else
+    ``INTENT_LOCK_DEEZER=0`` disables the Deezer leg; anything else
     (including unset) leaves it enabled once wired in."""
-    return os.environ.get("OMNIBEAT_DEEZER", "1") != "0"
+    return os.environ.get("INTENT_LOCK_DEEZER", "1") != "0"
 
 
 # ----------------------------------------------------------------------

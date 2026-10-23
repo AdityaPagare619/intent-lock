@@ -1,4 +1,4 @@
-# omnibeat-mcp-server — the Intent Lock MCP server (:8080)
+# Intent Lock MCP server (:8080)
 
 The deliverable: a self-hosted **MCP server (spec 2025-11-25, Streamable
 HTTP)** that verifies a voice request against real catalog rows before
@@ -40,10 +40,10 @@ blocks — every number measured by the run that produced it.
 Four tools from the pre-Intent-Lock build remain registered. The demo
 never calls them; they are kept as working substrate, labeled as such:
 
-- `omnibeat_resolve_and_play` — phonetic resolve + studio-purity guard, with elicitation on true collisions.
-- `omnibeat_fastpath_interrupt` — barge-in / yield handling.
-- `omnibeat_verify_ledger_or_relink` — truth-ledger audit of a user challenge; `-32042` URL elicitation for an expired token.
-- `omnibeat_sync_multiroom_and_bunker` — session init / multi-room telemetry / offline-bunker manifest.
+- `resolve_and_play` — phonetic resolve + studio-purity guard, with elicitation on true collisions.
+- `fastpath_interrupt` — barge-in / yield handling.
+- `verify_ledger_or_relink` — truth-ledger audit of a user challenge; `-32042` URL elicitation for an expired token.
+- `sync_multiroom_and_bunker` — session init / multi-room telemetry / offline-bunker manifest.
 
 ## Structure
 
@@ -74,11 +74,10 @@ the `X-Chaos-Fault` header.
 From the repo root, with the server running:
 
 ```bash
-curl http://127.0.0.1:8080/health             # the server answers
-# …or point any MCP client (e.g. the official MCP Inspector) at http://127.0.0.1:8080/mcp
+python3 scripts/smoke_test.py                 # or: … http://127.0.0.1:8080/mcp
 ```
 
-A client session performs `initialize` → `tools/list` (asserts
+The smoke test performs `initialize` → `tools/list` (asserts
 `intent_lock` is registered) → one hero `intent_lock` call, and prints
 `SMOKE PASS` with the locked track id, or `SMOKE FAIL` with the reason.
 

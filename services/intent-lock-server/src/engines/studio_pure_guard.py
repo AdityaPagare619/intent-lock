@@ -32,7 +32,7 @@ import logging
 import re
 from typing import Any, Dict, List, Tuple
 
-log = logging.getLogger("omnibeat-mcp.e2")
+log = logging.getLogger("intent-lock.e2")
 
 # --- v2: text-token penalties (weights are published policy, not tuned secrets)
 LIVE_TOKENS = re.compile(

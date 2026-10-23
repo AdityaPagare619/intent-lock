@@ -3,7 +3,7 @@
 > **Scope note (2026-10-21):** the transcripts below prove the **legacy four-tool wire**, captured 2026-10-19/20. The current hero tool is `intent_lock` — for its live proof, boot the stack (`scripts/demo-up.sh`) and call `intent_lock` from any MCP client (initialize → tools/list → one verified lock); see `docs/12_INTENT_LOCK_SPEC.md` and final results in `docs/TESTING.md`.
 
 Intent Lock · captured 2026-10-19 ~03:40 IST from the live servers
-(`services/omnibeat-mcp-server`, Python/FastAPI, hand-rolled JSON-RPC).
+(`services/intent-lock-server`, Python/FastAPI, hand-rolled JSON-RPC).
 Every block below is a verbatim transcript. Session ids are real.
 
 > (Correction, 2026-10-23: the verify_mcp_wire.sh script and chaos-suite target named here were never shipped in this repository; the protocol evidence above was produced in the build workspace. The commands a reader can run today are in docs/TESTING.md and docs/OPERATIONS.md.)

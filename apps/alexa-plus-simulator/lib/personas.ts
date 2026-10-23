@@ -23,7 +23,7 @@ export const PERSONAS: PersonaDef[] = [
     useCase: "UC-1 accent rescue",
     simAsr: "alexa, play Lolly Pop La Gelu",
     alexaLine: "Playing Lollipop Lagelu — Pawan Singh, studio original.",
-    tool: "omnibeat_resolve_and_play",
+    tool: "resolve_and_play",
     args: {
       raw_utterance: "play Lolly Pop La Gelu",
       locale_hint: "IN-UP-BR",
@@ -40,7 +40,7 @@ export const PERSONAS: PersonaDef[] = [
     useCase: "UC-4 graceful yield",
     simAsr: "alexa — bro, stop yapping, just the short version",
     alexaLine: "Got it — short version: Pawan Singh, 2011 Bhojpuri hit.",
-    tool: "omnibeat_fastpath_interrupt",
+    tool: "fastpath_interrupt",
     args: { interrupted_at_word_index: 34, barge_in_command: "stop yapping, short version" },
   },
   {
@@ -60,7 +60,7 @@ export const PERSONAS: PersonaDef[] = [
     useCase: "UC-5 edge bunker",
     simAsr: "alexa, keep playing — don't you dare stop",
     alexaLine: "Edge Continuity Mode — running on local vibe cache.",
-    tool: "omnibeat_sync_multiroom_and_bunker",
+    tool: "sync_multiroom_and_bunker",
     args: { session: "init", rooms: ["living-room", "kitchen", "bedroom"] },
   },
 ];

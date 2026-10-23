@@ -1,6 +1,6 @@
 # 10 — Alexa+ 2026 Deep Research Dossier
 
-*Compiled 2026-10-21 by Petu (Principal, OmniBeat-MCP). Method: Amazon's official
+*Compiled 2026-10-21 by Petu (Principal, Intent Lock). Method: Amazon's official
 developer documentation read firsthand in a live browser (all seven MCP Toolkit
 pages), plus a sourced deep-research pass over the 2025–2026 literature and
 Amazon's public record. Every claim below carries its source or is marked as a
@@ -221,7 +221,7 @@ The literature converges on one safe shape for letting an LLM touch actions:
 3. **Deterministic post-verification** (catalog-ID existence + phonetic
    distance threshold) before anything acts.
 4. Refusal/abstention as a first-class output.
-This is, not coincidentally, the shape OmniBeat's guard already enforces —
+This is, not coincidentally, the shape Intent Lock's guard already enforces —
 the redesign keeps the contract and upgrades the proposer.
 
 ## 6. Claims in the commissioning brief that failed verification
@@ -256,7 +256,7 @@ awareness without weakening the gate.
   practice). Latency measured up to ~15 s on some requests.
 - **The add-on shape Amazon productized is literally an MCP server** on
   spec 2025-11-25 returning `structuredContent` (+ optional MCP Apps UI).
-  OmniBeat already *is* that shape; its differentiator inside that shape is
+  Intent Lock already *is* that shape; its differentiator inside that shape is
   the **guarantee layer**: never-guess resolution (confidence floor),
   purity/anti-upsell verification, verified-effect playback, and a
   hash-chained receipt for every action — the trust layer between an

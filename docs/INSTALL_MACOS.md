@@ -1,4 +1,4 @@
-# Installing OmniBeat-MCP on macOS
+# Installing Intent Lock on macOS
 
 **The good news first:** the shell scripts were audited line-by-line against
 macOS's stock shell (bash 3.2 — Apple hasn't shipped a newer bash since

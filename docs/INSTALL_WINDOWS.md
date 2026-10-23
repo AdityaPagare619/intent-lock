@@ -1,4 +1,4 @@
-# Installing Intent Lock (OmniBeat-MCP) on Windows
+# Installing Intent Lock on Windows
 
 Native Windows is supported: this repo ships PowerShell launchers
 (`scripts\bootstrap.ps1`, `scripts\demo-up.ps1`, `scripts\demo-down.ps1`)
@@ -52,7 +52,7 @@ exactly the same thing; pick the shell you already have open.
 ## PowerShell — exact paste block
 
 ```powershell
-git clone https://github.com/AdityaPagare619/omnibeat-mcp.git
+git clone https://github.com/AdityaPagare619/intent-lock.git
 cd intent-lock
 
 # OPTIONAL — live Gemini brain. Skip this line for the keyless local floor.
@@ -97,7 +97,7 @@ cmd.exe cannot run `.ps1` files directly, so each script is invoked through
 `powershell -File`. Use exactly this form:
 
 ```bat
-git clone https://github.com/AdityaPagare619/omnibeat-mcp.git
+git clone https://github.com/AdityaPagare619/intent-lock.git
 cd intent-lock
 
 REM OPTIONAL — live Gemini brain. Skip this line for the keyless local floor.

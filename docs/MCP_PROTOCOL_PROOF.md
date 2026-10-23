@@ -2,7 +2,7 @@
 
 > **Scope note (2026-10-21):** the transcripts below prove the **legacy four-tool wire**, captured 2026-10-19/20. The current hero tool is `intent_lock` — for its live proof, boot the stack (`scripts/demo-up.sh`) and call `intent_lock` from any MCP client (initialize → tools/list → one verified lock); see `docs/12_INTENT_LOCK_SPEC.md` and final results in `docs/TESTING.md`.
 
-OmniBeat-MCP · captured 2026-10-19 ~03:40 IST from the live servers
+Intent Lock · captured 2026-10-19 ~03:40 IST from the live servers
 (`services/omnibeat-mcp-server`, Python/FastAPI, hand-rolled JSON-RPC).
 Every block below is a verbatim transcript. Session ids are real.
 
@@ -217,7 +217,7 @@ both paths asserted in F-10.
 > **Spec-shape note.** The `-32042` code itself is the spec's
 > `URLElicitationRequiredError` (SEP-1036 / 2025-11-25 elicitation),
 > but the spec's error `data` carries an `elicitations` array whose
-> entries have `mode: "url"` and an `elicitationId`. OmniBeat's `data`
+> entries have `mode: "url"` and an `elicitationId`. the server's `data`
 > is a flat, first-party shape (`url`, `provider`, `reason`, `render`)
 > that its own clients parse; a stock SDK client expecting the spec
 > shape would not. Documented deviation — see the J-02 verdict.

@@ -9,7 +9,7 @@
 
 ## Title
 
-**Intent Lock** (OmniBeat-MCP)
+**Intent Lock**
 
 ## Tagline
 
@@ -100,4 +100,4 @@ Model Context Protocol (2025-11-25, Streamable HTTP) · Python / FastAPI · Node
 
 ---
 
-*Team THE YAP PATROL — Intent Lock (OmniBeat-MCP), Amazon "Build, Ship, Shape" Developer Hackathon, Alexa+ Track.*
+*Team THE YAP PATROL — Intent Lock, Amazon "Build, Ship, Shape" Developer Hackathon, Alexa+ Track.*

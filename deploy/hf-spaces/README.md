@@ -19,16 +19,16 @@
    `supervisord.conf` under `deploy/`:
 
 ```bash
-git clone https://huggingface.co/spaces/<YOUR_USER>/omnibeat-demo
-cp -r /path/to/omnibeat-mcp/* omnibeat-demo/
-cp /path/to/omnibeat-mcp/deploy/hf-spaces/Dockerfile omnibeat-demo/Dockerfile
-cp /path/to/omnibeat-mcp/deploy/hf-spaces/.dockerignore omnibeat-demo/.dockerignore
-mkdir -p omnibeat-demo/deploy && cp /path/to/omnibeat-mcp/deploy/hf-spaces/supervisord.conf omnibeat-demo/deploy/
-cd omnibeat-demo && git add -A && git commit -m "OmniBeat-MCP demo" && git push
+git clone https://huggingface.co/spaces/<YOUR_USER>/intent-lock-demo
+cp -r /path/to/intent-lock/* intent-lock-demo/
+cp /path/to/intent-lock/deploy/hf-spaces/Dockerfile intent-lock-demo/Dockerfile
+cp /path/to/intent-lock/deploy/hf-spaces/.dockerignore intent-lock-demo/.dockerignore
+mkdir -p intent-lock-demo/deploy && cp /path/to/intent-lock/deploy/hf-spaces/supervisord.conf intent-lock-demo/deploy/
+cd intent-lock-demo && git add -A && git commit -m "Intent Lock demo" && git push
 ```
 
 The Space then serves the simulator at
-`https://<YOUR_USER>-omnibeat-demo.hf.space`, with the same chain as
+`https://<YOUR_USER>-intent-lock-demo.hf.space`, with the same chain as
 locally: browser → :7860/api/mcp → :4000 → :8080, all inside the
 container.
 

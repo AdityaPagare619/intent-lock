@@ -31,6 +31,21 @@ One gate, five sections, all must pass:
 
 Final gate run: 2026-10-23 (run 7, ~02:17 IST), against the exact tree in this repository. The run before it (run 6, same night) FAILED on two findings, both fixed and re-gated in run 7: a replay case where run-together ASR garble ("playsaiyaaranottheremix") hid the user's own "not the remix" veto from the parser — the kernel now carries a fused-negation rescue that recovers vetoes fused inside a single garbled token — and a saboteur-checker isolation flaw (the kernel had behaved correctly; the checker counted a pre-existing legitimate rule as a violation and now diffs snapshots). The protocol-negotiation fix below is also included. One acceptance note, in the open: the B2 rule beat accepts the LoFi Mix by recording (title + lead artist + either catalog's verified pressing: iTunes 1620148631 or Deezer 1724669457, ISRC-checked), because two live catalogs legitimately carry the same recording under different ids.
 
+## Calibration receipt
+
+The gate's thresholds — floor **0.60**, tie margin **0.04**, EXACT_LOCK
+**+0.10** (floor 0.70) — were selected against the hostile-host matrix,
+and are unchanged since that selection:
+
+- The matrix: **165 planned runs** (55 utterances × 3 personas),
+  **161 completed** (165 − 1 extraction error − 3 kernel errors).
+- On that matrix, the pre-fix system false-locked **36** runs —
+  guarantee survival **77.64%** (125 of 161 completed runs safe).
+- After the fixes, all **36** wrong-locks were replayed:
+  **36 FIXED / 0 still-wrong** — a false-lock rate of **0%** on the
+  replay — confirmed again at gate run 7 (2026-10-23) over the
+  shipped tree.
+
 ## Interop
 
 The server was also exercised by a third-party MCP client (the official MCP

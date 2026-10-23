@@ -73,10 +73,10 @@ variables:
 
 | Variable | Default |
 | --- | --- |
-| `OMNIBEAT_SIM_PORT` | `3000` |
-| `OMNIBEAT_ORCH_PORT` | `4000` |
-| `OMNIBEAT_MCP_PORT` | `8080` |
-| `OMNIBEAT_CHAOS_PORT` | `9000` |
+| `INTENT_LOCK_SIM_PORT` | `3000` |
+| `INTENT_LOCK_ORCH_PORT` | `4000` |
+| `INTENT_LOCK_MCP_PORT` | `8080` |
+| `INTENT_LOCK_CHAOS_PORT` | `9000` |
 
 The POSIX `demo-up.sh` starts the four default ports shown in the
 service map. When services are started manually on different ports,

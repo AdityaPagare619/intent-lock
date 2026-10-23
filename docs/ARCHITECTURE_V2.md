@@ -1,6 +1,6 @@
 > **SUPERSEDED — the canonical architecture is docs/12_INTENT_LOCK_SPEC.md and docs/architecture-main.png. This file is kept as design history.**
 
-# OmniBeat-MCP v2 — Final Architecture & Engineering Blueprint
+# Architecture v2 — Final Architecture & Engineering Blueprint (retired)
 
 > **⚠ SUPERSEDED — historical design document (2026-10-19).** This blueprint describes the retired four-tool v1 story (Graceful Yield, ledger, multiroom). The product that ships is **Intent Lock**: see `README.md` and the locked spec `docs/12_INTENT_LOCK_SPEC.md`. Kept in the tree as an honest build record, not as judge-facing product documentation.
 ### The Yap Patrol · Amazon "Build, Ship, Shape" · Alexa+ Track

@@ -119,5 +119,5 @@
 
   <!-- ===== Footer ===== -->
   <text x="40" y="706" font-size="13" fill="#9DB2C6">The pin is the MRTR discipline (SEP-2322) as two ordinary tool calls on MCP 2025-11-25 — the server re-verifies; it never samples, never guesses.</text>
-  <text x="1200" y="732" text-anchor="end" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="10.5" letter-spacing="1.5" fill="#6E87A0">ZERO LLMs · ZERO SETTINGS · ₹0 PER CALL</text>
+  <text x="1200" y="732" text-anchor="end" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="10.5" letter-spacing="1.5" fill="#6E87A0">0 LLMs IN THE VERIFIER · ZERO SETTINGS · ₹0 PER CALL</text>
 </svg>

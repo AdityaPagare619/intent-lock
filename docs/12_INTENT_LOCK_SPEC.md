@@ -109,6 +109,22 @@ and fails silently.
    variant substitution), **CONTEXT_ANCHOR (@)** (domain/family tokens;
    arbitrates the entity family before phonetic distance). A new dialect
    is lines of JSON — zero code.
+
+   **Stage A, stated formally.** Every ask *u* compiles to a constraint
+   set:
+
+   > C(u) = MUST(p₁…pₙ) ∧ ¬VETO(q₁…qₘ) ∧ ANCHOR(a) ∧ TEMPORAL(t_host)
+
+   MUST — the positive demands a survivor must satisfy (EXACT_LOCK `≡` /
+   OP_EXACT exclusivity; CANONICAL_ORIGIN `t₀` / OP_ORIGIN). ¬VETO — the
+   banned variants (HARD_VETO `≠` / OP_VETO, compiled from the raw
+   transcript). ANCHOR — the entity family fixed before phonetics speak
+   (CONTEXT_ANCHOR `@` / OP_ANCHOR). TEMPORAL — Stage B's standing rules
+   evaluated against `_meta.host_time`. The shape is LLM-Modulo: the
+   host brain proposes extractions and candidates, but the kernel
+   compiles the raw transcript itself — a host extraction can add
+   candidates, and it can never remove a veto the transcript carries
+   (saboteur S2 and S7 attack exactly this, and fail).
 2. **Stage B — Temporal Entity Memory Injection.** Stored Taste Lock
    rules are evaluated against `_meta.host_time` **before** fetching. A
    fired rule expands the search variants with its version
@@ -131,7 +147,12 @@ and fails silently.
 4. **Stage D — Articulatory Entity Grounding.** Context anchor first:
    the family containing the anchored context wins before phonetics
    speak. Then PanPhon articulatory features (70%) + consonant skeleton
-   (30%) score the survivors against the heard words.
+   (30%) score the survivors against the heard words:
+
+   > S_ground(q, c) = 0.70 · (1 − d_PanPhon(φ(q), φ(c))) + 0.30 · LCS_consonant(q, c)
+
+   This score contains no popularity term — catalog fame cannot raise a
+   candidate's grounding.
 5. **Stage E — Transparent Elimination & MRTR Pin Gate.** Traps die on
    named kill channels — on the music path **`veto`**, **`trap`**
    (karaoke, compilation-swap and wrong-film convictions all ride this
@@ -146,6 +167,16 @@ and fails silently.
    `pin` — the MRTR discipline (SEP-2322) as two ordinary tool calls on
    2025-11-25. A pin that names a banned or absent row is refused.
    Nothing clears the floor → `no_lock`, an honest refusal.
+
+   **Stage E, stated formally.** The gate returns a prediction *set*,
+   not a forced answer: the survivors at or above the floor and within
+   the tie margin (**0.04**) of the top score. Set size 0 → `no_lock`
+   (refusal); size 1 → `locked`; size > 1 → `tie_choice`, settled by a
+   human pin the server re-verifies before anything acts. This is the
+   abstention / set-valued-prediction pattern — the conformal-prediction
+   family — with one honesty boundary: **no coverage guarantee is
+   claimed**; the thresholds are empirical, calibrated on the
+   hostile-host matrix (see `docs/TESTING.md`, *Calibration receipt*).
 
 ### F-01, defined honestly
 

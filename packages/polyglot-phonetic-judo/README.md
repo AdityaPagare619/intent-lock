@@ -4,7 +4,7 @@
 
 A deterministic, zero-dependency phonetic pipeline that turns mangled
 speech-to-text transcripts into canonical track titles. Built for the
-**OmniBeat-MCP** Alexa+ track entry (Amazon "Build, Ship, Shape" hackathon),
+**Intent Lock** — Alexa+ track entry (Amazon "Build, Ship, Shape" hackathon),
 shipped as a standalone package for the **Open Source mini-challenge**.
 
 **What it does:** `"Lolly Pop La Gelu"` → **Lollipop Lagelu — Pawan Singh**.

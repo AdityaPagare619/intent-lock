@@ -1,6 +1,6 @@
 # =============================================================================
 # OmniBeat-MCP — docker-compose (RESTORED 4-service topology)
-# Locked 2026-10-19 ~02:54 IST · D-08 (docs/DECISION_LOG.md): the 2-service fold
+# Locked 2026-10-19 ~02:54 IST · D-08: the 2-service fold
 # is DEAD. Four separate servers, exactly per the blueprint docs, because
 # genuine process separation is the demo honesty story.
 #

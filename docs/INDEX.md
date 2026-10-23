@@ -38,8 +38,6 @@ for honesty, superseded where it conflicts with a CANONICAL file.
 | `shots/devpost-thumbnail.png` | The Devpost project thumbnail (3:2) | Presentation asset | GUIDE |
 | `shots/video-poster.jpg` | Poster frame from the demo video (16:9) | Presentation asset | GUIDE |
 | `10_ALEXA_PLUS_2026_DEEP_RESEARCH.md` | Research notes on the Alexa+ 2026 platform landscape, gathered before the build | Readers who want the market/platform context | BACKGROUND |
-| `FRICTION_LOG.md` | The dated build-time friction log (FL-01…FL-16) as written when each wall was hit; the final log grew from it — read `FRICTION_LOG_FINAL.md` instead | Readers tracing how an entry evolved | HISTORY |
-| `DECISION_LOG.md` | The dated decision record (D-01 onward): what was decided, why, and what it cost | Readers auditing how the design was chosen | HISTORY |
 | `ARCHITECTURE_V2.md` | The retired v2 blueprint (four-tool OmniBeat design, Graceful Yield, ledger) — superseded by the spec above; banner on the file says so | Readers tracing the design's evolution | HISTORY |
 | `.nojekyll` | GitHub Pages marker file (serves `index.html` raw); not a document | Nobody | GUIDE |
 | `INDEX.md` | This index | Anyone lost in this folder | GUIDE |
